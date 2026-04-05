@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Red Sea Restaurant & Detox Juice Bar | Fresh Juices · Kababs · Staten Island, NY</title>
+<meta name="description" content="Staten Island's premier restaurant and detox juice bar. Fresh-pressed juices, smoothies, kababs, wraps & more at 1612 Forest Ave. Call to order: (347) 857-6692."/>
+<meta property="og:title" content="Red Sea Restaurant & Detox Juice Bar"/>
+<meta property="og:description" content="Fresh juices, smoothies, kababs & more. Staten Island, NY. Call (347) 857-6692 to order."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"Red Sea Restaurant & Detox Juice Bar","address":{"@type":"PostalAddress","streetAddress":"1612 Forest Ave","addressLocality":"Staten Island","addressRegion":"NY","postalCode":"10302","addressCountry":"US"},"telephone":"(347) 857-6692","openingHours":"Mo-Su 10:00-22:00","servesCuisine":["Mediterranean","Juice Bar","Kebab","Yemeni"],"priceRange":"$$","url":"https://redseadetox.com"}</script>
+<style>
+:root{
+  --charcoal:#1a1a1a;--charcoal2:#222;--charcoal3:#2c2c2c;--charcoal4:#333;
+  --cream:#f5f0e8;--cream2:#ede7d9;
+  --accent:#d4a843;--accent2:#e8b84b;
+  --green:#4a7c59;--green2:#5e9970;
+  --red:#c0392b;
+  --text-light:#b8b0a0;--text-mid:#8a8070;
+  --radius:14px;--radius-sm:8px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif;overflow-x:hidden;line-height:1.6}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--charcoal)}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px;transition:all .3s}
+nav.scrolled{background:rgba(26,26,26,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(212,168,67,.15);box-shadow:0 4px 30px rgba(0,0,0,.5)}
+.nav-logo{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.nav-logo-icon{width:42px;height:42px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.nav-logo-text span:first-child{display:block;font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--cream);line-height:1.1}
+.nav-logo-text span:last-child{display:block;font-size:.6rem;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
+.nav-links a{color:var(--cream);text-decoration:none;font-size:.82rem;letter-spacing:.07em;text-transform:uppercase;font-weight:500;opacity:.8;transition:all .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--accent);transition:width .3s}
+.nav-links a:hover{opacity:1;color:var(--accent)}
+.nav-links a:hover::after{width:100%}
+.nav-call-btn{background:var(--accent);color:var(--charcoal);padding:.55rem 1.3rem;border-radius:50px;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:all .3s;border:none;cursor:pointer;font-family:'DM Sans',sans-serif}
+.nav-call-btn:hover{background:var(--accent2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(212,168,67,.35)}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.4rem}
+.nav-hamburger span{width:22px;height:2px;background:var(--cream);border-radius:1px;transition:all .3s}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--charcoal);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:1.8rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--cream);text-decoration:none;font-family:'Playfair Display',serif;font-size:1.8rem;opacity:.85;transition:all .2s}
+.mobile-menu a:hover{opacity:1;color:var(--accent)}
+.mobile-close{position:absolute;top:1.5rem;right:1.5rem;font-size:1.8rem;cursor:pointer;color:var(--cream);background:none;border:none}
+
+/* HERO */
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(8,20,10,.93) 0%,rgba(18,32,12,.88) 35%,rgba(20,18,8,.88) 65%,rgba(10,10,10,.95) 100%),url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600&q=80") center/cover no-repeat}
+.hero-orb1{position:absolute;top:-15%;left:-10%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(74,124,89,.2) 0%,transparent 65%);animation:floatOrb 9s ease-in-out infinite}
+.hero-orb2{position:absolute;bottom:-25%;right:-10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,.12) 0%,transparent 65%);animation:floatOrb 12s ease-in-out infinite reverse}
+@keyframes floatOrb{0%,100%{transform:translate(0,0)}50%{transform:translate(25px,-35px)}}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:880px;padding:2rem;animation:heroIn .9s ease both}
+@keyframes heroIn{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(212,168,67,.35);border-radius:50px;padding:.4rem 1.2rem;margin-bottom:1.8rem;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;background:rgba(212,168,67,.06)}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,7.5vw,6.8rem);font-weight:900;line-height:1.02;margin-bottom:1.4rem;color:var(--cream)}
+.hero-h1 em{font-style:italic;color:var(--accent)}
+.hero-h1 .line2{display:block;color:var(--green2);font-size:.68em}
+.hero-sub{font-size:1.05rem;color:var(--text-light);max-width:580px;margin:0 auto 2.2rem;font-weight:300;line-height:1.8}
+.hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.8rem}
+.btn-primary{background:var(--accent);color:var(--charcoal);padding:.88rem 2rem;border-radius:50px;font-weight:700;font-size:.88rem;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;transition:all .3s;box-shadow:0 6px 28px rgba(212,168,67,.3);border:none;cursor:pointer;font-family:'DM Sans',sans-serif;display:inline-flex;align-items:center;gap:.5rem}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 12px 36px rgba(212,168,67,.4)}
+.btn-outline{border:1.5px solid rgba(245,240,232,.28);color:var(--cream);padding:.88rem 2rem;border-radius:50px;font-weight:500;font-size:.88rem;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;transition:all .3s;background:transparent;cursor:pointer;font-family:'DM Sans',sans-serif}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap}
+.hero-stat{text-align:center}
+.hero-stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--accent);display:block}
+.hero-stat-label{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-light);font-weight:500}
+
+/* CALL STRIP */
+.call-strip{background:var(--green);padding:1rem 2rem}
+.call-strip-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.call-strip-text{color:white;font-size:.9rem;font-weight:500}
+.call-strip-text strong{font-weight:700;font-size:1rem}
+.call-strip-btn{background:white;color:var(--green);padding:.6rem 1.5rem;border-radius:50px;font-size:.82rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:all .25s;letter-spacing:.04em}
+.call-strip-btn:hover{background:var(--cream);transform:translateY(-1px)}
+
+/* SECTIONS */
+section{padding:5.5rem 2rem}
+.section-label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.9rem;display:flex;align-items:center;gap:.7rem}
+.section-label::before{content:'';width:28px;height:1px;background:var(--accent)}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;color:var(--cream);line-height:1.1;margin-bottom:1.3rem}
+.section-title em{font-style:italic;color:var(--green2)}
+.section-sub{font-size:.95rem;color:var(--text-light);max-width:540px;line-height:1.8;font-weight:300}
+.container{max-width:1200px;margin:0 auto}
+
+/* MENU */
+#menu{background:var(--charcoal)}
+.menu-controls{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-bottom:1.8rem}
+.menu-search{flex:1;min-width:220px;background:var(--charcoal2);border:1.5px solid rgba(212,168,67,.18);border-radius:50px;padding:.7rem 1.4rem;color:var(--cream);font-size:.88rem;outline:none;transition:border .3s;font-family:'DM Sans',sans-serif}
+.menu-search::placeholder{color:var(--text-mid)}
+.menu-search:focus{border-color:rgba(212,168,67,.55)}
+.cat-filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
+.cat-btn{padding:.45rem 1rem;border-radius:50px;font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border:1.5px solid rgba(212,168,67,.18);background:transparent;color:var(--text-light);cursor:pointer;transition:all .25s;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:.35rem}
+.cat-btn:hover,.cat-btn.active{background:var(--accent);color:var(--charcoal);border-color:var(--accent)}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.4rem}
+.menu-card{background:var(--charcoal2);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(245,240,232,.055);transition:all .3s;display:flex;flex-direction:column}
+.menu-card:hover{transform:translateY(-5px);border-color:rgba(212,168,67,.28);box-shadow:0 18px 50px rgba(0,0,0,.5)}
+.menu-card-img{width:100%;height:170px;overflow:hidden;background:var(--charcoal3);position:relative;flex-shrink:0}
+.menu-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.menu-card:hover .menu-card-img img{transform:scale(1.06)}
+.menu-card-body{padding:1.1rem;flex:1;display:flex;flex-direction:column;gap:.35rem}
+.menu-card-cat{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green2);font-weight:600}
+.menu-card-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--cream);line-height:1.2}
+.menu-card-desc{font-size:.75rem;color:var(--text-light);line-height:1.55;flex:1}
+.menu-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:.7rem;padding-top:.7rem;border-top:1px solid rgba(245,240,232,.055)}
+.menu-card-price{font-family:'Space Mono',monospace;font-size:.95rem;font-weight:700;color:var(--accent)}
+.menu-card-call{display:inline-flex;align-items:center;gap:.3rem;background:var(--green);color:white;border:none;border-radius:50px;padding:.4rem 1rem;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all .25s;font-family:'DM Sans',sans-serif}
+.menu-card-call:hover{background:var(--green2);transform:translateY(-1px)}
+.cat-section{margin-bottom:3rem}
+.cat-section-title{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:700;color:var(--cream);margin-bottom:.35rem;display:flex;align-items:center;gap:.65rem}
+.cat-section-divider{width:55px;height:2px;background:var(--accent);margin-bottom:1.4rem;border-radius:1px}
+.hidden{display:none!important}
+
+/* SIZE BADGE */
+.size-info{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.3rem}
+.size-pill{font-size:.6rem;background:rgba(212,168,67,.1);color:var(--accent);border:1px solid rgba(212,168,67,.2);border-radius:10px;padding:.1rem .4rem;font-weight:600;font-family:'Space Mono',monospace}
+
+/* ABOUT */
+#about{background:var(--charcoal2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:1.8rem}
+.about-feat{background:var(--charcoal3);padding:1.1rem;border-radius:var(--radius);border:1px solid rgba(245,240,232,.05)}
+.about-feat-icon{font-size:1.4rem;margin-bottom:.4rem}
+.about-feat-name{font-size:.82rem;font-weight:600;color:var(--cream);margin-bottom:.15rem}
+.about-feat-desc{font-size:.72rem;color:var(--text-light);line-height:1.5}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin-top:1.5rem}
+.review-card{background:var(--charcoal3);padding:1.1rem;border-radius:var(--radius);border-left:3px solid var(--accent)}
+.review-stars{color:var(--accent);font-size:.85rem;margin-bottom:.35rem}
+.review-text{font-size:.8rem;color:var(--text-light);line-height:1.6;font-style:italic;margin-bottom:.45rem}
+.review-author{font-size:.68rem;font-weight:600;color:var(--text-mid);letter-spacing:.08em;text-transform:uppercase}
+
+/* HOW TO ORDER */
+#how-to-order{background:var(--charcoal)}
+.order-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.8rem;margin-top:2.8rem}
+.order-step{background:var(--charcoal2);border-radius:var(--radius);padding:1.8rem;border:1px solid rgba(212,168,67,.1);text-align:center;position:relative}
+.step-num{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:rgba(212,168,67,.15);position:absolute;top:.8rem;right:1rem;line-height:1}
+.step-icon{font-size:2.5rem;margin-bottom:1rem;display:block}
+.step-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--cream);margin-bottom:.5rem}
+.step-desc{font-size:.82rem;color:var(--text-light);line-height:1.7}
+.big-call-btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:var(--accent);color:var(--charcoal);padding:1.1rem 3rem;border-radius:50px;font-weight:700;font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:all .3s;box-shadow:0 8px 32px rgba(212,168,67,.35);margin-top:2.5rem}
+.big-call-btn:hover{background:var(--accent2);transform:translateY(-3px);box-shadow:0 16px 40px rgba(212,168,67,.45)}
+
+/* GALLERY */
+#gallery{background:var(--charcoal2)}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,160px);gap:.9rem;margin-top:2.8rem}
+.gallery-item{border-radius:var(--radius);overflow:hidden;position:relative;cursor:pointer;transition:all .3s;border:1px solid rgba(245,240,232,.05);background:var(--charcoal3)}
+.gallery-item:hover{transform:scale(.98);border-color:rgba(212,168,67,.3)}
+.gallery-item:nth-child(1){grid-column:span 2;grid-row:span 2}
+.gallery-item:nth-child(5){grid-column:span 2}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block}
+.gallery-item-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 50%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:.8rem}
+.gallery-item:hover .gallery-item-overlay{opacity:1}
+.gallery-label{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,240,232,.9);font-weight:600;background:rgba(0,0,0,.55);padding:.22rem .55rem;border-radius:20px;backdrop-filter:blur(4px)}
+
+/* CATERING */
+#catering{background:var(--charcoal)}
+.catering-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;margin-top:2.8rem}
+.catering-perks{display:flex;flex-direction:column;gap:1.3rem}
+.catering-perk{display:flex;gap:.9rem;align-items:flex-start}
+.catering-perk-icon{width:46px;height:46px;border-radius:var(--radius-sm);background:rgba(212,168,67,.08);border:1px solid rgba(212,168,67,.18);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.catering-perk-text h4{font-size:.9rem;font-weight:600;color:var(--cream);margin-bottom:.18rem}
+.catering-perk-text p{font-size:.78rem;color:var(--text-light);line-height:1.6}
+.catering-form{background:var(--charcoal2);border-radius:20px;padding:1.9rem;border:1px solid rgba(212,168,67,.12)}
+.catering-form h3{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--cream);margin-bottom:1.4rem}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:.45rem;font-weight:600}
+.form-group input,.form-group textarea,.form-group select{width:100%;background:var(--charcoal3);border:1.5px solid rgba(245,240,232,.08);border-radius:var(--radius-sm);padding:.75rem .95rem;color:var(--cream);font-size:.88rem;outline:none;transition:border .2s;font-family:'DM Sans',sans-serif}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:rgba(212,168,67,.5)}
+.form-group select option{background:var(--charcoal3)}
+.form-group textarea{resize:vertical;min-height:80px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.form-submit{width:100%;background:var(--accent);color:var(--charcoal);padding:.88rem;border-radius:var(--radius-sm);font-weight:700;font-size:.88rem;letter-spacing:.07em;text-transform:uppercase;border:none;cursor:pointer;transition:all .3s;font-family:'DM Sans',sans-serif}
+.form-submit:hover{background:var(--accent2);transform:translateY(-1px)}
+
+/* LOCATION */
+#location{background:var(--charcoal2)}
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;margin-top:2.8rem}
+.loc-card{background:var(--charcoal3);border-radius:var(--radius);padding:1.4rem;border:1px solid rgba(245,240,232,.055);margin-bottom:1rem}
+.loc-card h4{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.65rem}
+.loc-card p,.loc-card a{font-size:.9rem;color:var(--cream);line-height:1.8;text-decoration:none}
+.loc-card a:hover{color:var(--accent)}
+.hours-table{display:flex;flex-direction:column;gap:.35rem}
+.hours-row{display:flex;justify-content:space-between;font-size:.84rem;color:var(--text-light)}
+.hours-row.today{color:var(--cream);font-weight:600}
+.hours-row .day{color:var(--text-mid)}
+
+/* FOOTER */
+footer{background:var(--charcoal3);padding:2.8rem 2rem 1.4rem;border-top:1px solid rgba(212,168,67,.1)}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:2.5rem;margin-bottom:2.5rem}
+.footer-brand p{font-size:.8rem;color:var(--text-light);line-height:1.7;max-width:240px;margin-top:.9rem}
+.footer-col h5{font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.9rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.footer-col ul li a{color:var(--text-light);text-decoration:none;font-size:.82rem;transition:color .2s}
+.footer-col ul li a:hover{color:var(--cream)}
+.footer-bottom{border-top:1px solid rgba(245,240,232,.055);padding-top:1.4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{font-size:.72rem;color:var(--text-mid)}
+.footer-bottom-links{display:flex;gap:1.3rem}
+.footer-bottom-links a{font-size:.72rem;color:var(--text-mid);text-decoration:none;transition:color .2s}
+.footer-bottom-links a:hover{color:var(--cream)}
+
+/* STICKY CALL BAR */
+.sticky-call{position:fixed;bottom:0;left:0;right:0;z-index:900;background:var(--green);padding:.9rem 1.5rem env(safe-area-inset-bottom);display:flex;align-items:center;justify-content:space-between;gap:1rem;box-shadow:0 -4px 20px rgba(0,0,0,.4)}
+.sticky-call-text{color:white;font-size:.82rem;font-weight:500}
+.sticky-call-text strong{font-size:1rem;display:block}
+.sticky-call-btn{background:white;color:var(--green);padding:.65rem 1.6rem;border-radius:50px;font-size:.85rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:all .25s;white-space:nowrap}
+.sticky-call-btn:hover{background:var(--cream)}
+
+/* BACK TO TOP */
+#btt{display:none;position:fixed;bottom:5.5rem;right:1.3rem;z-index:800;width:42px;height:42px;border-radius:50%;background:var(--charcoal3);border:1px solid rgba(212,168,67,.28);color:var(--accent);font-size:1rem;cursor:pointer;transition:all .3s;box-shadow:0 4px 18px rgba(0,0,0,.4);align-items:center;justify-content:center}
+#btt:hover{background:rgba(212,168,67,.1)}
+
+/* TOAST */
+.toast{position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%) translateY(20px);background:var(--green);color:white;padding:.65rem 1.4rem;border-radius:50px;font-size:.82rem;font-weight:600;z-index:3000;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(18px);transition:all .55s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .about-grid,.catering-grid,.location-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}
+  .gallery-item:nth-child(1){grid-column:span 2;height:200px}
+  .gallery-item:nth-child(5){grid-column:span 2}
+  .gallery-item{height:130px}
+}
+@media(max-width:768px){
+  nav{padding:0 1.1rem}
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  section{padding:4rem 1.2rem}
+  body{padding-bottom:80px}
+  .menu-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .footer-top{flex-direction:column;gap:1.8rem}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .about-features{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .hero-h1{font-size:2.6rem}
+  .hero-ctas{flex-direction:column;align-items:center}
+  .sticky-call-text strong{display:inline}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a class="nav-logo" href="#hero">
+    <div class="nav-logo-icon">🌊</div>
+    <div class="nav-logo-text">
+      <span>Red Sea Restaurant</span>
+      <span>&amp; Detox Juice Bar</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#catering">Catering</a></li>
+    <li><a href="#location">Location</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:.8rem">
+    <a class="nav-call-btn" href="tel:3478576692">📞 Call to Order</a>
+    <div class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+  <a href="#menu" onclick="document.getElementById('mobileMenu').classList.remove('open')">Menu</a>
+  <a href="#how-to-order" onclick="document.getElementById('mobileMenu').classList.remove('open')">How to Order</a>
+  <a href="#about" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
+  <a href="#gallery" onclick="document.getElementById('mobileMenu').classList.remove('open')">Gallery</a>
+  <a href="#catering" onclick="document.getElementById('mobileMenu').classList.remove('open')">Catering</a>
+  <a href="#location" onclick="document.getElementById('mobileMenu').classList.remove('open')">Location</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-orb1"></div>
+  <div class="hero-orb2"></div>
+  <div class="hero-content">
+    <div class="hero-badge">✦ Red Sea Restaurant · Staten Island, NY</div>
+    <h1 class="hero-h1">
+      Fresh. Bold.<br>
+      <em>Delicious.</em>
+      <span class="line2">Real Food. Real Flavor.</span>
+    </h1>
+    <p class="hero-sub">Cold-pressed juices, healing smoothies &amp; sizzling kababs — made fresh to order. Call us to place your order for delivery or pickup.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="tel:3478576692">📞 Call to Order Now</a>
+      <a class="btn-outline" href="#menu">View Full Menu</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="hero-stat-num">4.5★</span><span class="hero-stat-label">270+ Reviews</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">97+</span><span class="hero-stat-label">Menu Items</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">Free</span><span class="hero-stat-label">Delivery $25+</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">100%</span><span class="hero-stat-label">Fresh Daily</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CALL STRIP -->
+<div class="call-strip">
+  <div class="call-strip-inner">
+    <p class="call-strip-text">📞 Ready to order? <strong>Call or text us — delivery &amp; pickup available!</strong></p>
+    <a class="call-strip-btn" href="tel:3478576692">📞 (347) 857-6692</a>
+  </div>
+</div>
+
+<!-- HOW TO ORDER -->
+<section id="how-to-order">
+  <div class="container">
+    <div class="section-label">Simple &amp; Easy</div>
+    <h2 class="section-title">How to <em>Order</em></h2>
+    <p class="section-sub">No apps needed. Just browse our menu, then give us a call.</p>
+    <div class="order-steps">
+      <div class="order-step fade-in">
+        <span class="step-num">1</span>
+        <span class="step-icon">🍽️</span>
+        <div class="step-title">Browse the Menu</div>
+        <p class="step-desc">Scroll through our full menu below. We have 97+ fresh items including juices, smoothies, kababs, wraps, and more.</p>
+      </div>
+      <div class="order-step fade-in">
+        <span class="step-num">2</span>
+        <span class="step-icon">📞</span>
+        <div class="step-title">Call or Text Us</div>
+        <p class="step-desc">Call <a href="tel:3478576692" style="color:var(--accent)">(347) 857-6692</a> and tell us what you'd like. We're open daily from 10 AM to 10 PM.</p>
+      </div>
+      <div class="order-step fade-in">
+        <span class="step-num">3</span>
+        <span class="step-icon">🛵</span>
+        <div class="step-title">Delivery or Pickup</div>
+        <p class="step-desc">Choose delivery (free on orders $25+, otherwise $3.99) or pickup at 1612 Forest Ave. Ready in 15–45 minutes.</p>
+      </div>
+      <div class="order-step fade-in">
+        <span class="step-num">4</span>
+        <span class="step-icon">🎉</span>
+        <div class="step-title">Enjoy!</div>
+        <p class="step-desc">Fresh food made to order, delivered to your door or ready for pickup. Pay with cash or card.</p>
+      </div>
+    </div>
+    <div style="text-align:center">
+      <a class="big-call-btn" href="tel:3478576692">📞 Call (347) 857-6692 to Order</a>
+    </div>
+    <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="https://www.ubereats.com/store/detox-juice-bar-kabab-grill/4YYZtTu6WtiRdzJklCdU_g" target="_blank" style="background:#000;color:#fff;padding:.7rem 1.4rem;border-radius:50px;text-decoration:none;font-size:.8rem;font-weight:700;display:inline-flex;align-items:center;gap:.4rem">🚗 Order on Uber Eats</a>
+      <a href="https://www.doordash.com/en/store/detox-juice-bar-&-kebab-grill-25136394/" target="_blank" style="background:#ef233c;color:#fff;padding:.7rem 1.4rem;border-radius:50px;text-decoration:none;font-size:.8rem;font-weight:700;display:inline-flex;align-items:center;gap:.4rem">🍕 Order on DoorDash</a>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="container">
+    <div class="section-label">Full Menu</div>
+    <h2 class="section-title">Everything We <em>Make</em></h2>
+    <p class="section-sub">Fresh-made daily. Browse our menu then call us at <a href="tel:3478576692" style="color:var(--accent)">(347) 857-6692</a> to place your order.</p>
+    <div class="menu-controls" style="margin-top:2rem">
+      <input type="text" class="menu-search" id="menuSearch" placeholder="🔍  Search menu..." oninput="filterMenu()"/>
+    </div>
+    <div class="cat-filters" id="catFilters">
+      <button class="cat-btn active" onclick="filterCat('all',this)">All</button>
+      <button class="cat-btn" onclick="filterCat('detox',this)">🥤 Detox Juices</button>
+      <button class="cat-btn" onclick="filterCat('power',this)">⚡ Power Juices</button>
+      <button class="cat-btn" onclick="filterCat('juice-help',this)">💊 Juice Help</button>
+      <button class="cat-btn" onclick="filterCat('smoothies',this)">🥛 Smoothies</button>
+      <button class="cat-btn" onclick="filterCat('muscle',this)">💪 Muscle Builders</button>
+      <button class="cat-btn" onclick="filterCat('fat-burner',this)">🔥 Fat Burners</button>
+      <button class="cat-btn" onclick="filterCat('breakfast',this)">🍳 Breakfast</button>
+      <button class="cat-btn" onclick="filterCat('omelets',this)">🥚 Omelets</button>
+      <button class="cat-btn" onclick="filterCat('salads',this)">🥗 Salads</button>
+      <button class="cat-btn" onclick="filterCat('cold-app',this)">🫒 Cold Apps</button>
+      <button class="cat-btn" onclick="filterCat('hot-app',this)">♨️ Hot Apps</button>
+      <button class="cat-btn" onclick="filterCat('wraps',this)">🌯 Wraps</button>
+      <button class="cat-btn" onclick="filterCat('quesadilla',this)">🌮 Quesadillas</button>
+      <button class="cat-btn" onclick="filterCat('burgers',this)">🍔 Burgers</button>
+      <button class="cat-btn" onclick="filterCat('grill',this)">🍢 Grill</button>
+      <button class="cat-btn" onclick="filterCat('seafood',this)">🦐 Seafood</button>
+      <button class="cat-btn" onclick="filterCat('yemeni',this)">🫕 Yemeni</button>
+      <button class="cat-btn" onclick="filterCat('dessert',this)">🍮 Dessert</button>
+    </div>
+    <div id="menuSections"></div>
+    <div id="noResults" class="hidden" style="text-align:center;padding:4rem;color:var(--text-mid)">
+      <div style="font-size:2.5rem;margin-bottom:.8rem">🔍</div>
+      <p>No items found. Try a different search.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title">Where Health Meets <em>Bold Flavor</em></h2>
+        <p style="font-size:.92rem;color:var(--text-light);line-height:1.85;margin-bottom:1.3rem">Nestled in the Westerleigh neighborhood of Staten Island, Red Sea Restaurant &amp; Detox Juice Bar was born from two passions: nourishing the body with pure, cold-pressed juices and satisfying the soul with expertly grilled kababs and authentic Mediterranean cuisine.</p>
+        <p style="font-size:.88rem;color:var(--text-light);line-height:1.8;margin-bottom:1.5rem">Everything is made fresh to order. No shortcuts, no compromises. Our team greets every customer with warmth because we're not just a restaurant — we're a community fixture in Staten Island.</p>
+        <div class="about-features">
+          <div class="about-feat"><div class="about-feat-icon">🥤</div><div class="about-feat-name">Fresh-Pressed Daily</div><div class="about-feat-desc">Cold-pressed juices with real, whole ingredients — no artificial flavors</div></div>
+          <div class="about-feat"><div class="about-feat-icon">🍢</div><div class="about-feat-name">Authentic Grill</div><div class="about-feat-desc">Traditional kebab techniques with quality marinated meats</div></div>
+          <div class="about-feat"><div class="about-feat-icon">🌿</div><div class="about-feat-name">Wellness Focused</div><div class="about-feat-desc">Juice blends designed for specific wellness goals</div></div>
+          <div class="about-feat"><div class="about-feat-icon">🎉</div><div class="about-feat-name">Loyalty Program</div><div class="about-feat-desc">Buy 6 juices or shakes, get the 7th FREE!</div></div>
+        </div>
+      </div>
+      <div style="position:relative">
+        <div style="width:100%;height:480px;border-radius:20px;overflow:hidden;border:1px solid rgba(212,168,67,.12);background:var(--charcoal3);display:flex;align-items:center;justify-content:center;font-size:8rem">🌊</div>
+        <div style="position:absolute;bottom:-1.2rem;right:-1.2rem;background:var(--accent);color:var(--charcoal);width:110px;height:110px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;text-align:center;font-size:.8rem;line-height:1.2;box-shadow:0 10px 35px rgba(212,168,67,.4)"><span style="font-size:1.7rem">4.5★</span>270+<br>Reviews</div>
+      </div>
+    </div>
+    <div style="margin-top:3.5rem">
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--cream);margin-bottom:1rem">What Our Customers Say</h3>
+      <div class="reviews-grid">
+        <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"I've been going since they opened — friendliest and most courteous people. Service is beyond amazing!"</div><div class="review-author">Dulce F. · Uber Eats</div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Always has wonderful food with the freshest taste! Love trying new things on the menu."</div><div class="review-author">Maria N. · Uber Eats</div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Everything always made fresh to order. Delicious food and the best juices!"</div><div class="review-author">Gina S. · Uber Eats</div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Excellent food and service. Great place for healthy food and juices."</div><div class="review-author">Tony V. · Uber Eats</div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"The Beef Shish Kebabs were cooked to perfection and bursting with flavor!"</div><div class="review-author">Google Review</div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"The smoothies taste fresh and delicious. The halal food here is filling and affordable."</div><div class="review-author">Atly · Verified</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-label">Gallery</div>
+    <h2 class="section-title">Fresh From <em>Our Kitchen</em></h2>
+    <p class="section-sub">A taste of what awaits — vibrant juices, sizzling grill, and the freshest ingredients.</p>
+    <div class="gallery-grid" id="galleryGrid"></div>
+    <p style="text-align:center;margin-top:1.8rem;font-size:.8rem;color:var(--text-mid)">Follow us <a href="https://www.instagram.com/redsearestaurant25/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600">@redsearestaurant25</a> on Instagram</p>
+  </div>
+</section>
+
+<!-- CATERING -->
+<section id="catering">
+  <div class="container">
+    <div class="section-label">Catering &amp; Large Orders</div>
+    <h2 class="section-title">Feed Your <em>Whole Crew</em></h2>
+    <p class="section-sub">Corporate events, celebrations, parties — fresh food for any occasion and size.</p>
+    <div class="catering-grid">
+      <div class="catering-perks">
+        <div class="catering-perk"><div class="catering-perk-icon">🥤</div><div class="catering-perk-text"><h4>Juice &amp; Smoothie Bars</h4><p>Set up a fresh juice or smoothie bar at your event.</p></div></div>
+        <div class="catering-perk"><div class="catering-perk-icon">🍢</div><div class="catering-perk-text"><h4>Grill &amp; Kebab Platters</h4><p>Large-format grill platters featuring chicken, lamb, and mixed grill.</p></div></div>
+        <div class="catering-perk"><div class="catering-perk-icon">🥗</div><div class="catering-perk-text"><h4>Salad &amp; Appetizer Spreads</h4><p>Mediterranean-inspired cold and hot appetizer spreads for any crowd.</p></div></div>
+        <div class="catering-perk"><div class="catering-perk-icon">📞</div><div class="catering-perk-text"><h4>Call to Discuss</h4><p>Reach us at <a href="tel:3478576692" style="color:var(--accent)">(347) 857-6692</a> for custom catering quotes.</p></div></div>
+      </div>
+      <div class="catering-form">
+        <h3>Request a Catering Quote</h3>
+        <div class="form-row">
+          <div class="form-group"><label>Your Name</label><input type="text" id="catName" placeholder="Full name"/></div>
+          <div class="form-group"><label>Phone</label><input type="tel" id="catPhone" placeholder="(xxx) xxx-xxxx"/></div>
+        </div>
+        <div class="form-group"><label>Email</label><input type="email" id="catEmail" placeholder="your@email.com"/></div>
+        <div class="form-row">
+          <div class="form-group"><label>Event Date</label><input type="date" id="catDate"/></div>
+          <div class="form-group"><label>Guest Count</label><select id="catGuests"><option>10–25</option><option>25–50</option><option>50–100</option><option>100–200</option><option>200+</option></select></div>
+        </div>
+        <div class="form-group"><label>Event Type</label><select id="catType"><option>Corporate / Office</option><option>Birthday Party</option><option>Wedding</option><option>Community Event</option><option>School / Non-profit</option><option>Other</option></select></div>
+        <div class="form-group"><label>Details</label><textarea id="catDetails" placeholder="Menu preferences, dietary requirements, location..."></textarea></div>
+        <!-- Honeypot -->
+        <input type="text" id="catHp" style="display:none!important" tabindex="-1" autocomplete="off"/>
+        <button class="form-submit" id="catBtn" onclick="submitCatering()">Send Catering Inquiry →</button>
+        <div id="catMsg" style="margin-top:.8rem;font-size:.82rem;text-align:center;min-height:1.2rem"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location">
+  <div class="container">
+    <div class="section-label">Find Us</div>
+    <h2 class="section-title">Location &amp; <em>Hours</em></h2>
+    <div class="location-grid">
+      <div>
+        <div class="loc-card">
+          <h4>📍 Address</h4>
+          <p>1612 Forest Ave<br>Staten Island, NY 10302<br><em style="color:var(--text-mid);font-size:.8rem">Westerleigh Neighborhood</em></p>
+          <br><a href="https://maps.google.com/?q=1612+Forest+Ave,+Staten+Island,+NY+10302" target="_blank" style="color:var(--accent);font-size:.82rem;font-weight:600">Get Directions →</a>
+        </div>
+        <div class="loc-card"><h4>📞 Phone</h4><a href="tel:3478576692">(347) 857-6692</a></div>
+        <div class="loc-card">
+          <h4>🕐 Hours</h4>
+          <div class="hours-table" id="hoursTable">
+            <div class="hours-row"><span class="day">Monday</span><span>10:00 AM – 10:00 PM</span></div>
+            <div class="hours-row"><span class="day">Tuesday</span><span>10:00 AM – 10:00 PM</span></div>
+            <div class="hours-row"><span class="day">Wednesday</span><span>10:00 AM – 10:00 PM</span></div>
+            <div class="hours-row"><span class="day">Thursday</span><span>10:00 AM – 10:00 PM</span></div>
+            <div class="hours-row"><span class="day">Friday</span><span>10:00 AM – 10:00 PM</span></div>
+            <div class="hours-row"><span class="day">Saturday</span><span>10:00 AM – 10:00 PM</span></div>
+            <div class="hours-row"><span class="day">Sunday</span><span>10:00 AM – 10:00 PM</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="border-radius:18px;overflow:hidden;height:400px;border:1px solid rgba(212,168,67,.15)">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3027.4!2d-74.1347!3d40.6284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c249a2b2b2b2b3%3A0x0!2s1612+Forest+Ave%2C+Staten+Island%2C+NY+10302!5e0!3m2!1sen!2sus!4v1700000000000" width="100%" height="100%" style="border:0;filter:invert(90%) hue-rotate(180deg)" allowfullscreen="" loading="lazy" title="Red Sea Restaurant map"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="nav-logo" href="#hero" style="display:inline-flex;text-decoration:none">
+          <div class="nav-logo-icon">🌊</div>
+          <div class="nav-logo-text"><span>Red Sea Restaurant</span><span>&amp; Detox Juice Bar</span></div>
+        </a>
+        <p>Fresh-pressed juices, healing smoothies &amp; authentic kabab grill — Staten Island's favourite health-forward restaurant.</p>
+      </div>
+      <div class="footer-col"><h5>Menu</h5><ul>
+        <li><a href="#menu" onclick="filterCat('detox',null)">Detox Juices</a></li>
+        <li><a href="#menu" onclick="filterCat('smoothies',null)">Smoothies</a></li>
+        <li><a href="#menu" onclick="filterCat('grill',null)">Grill &amp; Kebabs</a></li>
+        <li><a href="#menu" onclick="filterCat('wraps',null)">Wraps &amp; Gyros</a></li>
+        <li><a href="#menu" onclick="filterCat('dessert',null)">Desserts</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Order</h5><ul>
+        <li><a href="tel:3478576692">📞 Call (347) 857-6692</a></li>
+        <li><a href="https://www.ubereats.com/store/detox-juice-bar-kabab-grill/4YYZtTu6WtiRdzJklCdU_g" target="_blank">Uber Eats</a></li>
+        <li><a href="https://www.doordash.com/en/store/detox-juice-bar-&-kebab-grill-25136394/" target="_blank">DoorDash</a></li>
+        <li><a href="#catering">Catering</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Info</h5><ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#location">Location &amp; Hours</a></li>
+        <li><a href="https://www.instagram.com/redsearestaurant25/" target="_blank">Instagram</a></li>
+        <li><a href="https://redseadetox.com">redseadetox.com</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Red Sea Restaurant &amp; Detox Juice Bar · 1612 Forest Ave, Staten Island, NY 10302 · <a href="tel:3478576692" style="color:var(--text-mid)">(347) 857-6692</a></p>
+      <div class="footer-bottom-links">
+        <a href="https://www.instagram.com/redsearestaurant25/" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY CALL BAR -->
+<div class="sticky-call">
+  <div class="sticky-call-text">
+    <strong>📞 (347) 857-6692</strong>
+    Call or text to order · Open Daily 10AM–10PM
+  </div>
+  <a class="sticky-call-btn" href="tel:3478576692">Call to Order</a>
+</div>
+
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<div class="toast" id="toast"></div>
+
+<script>
+// ═══════════════════════════════════════
+// MENU DATA
+// ═══════════════════════════════════════
+const MENU = [
+  // ── DETOX JUICES ──
+  {id:'purify-greens',cat:'detox',catLabel:'Detox Juices',name:'Purify Greens',desc:'Cucumber, celery, apple, lemon, and spinach. A deep green cleanse to purify and energize.',price:7.99,emoji:'🥬',imgPrompt:'emerald green detox juice in clear glass, cucumber and spinach beside it, moody dark food photography'},
+  {id:'sweet-sour-king',cat:'detox',catLabel:'Detox Juices',name:'Sweet & Sour King',desc:'Apple, kale, lemon, spinach, cucumber, and celery. A powerful alkalizing blend.',price:7.99,emoji:'🌿',imgPrompt:'fresh green apple kale celery juice in tall glass, kale leaves beside it, professional food photography'},
+  {id:'purple-beets',cat:'detox',catLabel:'Detox Juices',name:'Purple Beets',desc:'Beets, apple, lemon, orange, and ginger. A vibrant cleansing blend that supports liver function.',price:7.99,emoji:'🫐',imgPrompt:'vibrant purple beet juice in a glass, fresh beets and oranges beside it, dark moody studio lighting'},
+  // ── POWER JUICES ──
+  {id:'kale-immunity',cat:'power',catLabel:'Power Juices',name:'Kale Immunity',desc:'Kale, apple, carrot, and orange. Fortify your immune system with this powerhouse blend.',price:7.99,emoji:'🥦',imgPrompt:'green immunity juice with kale and carrot, orange slices beside it, professional restaurant photography'},
+  {id:'arctic-zen',cat:'power',catLabel:'Power Juices',name:'Arctic Zen',desc:'Pineapple, cucumber, and apple. Cool, refreshing, and deeply hydrating.',price:7.99,emoji:'🍍',imgPrompt:'pale green tropical juice with mint garnish in a chilled glass, pineapple chunks beside it, food photography'},
+  {id:'ginger-spark',cat:'power',catLabel:'Power Juices',name:'Ginger Spark',desc:'Ginger, mint, apple, cucumber, and kale. A warming, anti-inflammatory trio.',price:7.99,emoji:'🫚',imgPrompt:'orange ginger carrot juice shot in small glass, fresh ginger root and carrots, moody food photography'},
+  {id:'cucumber-apple',cat:'power',catLabel:'Power Juices',name:'Cucumber Apple',desc:'Ginger, mint, apple, cucumber, and kale. Crisp and refreshing.',price:7.99,emoji:'🥒',imgPrompt:'light green cucumber apple juice in glass, cucumber slices and apple beside it, clean food photography'},
+  // ── JUICE HELP ──
+  {id:'weight-loss',cat:'juice-help',catLabel:'Juice Help',name:'Weight Loss',desc:'Cucumber, carrot, and celery. Clean, crisp, and hydrating for your wellness journey.',price:7.99,emoji:'🥒',imgPrompt:'pale green celery cucumber carrot juice, clean minimal food photography, white and dark contrast'},
+  {id:'lack-energy',cat:'juice-help',catLabel:'Juice Help',name:'Lack of Energy',desc:'Beet, apple, carrot, orange, and spinach. Iron-rich and revitalizing — fight fatigue naturally.',price:7.99,emoji:'🩸',imgPrompt:'deep crimson beet apple orange juice, rich ruby color in glass, dramatic lighting food photography'},
+  {id:'inflammation',cat:'juice-help',catLabel:'Juice Help',name:'Inflammation',desc:'Carrot, orange, ginger, and pineapple. Anti-inflammatory ingredients for joint and body relief.',price:7.99,emoji:'🫚',imgPrompt:'golden anti-inflammatory turmeric ginger juice, ginger root and carrots, food photography'},
+  {id:'cholesterol',cat:'juice-help',catLabel:'Juice Help',name:'Cholesterol',desc:'Apple, orange, ginger, lemon, parsley, and kale. A heart-healthy blend.',price:7.99,emoji:'❤️',imgPrompt:'bright green juice with apple and orange, parsley garnish, health food photography dark background'},
+  {id:'mikelicious',cat:'juice-help',catLabel:'Juice Help',name:'Mikelicious',desc:'Pineapple, apple, kale, orange, ginger, mint, and parsley. Our most celebrated blend!',price:7.99,emoji:'🌱',imgPrompt:'complex green gold juice blend in tall glass, pear and pineapple beside it, premium food photography'},
+  {id:'hangover',cat:'juice-help',catLabel:'Juice Help',name:'Hangover',desc:'Beets, orange, ginger, mint, parsley, and cucumber. The ultimate morning-after rescue.',price:7.99,emoji:'🍊',imgPrompt:'bright citrus beet recovery juice, vibrant orange with hints of red, morning food photography'},
+  {id:'high-bp',cat:'juice-help',catLabel:'Juice Help',name:'High Blood Pressure',desc:'Lemon, orange, ginger, carrot, and celery. A clean blend known for blood pressure support.',price:7.99,emoji:'💓',imgPrompt:'simple orange carrot celery juice, clean glass, minimal wellness drink food photography'},
+  {id:'cold-relief',cat:'juice-help',catLabel:'Juice Help',name:'Cold Relief',desc:'Carrot, celery, parsley, beets, and orange. Immune-boosting blend to help you recover faster.',price:7.99,emoji:'🤧',imgPrompt:'warming orange ginger carrot juice, fresh pineapple chunks beside it, wellness drink photography'},
+  // ── FRUIT CUPS ──
+  {id:'fruit-cup',cat:'breakfast',catLabel:'Breakfast',name:'Fruit Cup',desc:'A refreshing assortment of seasonal fruits. Available in Small, Medium, Large, and X-Large.',price:6.99,emoji:'🍓',imgPrompt:'colorful fresh fruit cup with strawberries melon kiwi mango, bright food photography'},
+  // ── SMOOTHIES — FRESH BLENDS ──
+  {id:'strawberry-banana-blast',cat:'smoothies',catLabel:'Smoothies',name:'Strawberry Banana Blast',desc:'Strawberry, banana, almond milk, coconut water, orange juice, and apple juice.',price:7.49,emoji:'🍓',imgPrompt:'thick pink strawberry banana smoothie in tall glass, fresh strawberries beside it, food photography'},
+  {id:'pina-colada-madness',cat:'smoothies',catLabel:'Smoothies',name:'Pina Colada Madness',desc:'Pineapple and coconut milk. A tropical, creamy classic.',price:7.49,emoji:'🍍',imgPrompt:'creamy tropical pina colada smoothie with pineapple, coconut shreds, food photography'},
+  {id:'triple-berry',cat:'smoothies',catLabel:'Smoothies',name:'Triple Berry Sensation',desc:'Raspberry, blueberry, and strawberry. A powerful antioxidant-rich blend.',price:7.49,emoji:'🫐',imgPrompt:'deep purple triple berry smoothie in tall glass, blueberries strawberries raspberries, dark moody food photography'},
+  {id:'tropical-blast',cat:'smoothies',catLabel:'Smoothies',name:'Tropical Blast',desc:'Pineapple, mango, banana, and strawberry. Sunshine in a glass.',price:7.49,emoji:'🌴',imgPrompt:'vibrant yellow orange tropical smoothie, mango pineapple banana, bright food photography'},
+  {id:'green-smoothies',cat:'smoothies',catLabel:'Smoothies',name:'Green Smoothies',desc:'Pineapple, spinach, banana, kale, and water. Clean green nutrition.',price:7.49,emoji:'🥦',imgPrompt:'bright green smoothie with spinach kale banana, healthy drink food photography'},
+  {id:'honeymoon',cat:'smoothies',catLabel:'Smoothies',name:'Honeymoon',desc:'Pineapple, kale, banana, mango, and mint. A tropical escape in every sip.',price:7.49,emoji:'🍹',imgPrompt:'golden green honeymoon smoothie with mango kale mint, premium food photography'},
+  {id:'meech',cat:'smoothies',catLabel:'Smoothies',name:'Meech',desc:'Mango, kale pulp, banana, mango, and water. Smooth and naturally sweet.',price:7.49,emoji:'🥭',imgPrompt:'golden mango smoothie with kale, tropical fruit drink photography'},
+  // ── MUSCLE BUILDERS ──
+  {id:'green-machine',cat:'muscle',catLabel:'Muscle Builders',name:'Green Machine',desc:'Avocado, spinach, cinnamon, peanut butter, banana, lime, and apple juice.',price:11.99,emoji:'💪',imgPrompt:'thick green protein smoothie with avocado spinach peanut butter, fitness drink photography'},
+  {id:'hawaiian-runner',cat:'muscle',catLabel:'Muscle Builders',name:'Hawaiian Runner',desc:'Pineapple, mango, and coconut milk. A tropical muscle fuel.',price:11.99,emoji:'🌺',imgPrompt:'golden tropical muscle smoothie with pineapple mango coconut, athletic food photography'},
+  {id:'detox-muscle',cat:'muscle',catLabel:'Muscle Builders',name:'Detox (Muscle)',desc:'Raspberry, strawberry, blueberry, and whey protein. Post-workout recovery blend.',price:11.99,emoji:'💪',imgPrompt:'deep purple berry protein smoothie with whey, gym fitness drink photography'},
+  {id:'twisted-strawberry',cat:'muscle',catLabel:'Muscle Builders',name:'Twisted Strawberry',desc:'Strawberry, banana, and whey protein. A classic muscle-building blend.',price:11.99,emoji:'🍓',imgPrompt:'thick pink strawberry banana protein smoothie with whey, fitness food photography'},
+  {id:'peanut-butter-trump',cat:'muscle',catLabel:'Muscle Builders',name:'Peanut Butter Trump',desc:'Banana, peanut butter, and whey protein. Rich, creamy, and packed with protein.',price:11.99,emoji:'🥜',imgPrompt:'rich creamy peanut butter banana protein smoothie, dark moody food photography'},
+  {id:'in-the-tropics',cat:'muscle',catLabel:'Muscle Builders',name:'In the Tropics',desc:'Strawberry, banana, pineapple, coconut, and whey protein.',price:11.99,emoji:'🌴',imgPrompt:'tropical coconut pineapple protein smoothie, golden drink food photography'},
+  {id:'mocha-mania',cat:'muscle',catLabel:'Muscle Builders',name:'Mocha Mania',desc:'Chocolate infused with coffee and whey protein. The ultimate energy boost.',price:11.99,emoji:'☕',imgPrompt:'dark chocolate mocha protein smoothie with coffee swirl, athletic drink photography'},
+  // ── FAT BURNERS ──
+  {id:'belly-buster',cat:'fat-burner',catLabel:'Fat Burners',name:'Belly Buster',desc:'Strawberry, banana, and fat burn boost. A delicious way to support your goals.',price:11.99,emoji:'🔥',imgPrompt:'pink strawberry banana fat burn smoothie, fitness drink food photography'},
+  {id:'beery-beery-good',cat:'fat-burner',catLabel:'Fat Burners',name:'Beery Beery Good',desc:'Raspberry, blueberry, strawberry, and fat burn boost.',price:11.99,emoji:'🫐',imgPrompt:'deep purple berry fat burner smoothie, slim fitness drink photography'},
+  {id:'wonder-twins',cat:'fat-burner',catLabel:'Fat Burners',name:'Wonder Twins',desc:'Mango, peach, fat burn boost, and burn boost.',price:11.99,emoji:'🥭',imgPrompt:'golden mango peach fat burn smoothie, energetic fitness drink photography'},
+  {id:'tropical-bombshell',cat:'fat-burner',catLabel:'Fat Burners',name:'Tropical Bombshell',desc:'Pineapple, banana, coconut, and fat burn boost.',price:11.99,emoji:'💣',imgPrompt:'tropical pineapple coconut fat burner smoothie, bright fitness drink photography'},
+  // ── ACAI BOWL ──
+  {id:'acai-bowl',cat:'smoothies',catLabel:'Smoothies',name:'Acai Bowl',desc:'Acai, carnaiol, and your choice of toppings. Each topping is $1 extra.',price:11.99,emoji:'🫐',imgPrompt:'beautiful acai bowl with fresh berries granola banana toppings, overhead food photography'},
+  // ── SHOTS ──
+  {id:'shots',cat:'juice-help',catLabel:'Juice Help',name:'Wellness Shots',desc:'Concentrated wellness shots. 1oz $2.99 · 2oz $4.50 · 4oz $7.99.',price:2.99,emoji:'🥃',imgPrompt:'small shot glass with green ginger wellness shot, health drink photography'},
+  // ── BREAKFAST ──
+  {id:'detox-breakfast-wrap',cat:'breakfast',catLabel:'Breakfast',name:'Detox Breakfast Wrap',desc:'A fresh and healthy breakfast wrap packed with wholesome ingredients.',price:9.99,emoji:'🌯',imgPrompt:'fresh breakfast wrap with vegetables and eggs, morning food photography'},
+  {id:'super-veggie-wrap',cat:'breakfast',catLabel:'Breakfast',name:'Super Veggie Wrap',desc:'A hearty veggie-packed wrap — great start to your day.',price:7.99,emoji:'🥙',imgPrompt:'colorful veggie wrap with fresh vegetables, healthy breakfast photography'},
+  {id:'egg-white',cat:'breakfast',catLabel:'Breakfast',name:'Egg White',desc:'Fresh egg whites prepared your way.',price:7.99,emoji:'🥚',imgPrompt:'fluffy egg whites on plate, clean healthy breakfast photography'},
+  {id:'philadelphia-wrap',cat:'breakfast',catLabel:'Breakfast',name:'Philadelphia Wrap',desc:'A classic wrap with Philadelphia-style ingredients.',price:9.99,emoji:'🌯',imgPrompt:'philadelphia style breakfast wrap with cream cheese eggs, food photography'},
+  {id:'breakfast-platter',cat:'breakfast',catLabel:'Breakfast',name:'Breakfast Platter',desc:'A full breakfast platter to start your day right.',price:9.99,emoji:'🍳',imgPrompt:'mediterranean breakfast platter with eggs pita hummus and vegetables, restaurant food photography'},
+  {id:'shakshuka',cat:'breakfast',catLabel:'Breakfast',name:'Shakshuka',desc:'Eggs poached in a rich, spiced tomato sauce. A Mediterranean classic.',price:9.99,emoji:'🍅',imgPrompt:'shakshuka eggs in tomato sauce skillet, mediterranean breakfast photography'},
+  {id:'compuestos-pita',cat:'breakfast',catLabel:'Breakfast',name:'Compuestos Pita Bread',desc:'Chicken, eggs, tomatoes, and onion in warm pita bread.',price:9.99,emoji:'🫓',imgPrompt:'stuffed pita bread with chicken eggs tomatoes, middle eastern breakfast photography'},
+  {id:'beans',cat:'breakfast',catLabel:'Breakfast',name:'Beans',desc:'Slow-cooked beans, a hearty and satisfying dish.',price:15.99,emoji:'🫘',imgPrompt:'rich stewed beans in bowl with bread, middle eastern food photography'},
+  // ── OMELETTES ──
+  {id:'best-buy-omelette',cat:'omelets',catLabel:'Omelettes',name:'Best Buy Omelette',desc:'2 eggs, turkey bacon, onions, and peppers.',price:9.99,emoji:'🥚',imgPrompt:'fluffy omelette with turkey bacon onions peppers, breakfast food photography'},
+  {id:'western-omelette',cat:'omelets',catLabel:'Omelettes',name:'Western Omelette',desc:'2 egg whites, avocado, spinach, and turkey.',price:9.99,emoji:'🥑',imgPrompt:'healthy western omelette with avocado spinach turkey, clean food photography'},
+  {id:'carlitos-way',cat:'omelets',catLabel:'Omelettes',name:'Carlitos Way',desc:'Egg whites, onion, avocado, tomato, and cheese.',price:9.99,emoji:'🧀',imgPrompt:'gourmet omelette with avocado tomato cheese, restaurant food photography'},
+  {id:'superman-omelette',cat:'omelets',catLabel:'Omelettes',name:'Superman Omelette',desc:'2 egg whites, onion, spinach, and cheese.',price:9.99,emoji:'💪',imgPrompt:'power packed omelette with spinach onion cheese, healthy food photography'},
+  // ── SALADS ──
+  {id:'detox-garden-salad',cat:'salads',catLabel:'Salads',name:'Detox Garden Salad',desc:'Fresh garden vegetables in a detox-friendly mix.',price:11.99,emoji:'🥗',imgPrompt:'fresh green garden salad with colorful vegetables, light dressing, food photography'},
+  {id:'salmon-salad',cat:'salads',catLabel:'Salads',name:'Salmon Salad',desc:'Fresh salmon over a crisp, flavorful salad base.',price:18.99,emoji:'🐟',imgPrompt:'grilled salmon over fresh salad greens with vinaigrette dressing, restaurant food photography'},
+  {id:'catfish-salad',cat:'salads',catLabel:'Salads',name:'Catfish Salad',desc:'Fresh catfish over a crisp salad base.',price:10.99,emoji:'🐠',imgPrompt:'catfish salad with fresh greens tomatoes cucumbers, seafood salad photography'},
+  {id:'thai-salad',cat:'salads',catLabel:'Specialty Salads',name:'Spicy Thai Salad',desc:'A bold Thai-inspired salad with a spicy kick.',price:13.99,emoji:'🌶️',imgPrompt:'spicy thai salad with colorful vegetables sesame and chili dressing, vibrant food photography'},
+  {id:'caesar-salad',cat:'salads',catLabel:'Salads',name:'Caesar Salad',desc:'Romaine, croutons, parmesan, and Caesar dressing.',price:12.99,emoji:'🥗',imgPrompt:'classic caesar salad with croutons parmesan cheese, restaurant food photography'},
+  {id:'healthy-wrap-caesar',cat:'salads',catLabel:'Salads',name:'Healthy Wrap (Caesar)',desc:'Caesar salad wrapped in a whole wheat wrap.',price:13.99,emoji:'🌯',imgPrompt:'healthy caesar wrap cut in half, fresh greens visible, food photography'},
+  // ── WRAPS ──
+  {id:'detox-wrap',cat:'wraps',catLabel:'Wraps',name:'Detox Wrap',desc:'Grilled chicken, Swiss cheese, spinach, tomatoes, and mixed greens.',price:9.99,emoji:'🌯',imgPrompt:'grilled chicken wrap cut in half showing filling of spinach cheese tomato, restaurant food photography'},
+  {id:'healthy-wrap',cat:'wraps',catLabel:'Wraps',name:'Healthy Wrap',desc:'Grilled chicken, tomato, Swiss cheese, peppers, and mixed greens.',price:8.99,emoji:'🥙',imgPrompt:'healthy grilled chicken wrap with peppers and greens, clean food photography'},
+  {id:'caesar-wrap',cat:'wraps',catLabel:'Wraps',name:'Caesar Wrap',desc:'Croutons, Caesar dressing, parmesan, and romaine lettuce.',price:9.99,emoji:'🌯',imgPrompt:'caesar wrap with croutons parmesan lettuce, food photography'},
+  {id:'salmon-wrap',cat:'wraps',catLabel:'Wraps',name:'Salmon Wrap',desc:'Salmon and sweet spinach wrapped in a fresh tortilla.',price:12.99,emoji:'🐟',imgPrompt:'salmon wrap with spinach greens, premium seafood wrap food photography'},
+  {id:'falafel-wrap',cat:'wraps',catLabel:'Wraps',name:'Falafel Wrap',desc:'Tomato chipotle, falafel, lettuce, tomato, and hummus.',price:11.99,emoji:'🧆',imgPrompt:'falafel wrap with hummus tomato lettuce, middle eastern food photography'},
+  {id:'chicken-gyro',cat:'wraps',catLabel:'Wraps',name:'Chicken Gyro',desc:'Juicy chicken in a warm pita bread with all the toppings.',price:9.99,emoji:'🌮',imgPrompt:'authentic chicken gyro in pita bread with tzatziki sauce and vegetables, street food photography'},
+  // ── QUESADILLAS ──
+  {id:'detox-q',cat:'quesadilla',catLabel:'Quesadillas',name:'Detox Quesadilla',desc:'Grilled chicken, smoked spinach, grilled onions, and peppers.',price:13.89,emoji:'🌮',imgPrompt:'crispy chicken spinach quesadilla cut into triangles, melted cheese, restaurant food photography'},
+  {id:'chicken-quesadilla',cat:'quesadilla',catLabel:'Quesadillas',name:'Chicken Quesadilla',desc:'Parmesan, grilled chicken, lettuce, and croutons. #1 Most Liked!',price:12.99,emoji:'🌮',imgPrompt:'crispy chicken quesadilla cut into triangles, melted cheese visible, restaurant food photography'},
+  {id:'philly-q',cat:'quesadilla',catLabel:'Quesadillas',name:'Philly Cheese Steak Quesadilla',desc:'Steak, onion, and green peppers, mixed.',price:14.98,emoji:'🥩',imgPrompt:'philly cheesesteak quesadilla with steak onions peppers melted cheese, restaurant food photography'},
+  {id:'go-detox-q',cat:'quesadilla',catLabel:'Quesadillas',name:'Go Detox Quesadilla',desc:'Fresh shrimp, grilled, smoked spinach, broccoli, and peppers.',price:13.99,emoji:'🦐',imgPrompt:'shrimp and vegetable quesadilla with broccoli spinach melted cheese, premium food photography'},
+  // ── HOT APPETIZERS ──
+  {id:'falafel-hummus',cat:'hot-app',catLabel:'Hot Appetizers',name:'6 Pcs Falafel w/Hummus',desc:'Six crispy falafel balls served with creamy hummus.',price:11.89,emoji:'🧆',imgPrompt:'golden crispy falafel balls on plate with hummus dipping sauce, food photography'},
+  {id:'sweet-fries',cat:'hot-app',catLabel:'Hot Appetizers',name:'Sweet Fries',desc:'Crispy sweet potato fries served hot.',price:4.99,emoji:'🍠',imgPrompt:'golden crispy sweet potato fries in basket, warm food photography'},
+  {id:'kefries-soup',cat:'hot-app',catLabel:'Hot Appetizers',name:'Kefries Soup',desc:'A hearty and warming soup served with fries.',price:5.99,emoji:'🍜',imgPrompt:'warm soup with fries side, comfort food photography'},
+  {id:'chicken-wings',cat:'hot-app',catLabel:'Hot Appetizers',name:'Chicken Wings',desc:'Crispy, flavorful chicken wings.',price:6.99,emoji:'🍗',imgPrompt:'crispy golden chicken wings on plate with dipping sauce, restaurant food photography'},
+  {id:'chicken-nuggets',cat:'hot-app',catLabel:'Hot Appetizers',name:'Chicken Nuggets w/Fries',desc:'Crispy chicken nuggets served with fries.',price:12.99,emoji:'🍟',imgPrompt:'golden crispy chicken nuggets with fries, restaurant food photography'},
+  {id:'french-fries',cat:'hot-app',catLabel:'Hot Appetizers',name:'French Fries',desc:'Crispy, golden sticks served piping hot.',price:4.99,emoji:'🍟',imgPrompt:'perfectly golden crispy french fries in basket, restaurant food photography, warm lighting'},
+  // ── COLD APPETIZERS ──
+  {id:'hummus',cat:'cold-app',catLabel:'Cold Appetizers',name:'Hummus',desc:'Creamy hummus with chicken mixed, baba ganoush, pita, and lemon.',price:6.99,emoji:'🫘',imgPrompt:'creamy hummus in bowl with olive oil drizzle and pita bread, middle eastern food photography'},
+  {id:'baba-ganush',cat:'cold-app',catLabel:'Cold Appetizers',name:'Baba Ganush',desc:'Smoky baba ganoush with garlic and olive oil.',price:7.98,emoji:'🍆',imgPrompt:'smooth baba ganoush in bowl with olive oil garlic, middle eastern appetizer photography'},
+  {id:'grape-leaves',cat:'cold-app',catLabel:'Cold Appetizers',name:'5 Pcs Grape Leaves',desc:'Stuffed grape leaves with grilled egg plant and stuffed red pepper with olive.',price:12.99,emoji:'🍃',imgPrompt:'stuffed grape leaves on plate with side garnish, mediterranean food photography'},
+  {id:'mixed-appetizer',cat:'cold-app',catLabel:'Cold Appetizers',name:'Mixed Appetizer',desc:'Carrot, black pepper, lemon, rice, cumin, raisins, 2 pcs pita, grape leaves.',price:22.99,emoji:'🫒',imgPrompt:'mediterranean mixed appetizer platter hummus baba ganoush olives pita, restaurant food photography'},
+  // ── BURGERS ──
+  {id:'chicken-burger',cat:'burgers',catLabel:'Burgers',name:'Chicken Burger',desc:'Chicken, Swiss cheese, lettuce, and tomatoes. Served with fries.',price:11.99,emoji:'🍔',imgPrompt:'juicy chicken burger with swiss cheese lettuce tomato on toasted bun, premium food photography'},
+  {id:'big-dipper',cat:'burgers',catLabel:'Burgers',name:'The Big Dipper',desc:'Tomatoes, mozzarella, bacon, green onion strips. Served with fries.',price:10.99,emoji:'🍔',imgPrompt:'gourmet beef burger with mozzarella bacon green onions on toasted bun, restaurant food photography'},
+  {id:'salmon-burger',cat:'burgers',catLabel:'Burgers',name:'Salmon Burger',desc:'Salmon with lettuce, tomatoes, onion, cheese, and mayo. Served with fries.',price:11.99,emoji:'🐟',imgPrompt:'premium salmon burger with lettuce tomato onion mayo on bun, seafood food photography'},
+  // ── GRILL ──
+  {id:'chicken-gyro-dish',cat:'grill',catLabel:'Chicken & Lamb Dishes',name:'Chicken Gyro',desc:'Tender chicken gyro — a classic Mediterranean favourite.',price:9.99,emoji:'🌮',imgPrompt:'chicken gyro plate with rice salad pita, mediterranean food photography'},
+  {id:'chicken-shish',cat:'grill',catLabel:'Chicken & Lamb Dishes',name:'Chicken Shish Kebab',desc:'Marinated chicken grilled on skewers to perfection.',price:9.99,emoji:'🍡',imgPrompt:'grilled chicken shish kebab skewers on plate with pita rice and salad, mediterranean food photography'},
+  {id:'chicken-adana',cat:'grill',catLabel:'Chicken & Lamb Dishes',name:'Chicken Adana Kebab',desc:'Spiced ground chicken kebab grilled to perfection.',price:9.99,emoji:'🍢',imgPrompt:'chicken adana kebab on skewer with grilled vegetables, turkish food photography'},
+  {id:'chicken-macaroni',cat:'grill',catLabel:'Chicken & Lamb Dishes',name:'Chicken Macaroni',desc:'Tender chicken served with macaroni.',price:10.00,emoji:'🍝',imgPrompt:'chicken with macaroni pasta, comfort food photography'},
+  {id:'charcoal-chicken',cat:'grill',catLabel:'Chicken & Lamb Dishes',name:'Charcoal Chicken Chop',desc:'Chicken grilled over charcoal for a smoky, delicious flavour.',price:10.80,emoji:'🍗',imgPrompt:'charcoal grilled chicken chop with smoky char marks, restaurant food photography'},
+  {id:'chicken-mandi',cat:'grill',catLabel:'Chicken & Lamb Dishes',name:'Chicken Mandi',desc:'Aromatic slow-cooked chicken over fragrant basmati rice.',price:10.00,emoji:'🍚',imgPrompt:'chicken mandi over fragrant basmati rice, yemeni food photography'},
+  {id:'lamb-shish',cat:'grill',catLabel:'Chicken & Lamb Dishes',name:'Lamb Shish Kebab',desc:'Premium lamb marinated and grilled to a perfect sear on skewers.',price:10.00,emoji:'🍢',imgPrompt:'perfectly grilled lamb shish kebab skewers with charred edges, served with rice and salad'},
+  {id:'lamb-adana',cat:'grill',catLabel:'Chicken & Lamb Dishes',name:'Lamb Adana Kebab',desc:'Spiced ground lamb kebab grilled on skewers.',price:10.00,emoji:'🍢',imgPrompt:'lamb adana kebab on skewer, middle eastern grill food photography'},
+  {id:'lamb-chops',cat:'grill',catLabel:'Chicken & Lamb Dishes',name:'Lamb Chops',desc:'Juicy, perfectly grilled lamb chops.',price:10.00,emoji:'🥩',imgPrompt:'grilled lamb chops with herb seasoning on plate, premium restaurant food photography'},
+  {id:'mix-gyro',cat:'grill',catLabel:'Chicken & Lamb Dishes',name:'Chicken & Lamb Mix Gyro',desc:'A mix of chicken and lamb gyro — the best of both worlds.',price:11.99,emoji:'🌮',imgPrompt:'mixed chicken lamb gyro plate with rice and salad, mediterranean food photography'},
+  // ── SUPER MIXED GRILL ──
+  {id:'super-mixed',cat:'grill',catLabel:'Super Mixed Grill',name:'Red Sea Super Mixed Grill',desc:'An epic combination platter of our best grilled meats. Includes rice and salad.',price:40.00,emoji:'🥩',imgPrompt:'impressive mixed grill platter with chicken lamb kebabs rice and salads, restaurant food photography'},
+  // ── SEAFOOD ──
+  {id:'salmon-kebab',cat:'seafood',catLabel:'Seafood',name:'Salmon Kebab',desc:'Fresh salmon grilled on skewers to perfection.',price:22.99,emoji:'🐟',imgPrompt:'grilled salmon kebab skewers with lemon herbs on plate, seafood restaurant photography'},
+  {id:'branzino-kebab',cat:'seafood',catLabel:'Seafood',name:'Branzino Kebab',desc:'Fresh branzino grilled to a crispy perfection.',price:27.99,emoji:'🐠',imgPrompt:'grilled branzino fish kebab on plate with vegetables lemon, premium seafood photography'},
+  {id:'seafood-platter',cat:'seafood',catLabel:'Seafood',name:'Super Mixed Seafood Platter',desc:'A spectacular platter of our finest seafood selections.',price:49.00,emoji:'🦐',imgPrompt:'impressive mixed seafood platter with fish shrimp kebabs, premium restaurant photography'},
+  // ── YEMENI ──
+  {id:'yemeni',cat:'yemeni',catLabel:'Yemeni Dishes',name:'Yemeni Specialties',desc:'Authentic Yemeni cuisine prepared with traditional spices — including lamb okra with basmati rice.',price:13.99,emoji:'🫕',imgPrompt:'authentic yemeni lamb stew with basmati rice and flatbread, traditional middle eastern food photography'},
+  // ── DESSERTS ──
+  {id:'banana-cake',cat:'dessert',catLabel:'Dessert',name:'Banana Cake',desc:'A moist, delicious homemade banana cake.',price:7.99,emoji:'🍰',imgPrompt:'slice of moist banana cake on plate, bakery food photography'},
+  {id:'kunafe',cat:'dessert',catLabel:'Dessert',name:'Kunafe',desc:'Traditional Middle Eastern kunafe with stretchy cheese and golden pastry.',price:8.99,emoji:'🍮',imgPrompt:'golden kunafe with cheese and syrup, middle eastern dessert photography'},
+  {id:'rice-pudding',cat:'dessert',catLabel:'Dessert',name:'Rice Pudding',desc:'Creamy, comforting rice pudding.',price:8.99,emoji:'🍮',imgPrompt:'creamy rice pudding in bowl with cinnamon, comfort dessert photography'},
+  {id:'cheese-cake',cat:'dessert',catLabel:'Dessert',name:'Cheese Cake',desc:'Rich, creamy New York-style cheesecake.',price:8.99,emoji:'🎂',imgPrompt:'rich creamy cheesecake slice on plate, premium dessert photography'},
+  {id:'banana-mousse',cat:'dessert',catLabel:'Dessert',name:'Banana Mousse',desc:'Light and airy banana mousse.',price:4.99,emoji:'🍌',imgPrompt:'light banana mousse in glass, elegant dessert food photography'},
+];
+
+const SIZE_CATS = ['detox','power','juice-help','smoothies','muscle','fat-burner'];
+const JUICE_SIZES = [
+  { key:'S', label:'Small',  oz:'12oz', price:6.99 },
+  { key:'M', label:'Medium', oz:'16oz', price:7.99 },
+  { key:'L', label:'Large',  oz:'24oz', price:9.49 },
+  { key:'XL',label:'X-Large',oz:'32oz', price:9.49 },
+];
+const SMOOTHIE_SIZES = [
+  { key:'S', label:'Small',  oz:'12oz', price:6.99 },
+  { key:'M', label:'Medium', oz:'16oz', price:7.49 },
+  { key:'L', label:'Large',  oz:'24oz', price:8.49 },
+  { key:'XL',label:'X-Large',oz:'32oz', price:9.49 },
+];
+const MUSCLE_SIZES = [
+  { key:'M', label:'Regular', oz:'16oz', price:11.99 },
+];
+const DEFAULT_SIZE = 'M';
+
+function getSizesForCat(cat) {
+  if (['muscle','fat-burner'].includes(cat)) return MUSCLE_SIZES;
+  if (cat === 'smoothies') return SMOOTHIE_SIZES;
+  if (SIZE_CATS.includes(cat)) return JUICE_SIZES;
+  return null;
+}
+
+function itemHasSizes(item) { return SIZE_CATS.includes(item.cat); }
+function getNumericPrice(item) { return typeof item.price === 'number' ? item.price : 0; }
+
+const FEATURED_IDS = ['chicken-quesadilla','purple-beets','lamb-shish','go-detox-q','sweet-sour-king','triple-berry'];
+const GALLERY_IDS = ['lamb-shish','purple-beets','chicken-quesadilla','honeymoon','super-mixed','mixed-appetizer','salmon-salad','yemeni','kunafe'];
+const GALLERY_LABELS = {'lamb-shish':'Lamb Kebab','purple-beets':'Fresh Pressed Juice','chicken-quesadilla':'Quesadillas','honeymoon':'Honeymoon Smoothie','super-mixed':'Mixed Grill Platter','mixed-appetizer':'Cold Appetizers','salmon-salad':'Salmon Salad','yemeni':'Yemeni Dishes','kunafe':'Kunafe Dessert'};
+const CAT_ICONS = {detox:'🥤',power:'⚡','juice-help':'💊',smoothies:'🥛',muscle:'💪','fat-burner':'🔥',breakfast:'🍳',omelets:'🥚',salads:'🥗','cold-app':'🫒','hot-app':'♨️',wraps:'🌯',quesadilla:'🌮',burgers:'🍔',grill:'🍢',seafood:'🦐',yemeni:'🫕',dessert:'🍮'};
+const CAT_ORDER = ['detox','power','juice-help','smoothies','muscle','fat-burner','breakfast','omelets','salads','cold-app','hot-app','wraps','quesadilla','burgers','grill','seafood','yemeni','dessert'];
+
+// ═══════════════════════════════════════
+// IMAGE CACHE & SVG GENERATOR
+// ═══════════════════════════════════════
+const imgCache = {};
+
+function generateSVGFood(item) {
+  if (imgCache[item.id]) return imgCache[item.id];
+  // Color palettes per category
+  const palettes = {
+    'detox':    {bg:'#0a1a0e', c1:'#2d6a4f', c2:'#52b788', c3:'#95d5b2', accent:'#d4a843'},
+    'power':    {bg:'#0a1800', c1:'#386641', c2:'#6a994e', c3:'#a7c957', accent:'#bc6c25'},
+    'juice-help':{bg:'#1a0800', c1:'#bc6c25', c2:'#dda15e', c3:'#fefae0', accent:'#606c38'},
+    'smoothies':{bg:'#0a001a', c1:'#7b2d8b', c2:'#c77dff', c3:'#e0aaff', accent:'#ff9ef5'},
+    'muscle':   {bg:'#1a0a00', c1:'#9d4edd', c2:'#c77dff', c3:'#e0aaff', accent:'#ffd60a'},
+    'fat-burner':{bg:'#1a0200', c1:'#d62828', c2:'#f77f00', c3:'#fcbf49', accent:'#eae2b7'},
+    'breakfast':{bg:'#1a1000', c1:'#bc6c25', c2:'#dda15e', c3:'#fefae0', accent:'#606c38'},
+    'omelets':  {bg:'#1a1200', c1:'#e76f51', c2:'#f4a261', c3:'#e9c46a', accent:'#264653'},
+    'salads':   {bg:'#001a08', c1:'#2d6a4f', c2:'#52b788', c3:'#95d5b2', accent:'#d4a843'},
+    'cold-app': {bg:'#001a10', c1:'#2d6a4f', c2:'#52b788', c3:'#b7e4c7', accent:'#d4a843'},
+    'hot-app':  {bg:'#1a0800', c1:'#bc6c25', c2:'#dda15e', c3:'#fefae0', accent:'#606c38'},
+    'wraps':    {bg:'#0a1400', c1:'#386641', c2:'#6a994e', c3:'#a7c957', accent:'#bc6c25'},
+    'quesadilla':{bg:'#1a0e00', c1:'#bc6c25', c2:'#dda15e', c3:'#ffd166', accent:'#ef233c'},
+    'burgers':  {bg:'#1a0800', c1:'#9e2a2b', c2:'#e09f3e', c3:'#fff3b0', accent:'#335c67'},
+    'grill':    {bg:'#1a0500', c1:'#9e2a2b', c2:'#c9821a', c3:'#f4a261', accent:'#e9c46a'},
+    'seafood':  {bg:'#001525', c1:'#1d3557', c2:'#457b9d', c3:'#a8dadc', accent:'#e63946'},
+    'yemeni':   {bg:'#1a0800', c1:'#774936', c2:'#bc6c25', c3:'#dda15e', accent:'#606c38'},
+    'dessert':  {bg:'#1a0510', c1:'#9d0208', c2:'#dc2f02', c3:'#e85d04', accent:'#f48c06'},
+  };
+  const p = palettes[item.cat] || palettes['grill'];
+  // Shape vocabulary per category
+  const shapes = {
+    'detox': `<circle cx="100" cy="85" r="55" fill="${p.c1}" opacity=".9"/>
+      <ellipse cx="100" cy="85" rx="35" ry="38" fill="${p.c2}"/>
+      <circle cx="100" cy="80" r="20" fill="${p.c3}" opacity=".7"/>
+      <ellipse cx="82" cy="115" rx="18" ry="8" fill="${p.c1}" opacity=".6"/>
+      <ellipse cx="118" cy="112" rx="14" ry="6" fill="${p.accent}" opacity=".5"/>
+      <rect x="88" y="130" width="24" height="50" rx="12" fill="${p.c1}" opacity=".8"/>`,
+    'smoothies': `<rect x="55" y="60" width="90" height="110" rx="45" fill="${p.c1}" opacity=".95"/>
+      <rect x="63" y="68" width="74" height="95" rx="37" fill="${p.c2}" opacity=".8"/>
+      <circle cx="100" cy="80" r="22" fill="${p.c3}" opacity=".7"/>
+      <ellipse cx="100" cy="170" rx="28" ry="6" fill="${p.c1}" opacity=".4"/>
+      <circle cx="85" cy="100" r="8" fill="${p.accent}" opacity=".6"/>
+      <circle cx="115" cy="95" r="6" fill="${p.c3}" opacity=".8"/>`,
+    'grill': `<ellipse cx="100" cy="130" rx="70" ry="20" fill="${p.c1}" opacity=".4"/>
+      <rect x="30" y="80" width="140" height="60" rx="8" fill="${p.c1}" opacity=".9"/>
+      <rect x="38" y="88" width="124" height="44" rx="5" fill="${p.c2}" opacity=".8"/>
+      <line x1="40" y1="95" x2="160" y2="95" stroke="${p.bg}" stroke-width="3" opacity=".6"/>
+      <line x1="40" y1="110" x2="160" y2="110" stroke="${p.bg}" stroke-width="3" opacity=".6"/>
+      <line x1="40" y1="125" x2="160" y2="125" stroke="${p.bg}" stroke-width="3" opacity=".6"/>
+      <circle cx="70" cy="75" r="10" fill="${p.accent}" opacity=".8"/>
+      <circle cx="130" cy="75" r="10" fill="${p.accent}" opacity=".8"/>`,
+    'wraps': `<ellipse cx="100" cy="120" rx="75" ry="50" fill="${p.c1}" opacity=".9"/>
+      <ellipse cx="100" cy="115" rx="60" ry="40" fill="${p.c2}" opacity=".8"/>
+      <ellipse cx="100" cy="110" rx="45" ry="30" fill="${p.c3}" opacity=".7"/>
+      <circle cx="75" cy="105" r="12" fill="${p.accent}" opacity=".7"/>
+      <circle cx="100" cy="95" r="10" fill="${p.c1}" opacity=".8"/>
+      <circle cx="125" cy="108" r="9" fill="${p.accent}" opacity=".6"/>`,
+    'quesadilla': `<polygon points="100,40 175,140 25,140" fill="${p.c1}" opacity=".9"/>
+      <polygon points="100,55 162,135 38,135" fill="${p.c2}" opacity=".8"/>
+      <polygon points="100,40 175,140 25,140" fill="none" stroke="${p.accent}" stroke-width="2" opacity=".5"/>
+      <circle cx="100" cy="105" r="18" fill="${p.c3}" opacity=".6"/>
+      <circle cx="78" cy="115" r="8" fill="${p.accent}" opacity=".5"/>
+      <circle cx="122" cy="112" r="8" fill="${p.accent}" opacity=".5"/>`,
+    'salads': `<circle cx="100" cy="100" r="72" fill="${p.c1}" opacity=".7"/>
+      <circle cx="100" cy="100" r="55" fill="${p.c2}" opacity=".6"/>
+      <circle cx="78" cy="88" r="14" fill="${p.c3}" opacity=".8"/>
+      <circle cx="118" cy="92" r="12" fill="${p.accent}" opacity=".7"/>
+      <circle cx="95" cy="115" r="10" fill="${p.c1}" opacity=".9"/>
+      <circle cx="115" cy="118" r="8" fill="${p.c3}" opacity=".7"/>
+      <circle cx="82" cy="112" r="6" fill="${p.accent}" opacity=".6"/>`,
+    'burgers': `<ellipse cx="100" cy="75" rx="70" ry="30" fill="${p.c3}" opacity=".9"/>
+      <rect x="28" y="95" width="144" height="20" rx="4" fill="${p.c1}" opacity=".9"/>
+      <rect x="28" y="108" width="144" height="25" rx="4" fill="${p.c2}" opacity=".8"/>
+      <rect x="28" y="126" width="144" height="15" rx="4" fill="${p.accent}" opacity=".7"/>
+      <ellipse cx="100" cy="148" rx="72" ry="18" fill="${p.c1}" opacity=".85"/>`,
+  };
+  const shapeKey = Object.keys(shapes).find(k => item.cat.includes(k)) || 'grill';
+  const svgBody = shapes[shapeKey] || shapes['grill'];
+
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+    <rect width="200" height="200" fill="${p.bg}"/>
+    <circle cx="100" cy="100" r="90" fill="${p.c1}" opacity=".08"/>
+    ${svgBody}
+    <rect width="200" height="200" fill="url(#vignette)" opacity=".5"/>
+    <defs>
+      <radialGradient id="vignette" cx="50%" cy="50%" r="50%">
+        <stop offset="60%" stop-color="transparent"/>
+        <stop offset="100%" stop-color="${p.bg}"/>
+      </radialGradient>
+    </defs>
+  </svg>`;
+  const dataUrl = 'data:image/svg+xml;base64,' + btoa(svg);
+  imgCache[item.id] = dataUrl;
+  return dataUrl;
+}
+
+// ═══════════════════════════════════════
+// MENU RENDERING
+// ═══════════════════════════════════════
+function renderMenuSections(items) {
+  const sections = {};
+  items.forEach(item => {
+    if (!sections[item.cat]) sections[item.cat] = {label:item.catLabel, items:[]};
+    sections[item.cat].items.push(item);
+  });
+  const container = document.getElementById('menuSections');
+  container.innerHTML = CAT_ORDER.filter(cat => sections[cat]).map(cat => {
+    const sec = sections[cat];
+    return `<div class="cat-section" data-cat="${cat}" id="cat-${cat}">
+      <h3 class="cat-section-title">${CAT_ICONS[cat]||'🍽️'} ${sec.label}</h3>
+      <div class="cat-section-divider"></div>
+      <div class="menu-grid">
+        ${sec.items.map(item => {
+          const imgSrc = imgCache[item.id] || generateSVGFood(item);
+          const sizes = getSizesForCat(item.cat);
+          const displayPrice = sizes ? 'From $' + sizes[0].price.toFixed(2) : '$' + getNumericPrice(item).toFixed(2);
+          const sizeInfo = sizes ? sizes.map(s => `<span class="size-pill">${s.key} $${s.price.toFixed(2)}</span>`).join('') : '';
+          return `<div class="menu-card fade-in" data-cat="${item.cat}" data-name="${item.name.toLowerCase()}">
+            <div class="menu-card-img"><img src="${imgSrc}" alt="${item.name}" loading="lazy" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:3rem;display:flex;align-items:center;justify-content:center;height:100%&quot;>${item.emoji}</span>'"/></div>
+            <div class="menu-card-body">
+              <div class="menu-card-cat">${item.catLabel}</div>
+              <div class="menu-card-name">${item.name}</div>
+              <div class="menu-card-desc">${item.desc}</div>
+              ${sizeInfo ? `<div class="size-info">${sizeInfo}</div>` : ''}
+              <div class="menu-card-footer">
+                <span class="menu-card-price">${displayPrice}</span>
+                <a class="menu-card-call" href="tel:3478576692">📞 Call to Order</a>
+              </div>
+            </div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderGallery() {
+  const grid = document.getElementById('galleryGrid');
+  grid.innerHTML = GALLERY_IDS.map(id => {
+    const item = MENU.find(m => m.id === id);
+    if (!item) return '';
+    const imgSrc = imgCache[id] || generateSVGFood(item);
+    return `<div class="gallery-item fade-in">
+      <img src="${imgSrc}" alt="${GALLERY_LABELS[id]}" loading="lazy"/>
+      <div class="gallery-item-overlay"><span class="gallery-label">${GALLERY_LABELS[id]}</span></div>
+    </div>`;
+  }).join('');
+}
+
+// ═══════════════════════════════════════
+// FILTERS
+// ═══════════════════════════════════════
+let activeFilterCat = 'all';
+
+function filterCat(cat, btn) {
+  activeFilterCat = cat;
+  const sections = document.querySelectorAll('.cat-section');
+  if (cat === 'all') sections.forEach(s => s.classList.remove('hidden'));
+  else sections.forEach(s => s.dataset.cat === cat ? s.classList.remove('hidden') : s.classList.add('hidden'));
+  if (btn) { document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); }
+  document.getElementById('menuSearch').value = '';
+  document.getElementById('noResults').classList.add('hidden');
+}
+
+function filterMenu() {
+  const q = document.getElementById('menuSearch').value.toLowerCase().trim();
+  if (!q) { filterCat(activeFilterCat, null); return; }
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  let found = 0;
+  document.querySelectorAll('.cat-section').forEach(sec => {
+    const cards = sec.querySelectorAll('.menu-card');
+    let n = 0;
+    cards.forEach(c => { if ((c.dataset.name||'').includes(q)) { c.style.display='flex'; n++; } else c.style.display='none'; });
+    if (n > 0) { sec.classList.remove('hidden'); found += n; } else sec.classList.add('hidden');
+  });
+  document.getElementById('noResults').classList.toggle('hidden', found > 0);
+}
+
+// ═══════════════════════════════════════
+// CATERING FORM
+// ═══════════════════════════════════════
+async function submitCatering() {
+  if (document.getElementById('catHp')?.value) return;
+  const name = document.getElementById('catName')?.value?.trim();
+  const phone = document.getElementById('catPhone')?.value?.trim();
+  const email = document.getElementById('catEmail')?.value?.trim();
+  const btn = document.getElementById('catBtn');
+  const msg = document.getElementById('catMsg');
+  if (!name) { msg.textContent='⚠️ Please enter your name.'; msg.style.color='#e74c3c'; return; }
+  if (!phone) { msg.textContent='⚠️ Please enter your phone.'; msg.style.color='#e74c3c'; return; }
+  if (!email) { msg.textContent='⚠️ Please enter your email.'; msg.style.color='#e74c3c'; return; }
+  btn.textContent='Sending...'; btn.disabled=true;
+  try {
+    const res = await fetch('/api/catering', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        name, phone, email,
+        eventDate: document.getElementById('catDate')?.value,
+        guestCount: document.getElementById('catGuests')?.value,
+        eventType: document.getElementById('catType')?.value,
+        details: document.getElementById('catDetails')?.value,
+      })
+    });
+    const data = await res.json();
+    if (res.ok && data.success) {
+      btn.textContent='✓ Inquiry Sent!'; btn.style.background='var(--green)';
+      msg.textContent="We'll be in touch within 24 hours!"; msg.style.color='var(--green2)';
+    } else {
+      btn.textContent='Send Catering Inquiry →'; btn.disabled=false;
+      msg.textContent=data.error||'Failed to send. Please call (347) 857-6692.'; msg.style.color='#e74c3c';
+    }
+  } catch {
+    btn.textContent='Send Catering Inquiry →'; btn.disabled=false;
+    msg.textContent='Error. Please call (347) 857-6692.'; msg.style.color='#e74c3c';
+  }
+}
+
+// ═══════════════════════════════════════
+// UTILS
+// ═══════════════════════════════════════
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+function highlightToday() {
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const today = days[new Date().getDay()];
+  document.querySelectorAll('.hours-row').forEach(row => {
+    if (row.querySelector('.day')?.textContent === today) row.classList.add('today');
+  });
+}
+
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 50);
+  const btt = document.getElementById('btt');
+  btt.style.display = window.scrollY > 400 ? 'flex' : 'none';
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:0.08});
+
+// ═══════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  MENU.forEach(item => generateSVGFood(item));
+  renderMenuSections(MENU);
+  renderGallery();
+  highlightToday();
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.getElementById('mobileMenu')?.classList.remove('open');
+});
+</script>
+</body>
+</html>
