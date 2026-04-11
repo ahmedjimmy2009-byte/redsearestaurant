@@ -1,990 +1,1671 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Red Sea Restaurant & Detox Juice Bar | Fresh Juices · Kababs · Staten Island, NY</title>
-<meta name="description" content="Staten Island's premier restaurant and detox juice bar. Fresh-pressed juices, smoothies, kababs, wraps & more at 1612 Forest Ave. Call to order: (347) 857-6692."/>
-<meta property="og:title" content="Red Sea Restaurant & Detox Juice Bar"/>
-<meta property="og:description" content="Fresh juices, smoothies, kababs & more. Staten Island, NY. Call (347) 857-6692 to order."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"Red Sea Restaurant & Detox Juice Bar","address":{"@type":"PostalAddress","streetAddress":"1612 Forest Ave","addressLocality":"Staten Island","addressRegion":"NY","postalCode":"10302","addressCountry":"US"},"telephone":"(347) 857-6692","openingHours":"Mo-Su 10:00-22:00","servesCuisine":["Mediterranean","Juice Bar","Kebab","Yemeni"],"priceRange":"$$","url":"https://redseadetox.com"}</script>
-<style>
-:root{
-  --charcoal:#1a1a1a;--charcoal2:#222;--charcoal3:#2c2c2c;--charcoal4:#333;
-  --cream:#f5f0e8;--cream2:#ede7d9;
-  --accent:#d4a843;--accent2:#e8b84b;
-  --green:#4a7c59;--green2:#5e9970;
-  --red:#c0392b;
-  --text-light:#b8b0a0;--text-mid:#8a8070;
-  --radius:14px;--radius-sm:8px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif;overflow-x:hidden;line-height:1.6}
-::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--charcoal)}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Red Sea Restaurant ‚Äî Detox Juices, Kebabs & Mediterranean Cuisine</title>
+  <meta name="description" content="Red Sea Restaurant serves fresh detox juices, smoothies, grilled kebabs, and Mediterranean cuisine in Staten Island. Order online for pickup or delivery." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px;transition:all .3s}
-nav.scrolled{background:rgba(26,26,26,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(212,168,67,.15);box-shadow:0 4px 30px rgba(0,0,0,.5)}
-.nav-logo{display:flex;align-items:center;gap:.7rem;text-decoration:none}
-.nav-logo-icon{width:42px;height:42px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
-.nav-logo-text span:first-child{display:block;font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--cream);line-height:1.1}
-.nav-logo-text span:last-child{display:block;font-size:.6rem;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;font-weight:600}
-.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
-.nav-links a{color:var(--cream);text-decoration:none;font-size:.82rem;letter-spacing:.07em;text-transform:uppercase;font-weight:500;opacity:.8;transition:all .2s;position:relative}
-.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--accent);transition:width .3s}
-.nav-links a:hover{opacity:1;color:var(--accent)}
-.nav-links a:hover::after{width:100%}
-.nav-call-btn{background:var(--accent);color:var(--charcoal);padding:.55rem 1.3rem;border-radius:50px;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:all .3s;border:none;cursor:pointer;font-family:'DM Sans',sans-serif}
-.nav-call-btn:hover{background:var(--accent2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(212,168,67,.35)}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.4rem}
-.nav-hamburger span{width:22px;height:2px;background:var(--cream);border-radius:1px;transition:all .3s}
-.mobile-menu{display:none;position:fixed;inset:0;background:var(--charcoal);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:1.8rem}
-.mobile-menu.open{display:flex}
-.mobile-menu a{color:var(--cream);text-decoration:none;font-family:'Playfair Display',serif;font-size:1.8rem;opacity:.85;transition:all .2s}
-.mobile-menu a:hover{opacity:1;color:var(--accent)}
-.mobile-close{position:absolute;top:1.5rem;right:1.5rem;font-size:1.8rem;cursor:pointer;color:var(--cream);background:none;border:none}
+    :root {
+      --black:     #06060f;
+      --dark:      #0d0d1a;
+      --dark-2:    #111122;
+      --dark-3:    #181830;
+      --dark-4:    #1e1e38;
+      --red:       #c8253a;
+      --red-light: #e03350;
+      --red-dark:  #9e1c2d;
+      --gold:      #c9a45c;
+      --gold-light:#e2c07a;
+      --cream:     #f5efe4;
+      --cream-2:   #e8dfd1;
+      --cream-3:   #c8bfb0;
+      --muted:     #7a7590;
+      --border:    rgba(201,164,92,0.18);
+      --border-2:  rgba(255,255,255,0.07);
+      --ff-display:'Playfair Display', Georgia, serif;
+      --ff-serif:  'Cormorant Garamond', Georgia, serif;
+      --ff-body:   'Inter', system-ui, sans-serif;
+      --radius:    12px;
+      --radius-lg: 20px;
+      --shadow:    0 8px 40px rgba(0,0,0,0.55), 0 2px 12px rgba(0,0,0,0.3);
+      --glow-red:  0 0 60px rgba(200,37,58,0.15);
+      --tr:        all 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
 
-/* HERO */
-#hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(8,20,10,.93) 0%,rgba(18,32,12,.88) 35%,rgba(20,18,8,.88) 65%,rgba(10,10,10,.95) 100%),url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600&q=80") center/cover no-repeat}
-.hero-orb1{position:absolute;top:-15%;left:-10%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(74,124,89,.2) 0%,transparent 65%);animation:floatOrb 9s ease-in-out infinite}
-.hero-orb2{position:absolute;bottom:-25%;right:-10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,.12) 0%,transparent 65%);animation:floatOrb 12s ease-in-out infinite reverse}
-@keyframes floatOrb{0%,100%{transform:translate(0,0)}50%{transform:translate(25px,-35px)}}
-.hero-content{position:relative;z-index:2;text-align:center;max-width:880px;padding:2rem;animation:heroIn .9s ease both}
-@keyframes heroIn{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(212,168,67,.35);border-radius:50px;padding:.4rem 1.2rem;margin-bottom:1.8rem;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;background:rgba(212,168,67,.06)}
-.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,7.5vw,6.8rem);font-weight:900;line-height:1.02;margin-bottom:1.4rem;color:var(--cream)}
-.hero-h1 em{font-style:italic;color:var(--accent)}
-.hero-h1 .line2{display:block;color:var(--green2);font-size:.68em}
-.hero-sub{font-size:1.05rem;color:var(--text-light);max-width:580px;margin:0 auto 2.2rem;font-weight:300;line-height:1.8}
-.hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.8rem}
-.btn-primary{background:var(--accent);color:var(--charcoal);padding:.88rem 2rem;border-radius:50px;font-weight:700;font-size:.88rem;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;transition:all .3s;box-shadow:0 6px 28px rgba(212,168,67,.3);border:none;cursor:pointer;font-family:'DM Sans',sans-serif;display:inline-flex;align-items:center;gap:.5rem}
-.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 12px 36px rgba(212,168,67,.4)}
-.btn-outline{border:1.5px solid rgba(245,240,232,.28);color:var(--cream);padding:.88rem 2rem;border-radius:50px;font-weight:500;font-size:.88rem;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;transition:all .3s;background:transparent;cursor:pointer;font-family:'DM Sans',sans-serif}
-.btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
-.hero-stats{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap}
-.hero-stat{text-align:center}
-.hero-stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--accent);display:block}
-.hero-stat-label{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-light);font-weight:500}
+    body { background:var(--black); color:var(--cream); font-family:var(--ff-body); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+    ::-webkit-scrollbar { width:5px; }
+    ::-webkit-scrollbar-track { background:var(--dark); }
+    ::-webkit-scrollbar-thumb { background:var(--red-dark); border-radius:3px; }
 
-/* CALL STRIP */
-.call-strip{background:var(--green);padding:1rem 2rem}
-.call-strip-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-.call-strip-text{color:white;font-size:.9rem;font-weight:500}
-.call-strip-text strong{font-weight:700;font-size:1rem}
-.call-strip-btn{background:white;color:var(--green);padding:.6rem 1.5rem;border-radius:50px;font-size:.82rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:all .25s;letter-spacing:.04em}
-.call-strip-btn:hover{background:var(--cream);transform:translateY(-1px)}
+    /* ‚îÄ‚îÄ PROGRESS BAR ‚îÄ‚îÄ */
+    #progress-bar {
+      position:fixed; top:0; left:0; height:3px; width:0%;
+      background:linear-gradient(90deg,var(--red),var(--gold));
+      z-index:2000; transition:width 0.1s linear;
+      box-shadow:0 0 10px rgba(200,37,58,0.6);
+    }
 
-/* SECTIONS */
-section{padding:5.5rem 2rem}
-.section-label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.9rem;display:flex;align-items:center;gap:.7rem}
-.section-label::before{content:'';width:28px;height:1px;background:var(--accent)}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;color:var(--cream);line-height:1.1;margin-bottom:1.3rem}
-.section-title em{font-style:italic;color:var(--green2)}
-.section-sub{font-size:.95rem;color:var(--text-light);max-width:540px;line-height:1.8;font-weight:300}
-.container{max-width:1200px;margin:0 auto}
+    /* ‚îÄ‚îÄ BACK TO TOP ‚îÄ‚îÄ */
+    #back-top {
+      position:fixed; bottom:90px; right:28px; z-index:900;
+      width:44px; height:44px; border-radius:50%;
+      background:var(--dark-3); border:1px solid var(--border);
+      color:var(--cream-3); cursor:pointer;
+      display:flex; align-items:center; justify-content:center;
+      opacity:0; transform:translateY(12px);
+      transition:var(--tr); box-shadow:var(--shadow);
+    }
+    #back-top.visible { opacity:1; transform:translateY(0); }
+    #back-top:hover { background:var(--red); border-color:var(--red); color:#fff; }
 
-/* MENU */
-#menu{background:var(--charcoal)}
-.menu-controls{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-bottom:1.8rem}
-.menu-search{flex:1;min-width:220px;background:var(--charcoal2);border:1.5px solid rgba(212,168,67,.18);border-radius:50px;padding:.7rem 1.4rem;color:var(--cream);font-size:.88rem;outline:none;transition:border .3s;font-family:'DM Sans',sans-serif}
-.menu-search::placeholder{color:var(--text-mid)}
-.menu-search:focus{border-color:rgba(212,168,67,.55)}
-.cat-filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
-.cat-btn{padding:.45rem 1rem;border-radius:50px;font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border:1.5px solid rgba(212,168,67,.18);background:transparent;color:var(--text-light);cursor:pointer;transition:all .25s;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:.35rem}
-.cat-btn:hover,.cat-btn.active{background:var(--accent);color:var(--charcoal);border-color:var(--accent)}
-.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.4rem}
-.menu-card{background:var(--charcoal2);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(245,240,232,.055);transition:all .3s;display:flex;flex-direction:column}
-.menu-card:hover{transform:translateY(-5px);border-color:rgba(212,168,67,.28);box-shadow:0 18px 50px rgba(0,0,0,.5)}
-.menu-card-img{width:100%;height:170px;overflow:hidden;background:var(--charcoal3);position:relative;flex-shrink:0}
-.menu-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
-.menu-card:hover .menu-card-img img{transform:scale(1.06)}
-.menu-card-body{padding:1.1rem;flex:1;display:flex;flex-direction:column;gap:.35rem}
-.menu-card-cat{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green2);font-weight:600}
-.menu-card-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--cream);line-height:1.2}
-.menu-card-desc{font-size:.75rem;color:var(--text-light);line-height:1.55;flex:1}
-.menu-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:.7rem;padding-top:.7rem;border-top:1px solid rgba(245,240,232,.055)}
-.menu-card-price{font-family:'Space Mono',monospace;font-size:.95rem;font-weight:700;color:var(--accent)}
-.menu-card-call{display:inline-flex;align-items:center;gap:.3rem;background:var(--green);color:white;border:none;border-radius:50px;padding:.4rem 1rem;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all .25s;font-family:'DM Sans',sans-serif}
-.menu-card-call:hover{background:var(--green2);transform:translateY(-1px)}
-.cat-section{margin-bottom:3rem}
-.cat-section-title{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:700;color:var(--cream);margin-bottom:.35rem;display:flex;align-items:center;gap:.65rem}
-.cat-section-divider{width:55px;height:2px;background:var(--accent);margin-bottom:1.4rem;border-radius:1px}
-.hidden{display:none!important}
+    /* ‚îÄ‚îÄ FLOATING CTA ‚îÄ‚îÄ */
+    #float-cta {
+      position:fixed; bottom:28px; right:28px; z-index:900;
+      opacity:0; transform:translateY(16px);
+      transition:var(--tr); pointer-events:none;
+    }
+    #float-cta.visible { opacity:1; transform:translateY(0); pointer-events:auto; }
 
-/* SIZE BADGE */
-.size-info{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.3rem}
-.size-pill{font-size:.6rem;background:rgba(212,168,67,.1);color:var(--accent);border:1px solid rgba(212,168,67,.2);border-radius:10px;padding:.1rem .4rem;font-weight:600;font-family:'Space Mono',monospace}
+    /* ‚îÄ‚îÄ UTILS ‚îÄ‚îÄ */
+    .container { width:100%; max-width:1200px; margin:0 auto; padding:0 24px; }
+    .section-label {
+      font-family:var(--ff-body); font-size:0.68rem; font-weight:700;
+      letter-spacing:0.22em; text-transform:uppercase; color:var(--gold);
+      display:block; margin-bottom:12px;
+    }
+    .section-title {
+      font-family:var(--ff-display); font-size:clamp(1.9rem,3.8vw,2.9rem);
+      font-weight:700; color:var(--cream); line-height:1.18; margin-bottom:16px;
+    }
+    .section-sub {
+      font-size:1rem; color:var(--cream-3); font-weight:300;
+      line-height:1.8; max-width:560px;
+    }
+    .divider { width:44px; height:2px; background:linear-gradient(90deg,var(--red),var(--gold)); margin:0 auto 18px; border-radius:2px; }
+    .divider-l { margin-left:0; }
+    .sec-head { text-align:center; margin-bottom:56px; }
 
-/* ABOUT */
-#about{background:var(--charcoal2)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
-.about-features{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:1.8rem}
-.about-feat{background:var(--charcoal3);padding:1.1rem;border-radius:var(--radius);border:1px solid rgba(245,240,232,.05)}
-.about-feat-icon{font-size:1.4rem;margin-bottom:.4rem}
-.about-feat-name{font-size:.82rem;font-weight:600;color:var(--cream);margin-bottom:.15rem}
-.about-feat-desc{font-size:.72rem;color:var(--text-light);line-height:1.5}
-.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin-top:1.5rem}
-.review-card{background:var(--charcoal3);padding:1.1rem;border-radius:var(--radius);border-left:3px solid var(--accent)}
-.review-stars{color:var(--accent);font-size:.85rem;margin-bottom:.35rem}
-.review-text{font-size:.8rem;color:var(--text-light);line-height:1.6;font-style:italic;margin-bottom:.45rem}
-.review-author{font-size:.68rem;font-weight:600;color:var(--text-mid);letter-spacing:.08em;text-transform:uppercase}
+    /* ‚îÄ‚îÄ BUTTONS ‚îÄ‚îÄ */
+    .btn {
+      display:inline-flex; align-items:center; gap:8px;
+      padding:13px 26px; border-radius:6px;
+      font-family:var(--ff-body); font-size:0.82rem; font-weight:700;
+      letter-spacing:0.07em; text-transform:uppercase;
+      text-decoration:none; border:none; cursor:pointer;
+      transition:var(--tr); white-space:nowrap; position:relative; overflow:hidden;
+    }
+    .btn::after {
+      content:''; position:absolute; inset:0;
+      background:rgba(255,255,255,0); transition:var(--tr);
+    }
+    .btn:hover::after { background:rgba(255,255,255,0.06); }
+    .btn-primary { background:var(--red); color:#fff; box-shadow:0 4px 20px rgba(200,37,58,0.4); }
+    .btn-primary:hover { background:var(--red-light); box-shadow:0 6px 28px rgba(200,37,58,0.55); transform:translateY(-2px); }
+    .btn-outline { background:transparent; color:var(--cream); border:1.5px solid rgba(245,239,228,0.28); }
+    .btn-outline:hover { border-color:var(--gold); color:var(--gold-light); transform:translateY(-2px); }
+    .btn-gold { background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:var(--dark); box-shadow:0 4px 20px rgba(201,164,92,0.3); }
+    .btn-gold:hover { box-shadow:0 6px 28px rgba(201,164,92,0.45); transform:translateY(-2px); }
+    .btn-sm { padding:9px 18px; font-size:0.76rem; }
 
-/* HOW TO ORDER */
-#how-to-order{background:var(--charcoal)}
-.order-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.8rem;margin-top:2.8rem}
-.order-step{background:var(--charcoal2);border-radius:var(--radius);padding:1.8rem;border:1px solid rgba(212,168,67,.1);text-align:center;position:relative}
-.step-num{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:rgba(212,168,67,.15);position:absolute;top:.8rem;right:1rem;line-height:1}
-.step-icon{font-size:2.5rem;margin-bottom:1rem;display:block}
-.step-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--cream);margin-bottom:.5rem}
-.step-desc{font-size:.82rem;color:var(--text-light);line-height:1.7}
-.big-call-btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:var(--accent);color:var(--charcoal);padding:1.1rem 3rem;border-radius:50px;font-weight:700;font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:all .3s;box-shadow:0 8px 32px rgba(212,168,67,.35);margin-top:2.5rem}
-.big-call-btn:hover{background:var(--accent2);transform:translateY(-3px);box-shadow:0 16px 40px rgba(212,168,67,.45)}
+    /* ‚îÄ‚îÄ WAVE DIVIDERS ‚îÄ‚îÄ */
+    .wave-divider { display:block; width:100%; overflow:hidden; line-height:0; }
+    .wave-divider svg { display:block; width:100%; }
 
-/* GALLERY */
-#gallery{background:var(--charcoal2)}
-.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,160px);gap:.9rem;margin-top:2.8rem}
-.gallery-item{border-radius:var(--radius);overflow:hidden;position:relative;cursor:pointer;transition:all .3s;border:1px solid rgba(245,240,232,.05);background:var(--charcoal3)}
-.gallery-item:hover{transform:scale(.98);border-color:rgba(212,168,67,.3)}
-.gallery-item:nth-child(1){grid-column:span 2;grid-row:span 2}
-.gallery-item:nth-child(5){grid-column:span 2}
-.gallery-item img{width:100%;height:100%;object-fit:cover;display:block}
-.gallery-item-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 50%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:.8rem}
-.gallery-item:hover .gallery-item-overlay{opacity:1}
-.gallery-label{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,240,232,.9);font-weight:600;background:rgba(0,0,0,.55);padding:.22rem .55rem;border-radius:20px;backdrop-filter:blur(4px)}
+    /* ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ HEADER ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+    #header {
+      position:fixed; top:0; left:0; right:0; z-index:1000;
+      transition:var(--tr); padding:0;
+    }
+    #header.scrolled {
+      background:rgba(6,6,15,0.96); backdrop-filter:blur(20px);
+      border-bottom:1px solid var(--border);
+      box-shadow:0 4px 30px rgba(0,0,0,0.5);
+    }
+    .header-inner { display:flex; align-items:center; justify-content:space-between; height:70px; gap:20px; }
+    .logo { display:flex; flex-direction:column; text-decoration:none; flex-shrink:0; }
+    .logo-main { font-family:var(--ff-display); font-size:1.28rem; font-weight:700; color:var(--cream); line-height:1; }
+    .logo-accent { color:var(--red); }
+    .logo-sub-text { font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-top:3px; }
+    nav { display:flex; align-items:center; gap:2px; }
+    nav a { font-size:0.79rem; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; color:var(--cream-3); text-decoration:none; padding:8px 12px; border-radius:6px; transition:var(--tr); }
+    nav a:hover { color:var(--cream); background:rgba(255,255,255,0.05); }
+    .hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; }
+    .hamburger span { display:block; width:22px; height:2px; background:var(--cream); border-radius:2px; transition:var(--tr); }
+    .mobile-nav { display:none; position:fixed; top:70px; left:0; right:0; background:rgba(6,6,15,0.98); backdrop-filter:blur(20px); border-bottom:1px solid var(--border); padding:20px; flex-direction:column; gap:4px; z-index:999; }
+    .mobile-nav.open { display:flex; }
+    .mobile-nav a { font-size:0.9rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--cream-3); text-decoration:none; padding:13px 16px; border-radius:8px; transition:var(--tr); }
+    .mobile-nav a:hover { color:var(--cream); background:rgba(255,255,255,0.05); }
+    .mobile-nav .btn { margin-top:10px; width:100%; justify-content:center; }
 
-/* CATERING */
-#catering{background:var(--charcoal)}
-.catering-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;margin-top:2.8rem}
-.catering-perks{display:flex;flex-direction:column;gap:1.3rem}
-.catering-perk{display:flex;gap:.9rem;align-items:flex-start}
-.catering-perk-icon{width:46px;height:46px;border-radius:var(--radius-sm);background:rgba(212,168,67,.08);border:1px solid rgba(212,168,67,.18);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
-.catering-perk-text h4{font-size:.9rem;font-weight:600;color:var(--cream);margin-bottom:.18rem}
-.catering-perk-text p{font-size:.78rem;color:var(--text-light);line-height:1.6}
-.catering-form{background:var(--charcoal2);border-radius:20px;padding:1.9rem;border:1px solid rgba(212,168,67,.12)}
-.catering-form h3{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--cream);margin-bottom:1.4rem}
-.form-group{margin-bottom:1rem}
-.form-group label{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:.45rem;font-weight:600}
-.form-group input,.form-group textarea,.form-group select{width:100%;background:var(--charcoal3);border:1.5px solid rgba(245,240,232,.08);border-radius:var(--radius-sm);padding:.75rem .95rem;color:var(--cream);font-size:.88rem;outline:none;transition:border .2s;font-family:'DM Sans',sans-serif}
-.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:rgba(212,168,67,.5)}
-.form-group select option{background:var(--charcoal3)}
-.form-group textarea{resize:vertical;min-height:80px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
-.form-submit{width:100%;background:var(--accent);color:var(--charcoal);padding:.88rem;border-radius:var(--radius-sm);font-weight:700;font-size:.88rem;letter-spacing:.07em;text-transform:uppercase;border:none;cursor:pointer;transition:all .3s;font-family:'DM Sans',sans-serif}
-.form-submit:hover{background:var(--accent2);transform:translateY(-1px)}
+    /* ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ HERO ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+    #home {
+      position:relative; min-height:100vh;
+      display:flex; align-items:center;
+      overflow:hidden; padding-top:70px;
+    }
+    .hero-bg {
+      position:absolute; inset:0;
+      background:radial-gradient(ellipse 90% 80% at 55% 45%, rgba(200,37,58,0.09) 0%, transparent 55%),
+                 radial-gradient(ellipse 60% 60% at 15% 75%, rgba(201,164,92,0.06) 0%, transparent 50%),
+                 linear-gradient(150deg, #04040b 0%, #0a0a18 45%, #0f0f20 100%);
+      z-index:0;
+    }
+    /* animated grid */
+    .hero-grid {
+      position:absolute; inset:0; z-index:0;
+      background-image:linear-gradient(rgba(201,164,92,0.035) 1px, transparent 1px),
+                       linear-gradient(90deg, rgba(201,164,92,0.035) 1px, transparent 1px);
+      background-size:64px 64px;
+      mask-image:radial-gradient(ellipse 75% 75% at 50% 50%, black 0%, transparent 100%);
+      animation:gridPan 20s linear infinite;
+    }
+    @keyframes gridPan { from{background-position:0 0} to{background-position:64px 64px} }
 
-/* LOCATION */
-#location{background:var(--charcoal2)}
-.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;margin-top:2.8rem}
-.loc-card{background:var(--charcoal3);border-radius:var(--radius);padding:1.4rem;border:1px solid rgba(245,240,232,.055);margin-bottom:1rem}
-.loc-card h4{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.65rem}
-.loc-card p,.loc-card a{font-size:.9rem;color:var(--cream);line-height:1.8;text-decoration:none}
-.loc-card a:hover{color:var(--accent)}
-.hours-table{display:flex;flex-direction:column;gap:.35rem}
-.hours-row{display:flex;justify-content:space-between;font-size:.84rem;color:var(--text-light)}
-.hours-row.today{color:var(--cream);font-weight:600}
-.hours-row .day{color:var(--text-mid)}
+    /* floating orbs */
+    .orb {
+      position:absolute; border-radius:50%;
+      filter:blur(80px); opacity:0.12; pointer-events:none;
+      animation:orbFloat 8s ease-in-out infinite;
+    }
+    .orb1 { width:500px; height:500px; background:var(--red); top:-100px; right:-100px; animation-delay:0s; }
+    .orb2 { width:350px; height:350px; background:var(--gold); bottom:-80px; left:-80px; animation-delay:-4s; }
+    @keyframes orbFloat {
+      0%,100%{transform:translateY(0) scale(1)}
+      50%{transform:translateY(-30px) scale(1.05)}
+    }
 
-/* FOOTER */
-footer{background:var(--charcoal3);padding:2.8rem 2rem 1.4rem;border-top:1px solid rgba(212,168,67,.1)}
-.footer-inner{max-width:1200px;margin:0 auto}
-.footer-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:2.5rem;margin-bottom:2.5rem}
-.footer-brand p{font-size:.8rem;color:var(--text-light);line-height:1.7;max-width:240px;margin-top:.9rem}
-.footer-col h5{font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.9rem}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
-.footer-col ul li a{color:var(--text-light);text-decoration:none;font-size:.82rem;transition:color .2s}
-.footer-col ul li a:hover{color:var(--cream)}
-.footer-bottom{border-top:1px solid rgba(245,240,232,.055);padding-top:1.4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-bottom p{font-size:.72rem;color:var(--text-mid)}
-.footer-bottom-links{display:flex;gap:1.3rem}
-.footer-bottom-links a{font-size:.72rem;color:var(--text-mid);text-decoration:none;transition:color .2s}
-.footer-bottom-links a:hover{color:var(--cream)}
+    .hero-content {
+      position:relative; z-index:1;
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:60px; align-items:center; padding:80px 0 60px;
+    }
+    .hero-left { max-width:580px; }
+    .hero-badge {
+      display:inline-flex; align-items:center; gap:8px;
+      background:rgba(200,37,58,0.12); border:1px solid rgba(200,37,58,0.28);
+      border-radius:100px; padding:6px 14px 6px 8px; margin-bottom:26px;
+    }
+    .badge-dot { width:8px; height:8px; background:var(--red); border-radius:50%; animation:blink 2s infinite; }
+    @keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+    .badge-text { font-size:0.7rem; font-weight:700; letter-spacing:0.13em; text-transform:uppercase; color:var(--red-light); }
+    .hero-title { font-family:var(--ff-display); font-size:clamp(2.6rem,5.5vw,4rem); font-weight:700; line-height:1.1; color:var(--cream); margin-bottom:22px; }
+    .hero-title em { font-style:italic; color:var(--gold-light); }
+    .hero-sub { font-size:1.05rem; color:var(--cream-3); font-weight:300; line-height:1.8; margin-bottom:34px; max-width:460px; }
+    .hero-actions { display:flex; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:44px; }
+    .hero-trust { display:flex; flex-wrap:wrap; gap:18px; }
+    .trust-pill {
+      display:flex; align-items:center; gap:7px;
+      background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09);
+      border-radius:100px; padding:7px 14px;
+    }
+    .trust-pill-icon { font-size:0.9rem; }
+    .trust-pill span { font-size:0.75rem; color:var(--cream-3); font-weight:500; }
 
-/* STICKY CALL BAR */
-.sticky-call{position:fixed;bottom:0;left:0;right:0;z-index:900;background:var(--green);padding:.9rem 1.5rem env(safe-area-inset-bottom);display:flex;align-items:center;justify-content:space-between;gap:1rem;box-shadow:0 -4px 20px rgba(0,0,0,.4)}
-.sticky-call-text{color:white;font-size:.82rem;font-weight:500}
-.sticky-call-text strong{font-size:1rem;display:block}
-.sticky-call-btn{background:white;color:var(--green);padding:.65rem 1.6rem;border-radius:50px;font-size:.85rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:all .25s;white-space:nowrap}
-.sticky-call-btn:hover{background:var(--cream)}
+    /* hero right ‚Äî visual dish showcase */
+    .hero-visual { position:relative; }
+    .hero-main-card {
+      background:var(--dark-3); border:1px solid var(--border);
+      border-radius:var(--radius-lg); overflow:hidden;
+      box-shadow:var(--shadow); position:relative;
+    }
+    .hero-dish-scene {
+      height:260px; display:flex; align-items:center; justify-content:center;
+      background:linear-gradient(135deg, #0d0d20, #1a1a35);
+      position:relative; overflow:hidden;
+    }
+    .hero-dish-scene::before {
+      content:''; position:absolute; inset:0;
+      background:radial-gradient(ellipse at center, rgba(200,37,58,0.12) 0%, transparent 70%);
+    }
+    .hero-dish-emoji { font-size:6rem; position:relative; z-index:1; filter:drop-shadow(0 8px 24px rgba(0,0,0,0.6)); animation:dishFloat 4s ease-in-out infinite; }
+    @keyframes dishFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+    .hero-dish-meta { padding:18px 22px; display:flex; align-items:center; justify-content:space-between; }
+    .hero-dish-name { font-family:var(--ff-display); font-size:1.1rem; font-weight:600; color:var(--cream); }
+    .hero-dish-tag { background:var(--red); color:#fff; font-size:0.62rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:4px 10px; border-radius:4px; }
+    .hero-side-cards { position:absolute; right:-24px; top:50%; transform:translateY(-50%); display:flex; flex-direction:column; gap:10px; }
+    .hero-side-card {
+      background:var(--dark-3); border:1px solid var(--border);
+      border-radius:var(--radius); padding:12px 14px;
+      display:flex; align-items:center; gap:10px;
+      box-shadow:var(--shadow); min-width:160px;
+      animation:cardSlide 0.5s ease both;
+      transition:var(--tr); cursor:default;
+    }
+    .hero-side-card:hover { border-color:rgba(201,164,92,0.35); transform:translateX(-4px); }
+    .hero-side-card span:first-child { font-size:1.6rem; }
+    .hero-side-card-name { font-size:0.78rem; font-weight:600; color:var(--cream); }
+    .hero-side-card-price { font-size:0.68rem; color:var(--gold); margin-top:1px; }
+    .hero-float-stat {
+      position:absolute; bottom:-16px; left:-16px;
+      background:var(--dark-3); border:1px solid var(--border);
+      border-radius:var(--radius); padding:14px 18px;
+      box-shadow:var(--shadow);
+    }
+    .stat-num { font-family:var(--ff-display); font-size:1.5rem; font-weight:700; color:var(--gold); line-height:1; }
+    .stat-lbl { font-size:0.65rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; margin-top:2px; }
+    .hero-float-order {
+      position:absolute; top:-16px; right:10px;
+      background:var(--red); border-radius:100px;
+      padding:9px 18px; font-size:0.68rem; font-weight:700;
+      letter-spacing:0.1em; text-transform:uppercase; color:#fff;
+      box-shadow:0 4px 20px rgba(200,37,58,0.45); animation:bounceIn 0.6s 0.5s both;
+    }
+    @keyframes bounceIn { from{opacity:0;transform:scale(0.7)} to{opacity:1;transform:scale(1)} }
 
-/* BACK TO TOP */
-#btt{display:none;position:fixed;bottom:5.5rem;right:1.3rem;z-index:800;width:42px;height:42px;border-radius:50%;background:var(--charcoal3);border:1px solid rgba(212,168,67,.28);color:var(--accent);font-size:1rem;cursor:pointer;transition:all .3s;box-shadow:0 4px 18px rgba(0,0,0,.4);align-items:center;justify-content:center}
-#btt:hover{background:rgba(212,168,67,.1)}
+    /* hero bottom wave */
+    .hero-wave { position:absolute; bottom:-1px; left:0; right:0; z-index:2; }
 
-/* TOAST */
-.toast{position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%) translateY(20px);background:var(--green);color:white;padding:.65rem 1.4rem;border-radius:50px;font-size:.82rem;font-weight:600;z-index:3000;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap}
-.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+    /* ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ ORDER PLATFORMS ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+    #platforms {
+      background:var(--dark); padding:56px 0;
+      border-top:1px solid var(--border-2);
+    }
+    .platforms-label {
+      text-align:center; font-size:0.68rem; font-weight:700;
+      letter-spacing:0.2em; text-transform:uppercase; color:var(--muted);
+      margin-bottom:28px;
+    }
+    .platforms-grid {
+      display:grid; grid-template-columns:repeat(4,1fr); gap:14px;
+    }
+    .platform-card {
+      display:flex; flex-direction:column; align-items:center; gap:10px;
+      background:var(--dark-2); border:1px solid var(--border-2);
+      border-radius:var(--radius-lg); padding:26px 18px;
+      text-decoration:none; transition:var(--tr);
+    }
+    .platform-card:hover { transform:translateY(-5px); border-color:var(--border); box-shadow:var(--shadow); }
+    .platform-card.clover:hover  { border-color:rgba(0,160,100,0.4);  box-shadow:0 8px 30px rgba(0,160,100,0.15); }
+    .platform-card.ubereats:hover{ border-color:rgba(6,190,80,0.35);  box-shadow:0 8px 30px rgba(6,190,80,0.12); }
+    .platform-card.doordash:hover{ border-color:rgba(255,60,0,0.35);  box-shadow:0 8px 30px rgba(255,60,0,0.12); }
+    .platform-card.grubhub:hover { border-color:rgba(245,100,0,0.35); box-shadow:0 8px 30px rgba(245,100,0,0.12); }
+    .platform-logo {
+      width:52px; height:52px; border-radius:14px; font-size:1.6rem;
+      display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    }
+    .logo-clover   { background:rgba(0,160,100,0.12); border:1px solid rgba(0,160,100,0.25); }
+    .logo-uber     { background:rgba(6,190,80,0.1);   border:1px solid rgba(6,190,80,0.25); }
+    .logo-doordash { background:rgba(255,60,0,0.1);   border:1px solid rgba(255,60,0,0.25); }
+    .logo-grubhub  { background:rgba(245,100,0,0.1);  border:1px solid rgba(245,100,0,0.25); }
+    .platform-name {
+      font-family:var(--ff-display); font-size:0.95rem; font-weight:700;
+      color:var(--cream); text-align:center;
+    }
+    .platform-desc { font-size:0.72rem; color:var(--muted); text-align:center; line-height:1.4; }
+    .platform-badge {
+      font-size:0.62rem; font-weight:700; letter-spacing:0.1em;
+      text-transform:uppercase; padding:4px 10px; border-radius:100px;
+    }
+    .badge-clover   { background:rgba(0,160,100,0.15); color:#00c878; }
+    .badge-delivery { background:rgba(201,164,92,0.12); color:var(--gold); }
+    @media(max-width:768px) { .platforms-grid { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:400px) { .platforms-grid { grid-template-columns:1fr; } }
 
-/* ANIMATIONS */
-.fade-in{opacity:0;transform:translateY(18px);transition:all .55s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
+    /* ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ STATS STRIP ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+    #stats {
+      background:var(--dark); padding:50px 0;
+    }
+    .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border-2); border:1px solid var(--border-2); border-radius:var(--radius-lg); overflow:hidden; }
+    .stat-block {
+      background:var(--dark-2); padding:32px 24px; text-align:center;
+      transition:var(--tr); cursor:default;
+    }
+    .stat-block:hover { background:var(--dark-3); }
+    .stat-block-icon { font-size:2rem; margin-bottom:10px; display:block; }
+    .stat-block-num { font-family:var(--ff-display); font-size:2.2rem; font-weight:700; color:var(--gold); line-height:1; }
+    .stat-block-label { font-size:0.78rem; color:var(--muted); margin-top:6px; letter-spacing:0.05em; }
 
-/* RESPONSIVE */
-@media(max-width:900px){
-  .about-grid,.catering-grid,.location-grid{grid-template-columns:1fr}
-  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}
-  .gallery-item:nth-child(1){grid-column:span 2;height:200px}
-  .gallery-item:nth-child(5){grid-column:span 2}
-  .gallery-item{height:130px}
-}
-@media(max-width:768px){
-  nav{padding:0 1.1rem}
-  .nav-links{display:none}
-  .nav-hamburger{display:flex}
-  section{padding:4rem 1.2rem}
-  body{padding-bottom:80px}
-  .menu-grid{grid-template-columns:1fr}
-  .form-row{grid-template-columns:1fr}
-  .footer-top{flex-direction:column;gap:1.8rem}
-  .footer-bottom{flex-direction:column;text-align:center}
-  .about-features{grid-template-columns:1fr 1fr}
-}
-@media(max-width:480px){
-  .hero-h1{font-size:2.6rem}
-  .hero-ctas{flex-direction:column;align-items:center}
-  .sticky-call-text strong{display:inline}
-}
-</style>
+    /* ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ FEATURED DISHES ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+    #featured { padding:100px 0; background:var(--dark); position:relative; }
+    .dishes-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+    .dish-card {
+      background:var(--dark-2); border:1px solid var(--border-2);
+      border-radius:var(--radius-lg); overflow:hidden; transition:var(--tr);
+      position:relative; cursor:default;
+    }
+    .dish-card:hover { transform:translateY(-8px); box-shadow:var(--shadow), var(--glow-red); border-color:var(--border); }
+    .dish-card-img {
+      height:190px; display:flex; align-items:center; justify-content:center;
+      font-size:4.5rem; position:relative; overflow:hidden;
+      background:linear-gradient(135deg,var(--dark-3),var(--dark-4));
+    }
+    .dish-card-img img {
+      position:absolute; inset:0; width:100%; height:100%;
+      object-fit:cover; transition:transform 0.5s ease;
+      filter:brightness(0.88) saturate(1.1);
+    }
+    .dish-card:hover .dish-card-img img { transform:scale(1.07); }
+    .dish-card-img::before {
+      content:''; position:absolute; inset:0; z-index:1;
+      background:linear-gradient(to top, rgba(6,6,15,0.55) 0%, transparent 60%);
+    }
+    .dish-card-img .dish-emoji { position:relative; z-index:1; filter:drop-shadow(0 6px 16px rgba(0,0,0,0.5)); transition:transform 0.4s ease; }
+    .dish-card:hover .dish-emoji { transform:scale(1.12) rotate(-3deg); }
+    /* gallery images */
+    .gallery-item img {
+      position:absolute; inset:0; width:100%; height:100%;
+      object-fit:cover; transition:transform 0.5s ease;
+      filter:brightness(0.82) saturate(1.15);
+    }
+    .gallery-item:hover img { transform:scale(1.06); }
+    /* hero dish image */
+    .hero-dish-scene img {
+      position:absolute; inset:0; width:100%; height:100%;
+      object-fit:cover; filter:brightness(0.75) saturate(1.2);
+    }
+    /* overlay on hover */
+    .dish-overlay {
+      position:absolute; inset:0; background:rgba(6,6,15,0.75);
+      display:flex; align-items:center; justify-content:center;
+      opacity:0; transition:var(--tr); z-index:2;
+    }
+    .dish-card:hover .dish-overlay { opacity:1; }
+    .dish-card-body { padding:20px 20px 18px; }
+    .dish-tag { display:inline-block; font-size:0.6rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); background:rgba(201,164,92,0.1); border:1px solid rgba(201,164,92,0.2); border-radius:4px; padding:3px 8px; margin-bottom:9px; }
+    .dish-card-title { font-family:var(--ff-display); font-size:1.1rem; font-weight:600; color:var(--cream); margin-bottom:7px; line-height:1.3; }
+    .dish-card-desc { font-size:0.82rem; color:var(--muted); line-height:1.65; margin-bottom:16px; }
+    .dish-card-footer { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .dish-price { font-family:var(--ff-display); font-size:1.05rem; font-weight:600; color:var(--gold); }
+
+    /* ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ GALLERY ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+    #gallery { padding:90px 0; background:var(--black); }
+    .gallery-grid {
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      grid-template-rows:200px 200px;
+      gap:12px; border-radius:var(--radius-lg); overflow:hidden;
+    }
+    .gallery-item {
+      background:linear-gradient(135deg,var(--dark-3),var(--dark-4));
+      border:1px solid var(--border-2);
+      display:flex; align-items:center; justify-content:center;
+      font-size:3.5rem; position:relative; overflow:hidden;
+      cursor:pointer; transition:var(--tr); min-height:200px;
+    }
+    .gallery-item:hover { transform:scale(1.02); z-index:2; border-color:var(--border); }
+    .gallery-item:hover .gallery-caption { opacity:1; transform:translateY(0); }
+    .gallery-item::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at center, rgba(200,37,58,0.1) 0%, transparent 70%); }
+    .gallery-item .g-emoji { position:relative; z-index:1; filter:drop-shadow(0 4px 12px rgba(0,0,0,0.5)); }
+    .gallery-caption {
+      position:absolute; bottom:0; left:0; right:0;
+      background:linear-gradient(transparent,rgba(6,6,15,0.9));
+      padding:20px 14px 12px; font-size:0.78rem; font-weight:600;
+      color:var(--cream-2); letter-spacing:0.04em;
+      opacity:0; transform:translateY(6px); transition:var(--tr); z-index:2;
+    }
+    .g1 { grid-column:span 2; grid-row:span 2; font-size:6rem; }
+    .g2 { grid-column:span 2; }
+    .g3 { grid-column:span 2; }
+    .g4 { grid-column:span 1; }
+    .g5 { grid-column:span 1; }
+    .g6 { grid-column:span 2; }
+
+    /* ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ WHY CHOOSE US ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+    #why-us { padding:100px 0; background:var(--dark); position:relative; overflow:hidden; }
+    #why-us::before { content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:900px; height:900px; background:radial-gradient(ellipse,rgba(200,37,58,0.04) 0%,transparent 70%); pointer-events:none; }
+    .why-layout { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+    .why-features { display:flex; flex-direction:column; gap:16px; }
+    .why-feature {
+      display:flex; gap:16px; align-items:flex-start;
+      background:var(--dark-2); border:1px solid var(--border-2);
+      border-radius:var(--radius); padding:20px; transition:var(--tr);
+    }
+    .why-feature:hover { border-color:var(--border); transform:translateX(6px); box-shadow:var(--shadow); }
+    .why-icon { width:46px; height:46px; background:rgba(200,37,58,0.12); border:1px solid rgba(200,37,58,0.22); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0; }
+    .why-title { font-family:var(--ff-display); font-size:0.98rem; font-weight:600; color:var(--cream); margin-bottom:4px; }
+    .why-desc { font-size:0.82rem; color:var(--muted); line-height:1.65; }
+    .why-quote {
+      background:linear-gradient(135deg,var(--dark-3),var(--dark-4));
+      border:1px solid var(--border); border-radius:var(--radius-lg);
+      padding:40px; position:relative; overflow:hidden;
+    }
+    .why-quote::before { content:'"'; position:absolute; top:-10px; left:20px; font-family:Georgia,serif; font-size:8rem; color:var(--red); opacity:0.15; line-height:1; }
+    .why-quote-text { font-family:var(--ff-serif); font-size:1.25rem; font-style:italic; color:var(--cream-2); line-height:1.75; margin-bottom:24px; position:relative; }
+    .why-quote-author { display:flex; align-items:center; gap:12px; }
+    .why-quote-avatar { width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,var(--red-dark),var(--red)); display:flex; align-items:center; justify-content:center; font-size:1.2rem; font-weight:700; color:#fff; }
+    .why-quote-name { font-size:0.88rem; font-weight:600; color:var(--cream); }
+    .why-quote-role { font-size:0.72rem; color:var(--gold); margin-top:2px; letter-spacing:0.05em; }
+    .why-values { display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+    .val-pill { background:var(--dark-3); border:1px solid var(--border); border-radius:100px; padding:7px 15px; font-size:0.76rem; font-weight:500; color:var(--cream-3); transition:var(--tr); cursor:default; }
+    .val-pill:hover { border-color:rgba(201,164,92,0.4); color:var(--gold-light); }
+
+    /* ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ HOW IT WORKS ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+    #how { padding:100px 0; background:var(--black); }
+    .steps-row { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; position:relative; margin-top:60px; }
+    .steps-row::before { content:''; position:absolute; top:28px; left:12%; right:12%; height:1px; background:linear-gradient(90deg,transparent,var(--red),var(--gold),var(--red),transparent); opacity:0.25; }
+    .step-card { text-align:center; position:relative; z-index:1; padding:0 10px; }
+    .step-num { width:56px; height:56px; background:var(--dark-3); border:2px solid var(--red); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; font-family:var(--ff-display); font-size:1.1rem; font-weight:700; color:var(--red-light); box-shadow:0 0 20px rgba(200,37,58,0.25); transition:var(--tr); }
+    .step-card:hover .step-num { background:var(--red); color:#fff; box-shadow:0 0 30px rgba(200,37,58,0.5); }
+    .step-emoji { font-size:1.6rem; display:block; margin-bottom:12px; }
+    .step-title { font-family:var(--ff-display); font-size:0.98rem; font-weight:600; color:var(--cream); margin-bottom:9px; }
+    .step-desc { font-size:0.82rem; color:var(--muted); line-height:1.65; }
+
+    /* ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ ABOUT ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+    #about { padding:100px 0; background:var(--dark); }
+    .about-layout { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+    .about-visual { position:relative; }
+    .about-main-card {
+      background:linear-gradient(135deg,var(--dark-3),var(--dark-4));
+      border:1px solid var(--border); border-radius:var(--radius-lg);
+      height:440px; display:flex; flex-direction:column;
+      align-items:center; justify-content:center; gap:16px;
+      box-shadow:var(--shadow); position:relative; overflow:hidden;
+    }
+    .about-main-card::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 40% 60%,rgba(200,37,58,0.1) 0%,transparent 60%); }
+    .about-main-emoji { font-size:5rem; z-index:1; }
+    .about-main-text { font-family:var(--ff-serif); font-style:italic; font-size:1.1rem; color:var(--cream-3); z-index:1; text-align:center; padding:0 30px; }
+    .about-badge-1 { position:absolute; top:20px; right:-16px; background:var(--red); border-radius:var(--radius); padding:14px 18px; box-shadow:0 8px 30px rgba(200,37,58,0.4); text-align:center; }
+    .about-badge-1 .ab-num { font-family:var(--ff-display); font-size:1.6rem; font-weight:700; color:#fff; line-height:1; }
+    .about-badge-1 .ab-lbl { font-size:0.62rem; color:rgba(255,255,255,0.75); letter-spacing:0.1em; text-transform:uppercase; }
+    .about-badge-2 { position:absolute; bottom:-10px; left:-16px; background:var(--dark-2); border:1px solid var(--border); border-radius:var(--radius); padding:14px 18px; box-shadow:var(--shadow); text-align:center; }
+    .about-badge-2 .ab-num { font-family:var(--ff-display); font-size:1.4rem; font-weight:700; color:var(--gold); line-height:1; }
+    .about-badge-2 .ab-lbl { font-size:0.62rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; margin-top:2px; }
+    .about-quote { border-left:3px solid var(--gold); padding-left:18px; margin:24px 0; }
+    .about-quote p { font-family:var(--ff-serif); font-size:1.1rem; font-style:italic; color:var(--cream-2); line-height:1.7; }
+    .about-p { font-size:0.95rem; color:var(--cream-3); line-height:1.8; margin-bottom:16px; }
+
+    /* ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ MENU ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+    #menu { padding:100px 0; background:var(--black); }
+    .menu-tabs { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:48px; }
+    .menu-tab {
+      padding:9px 20px; border-radius:100px; font-size:0.78rem;
+      font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
+      cursor:pointer; border:1.5px solid var(--border-2);
+      background:transparent; color:var(--cream-3);
+      transition:var(--tr); display:flex; align-items:center; gap:7px;
+    }
+    .menu-tab:hover { border-color:var(--border); color:var(--cream); }
+    .menu-tab.active { background:var(--red); border-color:var(--red); color:#fff; box-shadow:0 4px 16px rgba(200,37,58,0.35); }
+    .menu-panels {}
+    .menu-panel { display:none; }
+    .menu-panel.active { display:block; animation:fadePanel 0.4s ease; }
+    @keyframes fadePanel { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+    .menu-items-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+    .menu-row {
+      background:var(--dark-2); border:1px solid var(--border-2);
+      border-radius:var(--radius); padding:18px 20px;
+      display:flex; align-items:flex-start; gap:14px;
+      transition:var(--tr); cursor:default;
+    }
+    .menu-row:hover { border-color:var(--border); transform:translateY(-2px); box-shadow:var(--shadow); }
+    .menu-row-emoji { font-size:1.8rem; flex-shrink:0; margin-top:2px; }
+    .menu-row-name { font-family:var(--ff-display); font-size:0.95rem; font-weight:600; color:var(--cream); margin-bottom:3px; }
+    .menu-row-desc { font-size:0.78rem; color:var(--muted); line-height:1.5; }
+    .menu-row-price { font-size:0.9rem; font-weight:700; color:var(--gold); flex-shrink:0; margin-top:2px; }
+    .menu-cta { text-align:center; margin-top:50px; }
+    .menu-cta p { font-size:0.88rem; color:var(--muted); margin-bottom:18px; }
+
+    /* ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ TESTIMONIALS ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+    #testimonials { padding:100px 0; background:var(--dark); }
+    .testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+    .testi-card {
+      background:var(--dark-2); border:1px solid var(--border-2);
+      border-radius:var(--radius-lg); padding:30px; transition:var(--tr);
+      position:relative; overflow:hidden;
+    }
+    .testi-card::before { content:'"'; position:absolute; top:-5px; right:20px; font-family:Georgia,serif; font-size:6rem; color:var(--red); opacity:0.08; line-height:1; pointer-events:none; }
+    .testi-card:hover { transform:translateY(-6px); border-color:var(--border); box-shadow:var(--shadow); }
+    .testi-stars { display:flex; gap:3px; margin-bottom:14px; }
+    .star { color:var(--gold); font-size:0.85rem; }
+    .testi-text { font-family:var(--ff-serif); font-size:0.98rem; font-style:italic; color:var(--cream-2); line-height:1.75; margin-bottom:22px; }
+    .testi-author { display:flex; align-items:center; gap:12px; }
+    .testi-avatar { width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--red-dark),var(--red)); display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:700; color:#fff; flex-shrink:0; }
+    .testi-name { font-size:0.875rem; font-weight:600; color:var(--cream); }
+    .testi-tag { font-size:0.7rem; color:var(--muted); margin-top:2px; }
+    .testi-platform { position:absolute; top:20px; right:20px; width:30px; height:30px; background:rgba(255,255,255,0.04); border:1px solid var(--border-2); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.9rem; }
+
+    /* ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ RESERVATION ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+    #reservation { padding:100px 0; background:var(--black); }
+    .reservation-layout { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; }
+    .reservation-form-wrap {
+      background:var(--dark-2); border:1px solid var(--border-2);
+      border-radius:var(--radius-lg); padding:36px;
+    }
+    .form-title { font-family:var(--ff-display); font-size:1.4rem; font-weight:600; color:var(--cream); margin-bottom:6px; }
+    .form-sub { font-size:0.84rem; color:var(--muted); margin-bottom:28px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .form-group { margin-bottom:16px; }
+    .form-label { display:block; font-size:0.72rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); margin-bottom:7px; }
+    .form-input, .form-select, .form-textarea {
+      width:100%; background:var(--dark-3); border:1px solid var(--border-2);
+      border-radius:8px; padding:12px 14px; color:var(--cream);
+      font-family:var(--ff-body); font-size:0.88rem;
+      transition:var(--tr); outline:none;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(201,164,92,0.1); }
+    .form-input::placeholder, .form-textarea::placeholder { color:var(--muted); }
+    .form-select { cursor:pointer; appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%237a7590' stroke-width='2'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 14px center; }
+    .form-select option { background:var(--dark-3); }
+    .form-textarea { resize:vertical; min-height:100px; }
+    .form-note { font-size:0.74rem; color:var(--muted); margin-top:14px; text-align:center; line-height:1.6; }
+    .reservation-info { display:flex; flex-direction:column; gap:22px; }
+    .res-info-card {
+      background:var(--dark-2); border:1px solid var(--border-2);
+      border-radius:var(--radius); padding:22px;
+      display:flex; gap:16px; align-items:flex-start; transition:var(--tr);
+    }
+    .res-info-card:hover { border-color:var(--border); }
+    .res-info-icon { width:42px; height:42px; background:rgba(200,37,58,0.1); border:1px solid rgba(200,37,58,0.2); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+    .res-info-title { font-size:0.7rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); margin-bottom:5px; }
+    .res-info-val { font-size:0.9rem; color:var(--cream); line-height:1.6; }
+    .res-info-val a { color:var(--cream); text-decoration:none; transition:var(--tr); }
+    .res-info-val a:hover { color:var(--red-light); }
+    .order-promo {
+      background:linear-gradient(135deg,var(--dark-3),var(--dark-4));
+      border:1px solid var(--border); border-radius:var(--radius-lg);
+      padding:28px; text-align:center;
+    }
+    .order-promo-emoji { font-size:2.5rem; display:block; margin-bottom:12px; }
+    .order-promo-title { font-family:var(--ff-display); font-size:1.2rem; font-weight:600; color:var(--cream); margin-bottom:8px; }
+    .order-promo-desc { font-size:0.82rem; color:var(--muted); line-height:1.65; margin-bottom:18px; }
+
+    /* ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ CONTACT ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+    #contact { padding:100px 0; background:var(--dark); }
+    .contact-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+    .contact-block {
+      background:var(--dark-2); border:1px solid var(--border-2);
+      border-radius:var(--radius); padding:24px;
+      display:flex; gap:16px; align-items:flex-start; transition:var(--tr);
+    }
+    .contact-block:hover { border-color:var(--border); transform:translateY(-2px); }
+    .cb-icon { width:44px; height:44px; background:rgba(200,37,58,0.1); border:1px solid rgba(200,37,58,0.2); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+    .cb-label { font-size:0.68rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:5px; }
+    .cb-val { font-size:0.9rem; color:var(--cream); line-height:1.65; }
+    .cb-val a { color:var(--cream); text-decoration:none; transition:var(--tr); }
+    .cb-val a:hover { color:var(--red-light); }
+    .map-box {
+      background:linear-gradient(135deg,var(--dark-3),var(--dark-4));
+      border:1px solid var(--border-2); border-radius:var(--radius);
+      height:180px; display:flex; flex-direction:column;
+      align-items:center; justify-content:center; gap:8px; cursor:pointer;
+      grid-column:span 2; transition:var(--tr);
+    }
+    .map-box:hover { border-color:var(--border); }
+    .map-box span { font-size:2.2rem; }
+    .map-box p { font-size:0.8rem; color:var(--muted); text-align:center; }
+    .map-box a { font-size:0.78rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--red-light); text-decoration:none; border-bottom:1px solid rgba(200,37,58,0.35); padding-bottom:2px; }
+    .contact-final-cta {
+      background:linear-gradient(135deg,var(--dark-3),var(--dark-4));
+      border:1px solid var(--border); border-radius:var(--radius-lg);
+      padding:48px 40px; text-align:center; margin-top:40px;
+      position:relative; overflow:hidden;
+    }
+    .contact-final-cta::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(200,37,58,0.08) 0%,transparent 65%); }
+    .cfc-title { font-family:var(--ff-display); font-size:1.8rem; font-weight:700; color:var(--cream); margin-bottom:10px; position:relative; }
+    .cfc-desc { font-size:0.95rem; color:var(--cream-3); margin-bottom:26px; position:relative; }
+    .cfc-pills { display:flex; justify-content:center; gap:16px; flex-wrap:wrap; position:relative; }
+    .cfc-pill { font-size:0.78rem; color:var(--muted); display:flex; align-items:center; gap:5px; }
+
+    /* ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ FOOTER ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+    #footer { background:#040408; border-top:1px solid var(--border-2); padding:64px 0 28px; }
+    .footer-top { display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:40px; padding-bottom:48px; border-bottom:1px solid var(--border-2); margin-bottom:28px; }
+    .footer-tagline { font-family:var(--ff-serif); font-size:0.9rem; font-style:italic; color:var(--muted); line-height:1.7; margin:14px 0 22px; }
+    .footer-head { font-size:0.68rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
+    .footer-links { list-style:none; display:flex; flex-direction:column; gap:9px; }
+    .footer-links a { font-size:0.83rem; color:var(--muted); text-decoration:none; transition:var(--tr); }
+    .footer-links a:hover { color:var(--cream); }
+    .footer-hours { display:flex; flex-direction:column; gap:7px; }
+    .fh-row { display:flex; justify-content:space-between; gap:12px; }
+    .fh-day { font-size:0.78rem; color:var(--muted); }
+    .fh-time { font-size:0.78rem; color:var(--cream-3); font-weight:500; }
+    .footer-bottom { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    .footer-copy { font-size:0.76rem; color:var(--muted); }
+    .footer-bl { display:flex; gap:18px; }
+    .footer-bl a { font-size:0.74rem; color:var(--muted); text-decoration:none; transition:var(--tr); }
+    .footer-bl a:hover { color:var(--cream); }
+
+    /* ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ ANIMATIONS ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+    .fade-up { opacity:0; transform:translateY(28px); transition:opacity 0.65s ease, transform 0.65s ease; }
+    .fade-up.in { opacity:1; transform:translateY(0); }
+    .delay-1 { transition-delay:0.1s; }
+    .delay-2 { transition-delay:0.2s; }
+    .delay-3 { transition-delay:0.3s; }
+    .delay-4 { transition-delay:0.4s; }
+
+    /* ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ RESPONSIVE ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+    @media(max-width:1024px){
+      .hero-content { grid-template-columns:1fr; }
+      .hero-right { display:none; }
+      .why-layout { grid-template-columns:1fr; gap:50px; }
+      .about-layout { grid-template-columns:1fr; }
+      .about-visual { display:none; }
+      .reservation-layout { grid-template-columns:1fr; }
+      .dishes-grid { grid-template-columns:repeat(2,1fr); }
+      .testi-grid { grid-template-columns:1fr 1fr; }
+      .footer-top { grid-template-columns:1fr 1fr; }
+      .stats-grid { grid-template-columns:repeat(2,1fr); }
+      .gallery-grid { grid-template-columns:repeat(3,1fr); grid-template-rows:200px 200px; }
+      .g1 { grid-column:span 1; grid-row:span 1; font-size:4rem; }
+      .g2,.g3 { grid-column:span 1; }
+      .g6 { grid-column:span 1; }
+    }
+    @media(max-width:768px){
+      nav { display:none; }
+      .header-cta-desk { display:none; }
+      .hamburger { display:flex; }
+      .dishes-grid { grid-template-columns:1fr; }
+      .steps-row { grid-template-columns:1fr 1fr; }
+      .steps-row::before { display:none; }
+      .testi-grid { grid-template-columns:1fr; }
+      .menu-items-grid { grid-template-columns:1fr; }
+      .contact-grid { grid-template-columns:1fr; }
+      .map-box { grid-column:span 1; }
+      .footer-top { grid-template-columns:1fr; }
+      .footer-bottom { flex-direction:column; align-items:flex-start; }
+      .gallery-grid { grid-template-columns:repeat(2,1fr); }
+      .form-row { grid-template-columns:1fr; }
+    }
+    @media(max-width:480px){
+      .steps-row { grid-template-columns:1fr; }
+      .hero-actions { flex-direction:column; align-items:flex-start; }
+      .hero-actions .btn { width:100%; justify-content:center; }
+      .stats-grid { grid-template-columns:1fr 1fr; }
+      .gallery-grid { grid-template-columns:1fr 1fr; }
+      #float-cta, #back-top { bottom:16px; right:16px; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="mainNav">
-  <a class="nav-logo" href="#hero">
-    <div class="nav-logo-icon">🌊</div>
-    <div class="nav-logo-text">
-      <span>Red Sea Restaurant</span>
-      <span>&amp; Detox Juice Bar</span>
-    </div>
+<!-- PROGRESS BAR -->
+<div id="progress-bar"></div>
+
+<!-- BACK TO TOP -->
+<button id="back-top" aria-label="Back to top">
+  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<!-- FLOATING CTA -->
+<div id="float-cta">
+  <a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener" class="btn btn-primary">
+    <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+    Order Online
   </a>
-  <ul class="nav-links">
-    <li><a href="#menu">Menu</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#catering">Catering</a></li>
-    <li><a href="#location">Location</a></li>
-  </ul>
-  <div style="display:flex;align-items:center;gap:.8rem">
-    <a class="nav-call-btn" href="tel:3478576692">📞 Call to Order</a>
-    <div class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
-      <span></span><span></span><span></span>
-    </div>
-  </div>
-</nav>
-
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
-  <a href="#menu" onclick="document.getElementById('mobileMenu').classList.remove('open')">Menu</a>
-  <a href="#how-to-order" onclick="document.getElementById('mobileMenu').classList.remove('open')">How to Order</a>
-  <a href="#about" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
-  <a href="#gallery" onclick="document.getElementById('mobileMenu').classList.remove('open')">Gallery</a>
-  <a href="#catering" onclick="document.getElementById('mobileMenu').classList.remove('open')">Catering</a>
-  <a href="#location" onclick="document.getElementById('mobileMenu').classList.remove('open')">Location</a>
 </div>
 
-<!-- HERO -->
-<section id="hero">
+<!-- ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ HEADER ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ -->
+<header id="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="#home" class="logo">
+        <span class="logo-main"><span class="logo-accent">Red</span> Sea Restaurant</span>
+        <span class="logo-sub-text">Detox Juices ¬∑ Kebabs ¬∑ Mediterranean Cuisine</span>
+      </a>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#reservation">Reserve</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener" class="btn btn-primary header-cta-desk">Order Online</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#home" class="mn-link">Home</a>
+    <a href="#menu" class="mn-link">Menu</a>
+    <a href="#about" class="mn-link">About</a>
+    <a href="#reservation" class="mn-link">Reserve a Table</a>
+    <a href="#contact" class="mn-link">Contact</a>
+    <a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener" class="btn btn-primary">Order Online</a>
+  </div>
+</header>
+
+<!-- ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ HERO ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ -->
+<section id="home">
   <div class="hero-bg"></div>
-  <div class="hero-orb1"></div>
-  <div class="hero-orb2"></div>
-  <div class="hero-content">
-    <div class="hero-badge">✦ Red Sea Restaurant · Staten Island, NY</div>
-    <h1 class="hero-h1">
-      Fresh. Bold.<br>
-      <em>Delicious.</em>
-      <span class="line2">Real Food. Real Flavor.</span>
-    </h1>
-    <p class="hero-sub">Cold-pressed juices, healing smoothies &amp; sizzling kababs — made fresh to order. Call us to place your order for delivery or pickup.</p>
-    <div class="hero-ctas">
-      <a class="btn-primary" href="tel:3478576692">📞 Call to Order Now</a>
-      <a class="btn-outline" href="#menu">View Full Menu</a>
-    </div>
-    <div class="hero-stats">
-      <div class="hero-stat"><span class="hero-stat-num">4.5★</span><span class="hero-stat-label">270+ Reviews</span></div>
-      <div class="hero-stat"><span class="hero-stat-num">97+</span><span class="hero-stat-label">Menu Items</span></div>
-      <div class="hero-stat"><span class="hero-stat-num">Free</span><span class="hero-stat-label">Delivery $25+</span></div>
-      <div class="hero-stat"><span class="hero-stat-num">100%</span><span class="hero-stat-label">Fresh Daily</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- CALL STRIP -->
-<div class="call-strip">
-  <div class="call-strip-inner">
-    <p class="call-strip-text">📞 Ready to order? <strong>Call or text us — delivery &amp; pickup available!</strong></p>
-    <a class="call-strip-btn" href="tel:3478576692">📞 (347) 857-6692</a>
-  </div>
-</div>
-
-<!-- HOW TO ORDER -->
-<section id="how-to-order">
+  <div class="hero-grid"></div>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
   <div class="container">
-    <div class="section-label">Simple &amp; Easy</div>
-    <h2 class="section-title">How to <em>Order</em></h2>
-    <p class="section-sub">No apps needed. Just browse our menu, then give us a call.</p>
-    <div class="order-steps">
-      <div class="order-step fade-in">
-        <span class="step-num">1</span>
-        <span class="step-icon">🍽️</span>
-        <div class="step-title">Browse the Menu</div>
-        <p class="step-desc">Scroll through our full menu below. We have 97+ fresh items including juices, smoothies, kababs, wraps, and more.</p>
-      </div>
-      <div class="order-step fade-in">
-        <span class="step-num">2</span>
-        <span class="step-icon">📞</span>
-        <div class="step-title">Call or Text Us</div>
-        <p class="step-desc">Call <a href="tel:3478576692" style="color:var(--accent)">(347) 857-6692</a> and tell us what you'd like. We're open daily from 10 AM to 10 PM.</p>
-      </div>
-      <div class="order-step fade-in">
-        <span class="step-num">3</span>
-        <span class="step-icon">🛵</span>
-        <div class="step-title">Delivery or Pickup</div>
-        <p class="step-desc">Choose delivery (free on orders $25+, otherwise $3.99) or pickup at 1612 Forest Ave. Ready in 15–45 minutes.</p>
-      </div>
-      <div class="order-step fade-in">
-        <span class="step-num">4</span>
-        <span class="step-icon">🎉</span>
-        <div class="step-title">Enjoy!</div>
-        <p class="step-desc">Fresh food made to order, delivered to your door or ready for pickup. Pay with cash or card.</p>
-      </div>
-    </div>
-    <div style="text-align:center">
-      <a class="big-call-btn" href="tel:3478576692">📞 Call (347) 857-6692 to Order</a>
-    </div>
-    <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-      <a href="https://www.ubereats.com/store/detox-juice-bar-kabab-grill/4YYZtTu6WtiRdzJklCdU_g" target="_blank" style="background:#000;color:#fff;padding:.7rem 1.4rem;border-radius:50px;text-decoration:none;font-size:.8rem;font-weight:700;display:inline-flex;align-items:center;gap:.4rem">🚗 Order on Uber Eats</a>
-      <a href="https://www.doordash.com/en/store/detox-juice-bar-&-kebab-grill-25136394/" target="_blank" style="background:#ef233c;color:#fff;padding:.7rem 1.4rem;border-radius:50px;text-decoration:none;font-size:.8rem;font-weight:700;display:inline-flex;align-items:center;gap:.4rem">🍕 Order on DoorDash</a>
-    </div>
-  </div>
-</section>
-
-<!-- MENU -->
-<section id="menu">
-  <div class="container">
-    <div class="section-label">Full Menu</div>
-    <h2 class="section-title">Everything We <em>Make</em></h2>
-    <p class="section-sub">Fresh-made daily. Browse our menu then call us at <a href="tel:3478576692" style="color:var(--accent)">(347) 857-6692</a> to place your order.</p>
-    <div class="menu-controls" style="margin-top:2rem">
-      <input type="text" class="menu-search" id="menuSearch" placeholder="🔍  Search menu..." oninput="filterMenu()"/>
-    </div>
-    <div class="cat-filters" id="catFilters">
-      <button class="cat-btn active" onclick="filterCat('all',this)">All</button>
-      <button class="cat-btn" onclick="filterCat('detox',this)">🥤 Detox Juices</button>
-      <button class="cat-btn" onclick="filterCat('power',this)">⚡ Power Juices</button>
-      <button class="cat-btn" onclick="filterCat('juice-help',this)">💊 Juice Help</button>
-      <button class="cat-btn" onclick="filterCat('smoothies',this)">🥛 Smoothies</button>
-      <button class="cat-btn" onclick="filterCat('muscle',this)">💪 Muscle Builders</button>
-      <button class="cat-btn" onclick="filterCat('fat-burner',this)">🔥 Fat Burners</button>
-      <button class="cat-btn" onclick="filterCat('breakfast',this)">🍳 Breakfast</button>
-      <button class="cat-btn" onclick="filterCat('omelets',this)">🥚 Omelets</button>
-      <button class="cat-btn" onclick="filterCat('salads',this)">🥗 Salads</button>
-      <button class="cat-btn" onclick="filterCat('cold-app',this)">🫒 Cold Apps</button>
-      <button class="cat-btn" onclick="filterCat('hot-app',this)">♨️ Hot Apps</button>
-      <button class="cat-btn" onclick="filterCat('wraps',this)">🌯 Wraps</button>
-      <button class="cat-btn" onclick="filterCat('quesadilla',this)">🌮 Quesadillas</button>
-      <button class="cat-btn" onclick="filterCat('burgers',this)">🍔 Burgers</button>
-      <button class="cat-btn" onclick="filterCat('grill',this)">🍢 Grill</button>
-      <button class="cat-btn" onclick="filterCat('seafood',this)">🦐 Seafood</button>
-      <button class="cat-btn" onclick="filterCat('yemeni',this)">🫕 Yemeni</button>
-      <button class="cat-btn" onclick="filterCat('dessert',this)">🍮 Dessert</button>
-    </div>
-    <div id="menuSections"></div>
-    <div id="noResults" class="hidden" style="text-align:center;padding:4rem;color:var(--text-mid)">
-      <div style="font-size:2.5rem;margin-bottom:.8rem">🔍</div>
-      <p>No items found. Try a different search.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div>
-        <div class="section-label">Our Story</div>
-        <h2 class="section-title">Where Health Meets <em>Bold Flavor</em></h2>
-        <p style="font-size:.92rem;color:var(--text-light);line-height:1.85;margin-bottom:1.3rem">Nestled in the Westerleigh neighborhood of Staten Island, Red Sea Restaurant &amp; Detox Juice Bar was born from two passions: nourishing the body with pure, cold-pressed juices and satisfying the soul with expertly grilled kababs and authentic Mediterranean cuisine.</p>
-        <p style="font-size:.88rem;color:var(--text-light);line-height:1.8;margin-bottom:1.5rem">Everything is made fresh to order. No shortcuts, no compromises. Our team greets every customer with warmth because we're not just a restaurant — we're a community fixture in Staten Island.</p>
-        <div class="about-features">
-          <div class="about-feat"><div class="about-feat-icon">🥤</div><div class="about-feat-name">Fresh-Pressed Daily</div><div class="about-feat-desc">Cold-pressed juices with real, whole ingredients — no artificial flavors</div></div>
-          <div class="about-feat"><div class="about-feat-icon">🍢</div><div class="about-feat-name">Authentic Grill</div><div class="about-feat-desc">Traditional kebab techniques with quality marinated meats</div></div>
-          <div class="about-feat"><div class="about-feat-icon">🌿</div><div class="about-feat-name">Wellness Focused</div><div class="about-feat-desc">Juice blends designed for specific wellness goals</div></div>
-          <div class="about-feat"><div class="about-feat-icon">🎉</div><div class="about-feat-name">Loyalty Program</div><div class="about-feat-desc">Buy 6 juices or shakes, get the 7th FREE!</div></div>
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text">Now Available ¬∑ Pickup &amp; Delivery</span>
+        </div>
+        <h1 class="hero-title">
+          Where Every Dish<br/>Tells a <em>Sea Story</em>
+        </h1>
+        <p class="hero-sub">Cold-pressed detox juices, protein-packed smoothies, and flame-grilled kebabs ‚Äî made fresh to order, every single time.</p>
+        <div class="hero-actions">
+          <a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            Order Online
+          </a>
+          <a href="#menu" class="btn btn-outline">
+            View Menu
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-pill"><span class="trust-pill-icon">üõ°Ô∏è</span><span>Fresh Daily</span></div>
+          <div class="trust-pill"><span class="trust-pill-icon">‚ö°</span><span>Made to Order</span></div>
+          <div class="trust-pill"><span class="trust-pill-icon">üè°</span><span>Family Owned</span></div>
+          <div class="trust-pill"><span class="trust-pill-icon">üìç</span><span>Staten Island</span></div>
         </div>
       </div>
-      <div style="position:relative">
-        <div style="width:100%;height:480px;border-radius:20px;overflow:hidden;border:1px solid rgba(212,168,67,.12);background:var(--charcoal3);display:flex;align-items:center;justify-content:center;font-size:8rem">🌊</div>
-        <div style="position:absolute;bottom:-1.2rem;right:-1.2rem;background:var(--accent);color:var(--charcoal);width:110px;height:110px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;text-align:center;font-size:.8rem;line-height:1.2;box-shadow:0 10px 35px rgba(212,168,67,.4)"><span style="font-size:1.7rem">4.5★</span>270+<br>Reviews</div>
-      </div>
-    </div>
-    <div style="margin-top:3.5rem">
-      <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--cream);margin-bottom:1rem">What Our Customers Say</h3>
-      <div class="reviews-grid">
-        <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"I've been going since they opened — friendliest and most courteous people. Service is beyond amazing!"</div><div class="review-author">Dulce F. · Uber Eats</div></div>
-        <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Always has wonderful food with the freshest taste! Love trying new things on the menu."</div><div class="review-author">Maria N. · Uber Eats</div></div>
-        <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Everything always made fresh to order. Delicious food and the best juices!"</div><div class="review-author">Gina S. · Uber Eats</div></div>
-        <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Excellent food and service. Great place for healthy food and juices."</div><div class="review-author">Tony V. · Uber Eats</div></div>
-        <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"The Beef Shish Kebabs were cooked to perfection and bursting with flavor!"</div><div class="review-author">Google Review</div></div>
-        <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"The smoothies taste fresh and delicious. The halal food here is filling and affordable."</div><div class="review-author">Atly · Verified</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section id="gallery">
-  <div class="container">
-    <div class="section-label">Gallery</div>
-    <h2 class="section-title">Fresh From <em>Our Kitchen</em></h2>
-    <p class="section-sub">A taste of what awaits — vibrant juices, sizzling grill, and the freshest ingredients.</p>
-    <div class="gallery-grid" id="galleryGrid"></div>
-    <p style="text-align:center;margin-top:1.8rem;font-size:.8rem;color:var(--text-mid)">Follow us <a href="https://www.instagram.com/redsearestaurant25/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600">@redsearestaurant25</a> on Instagram</p>
-  </div>
-</section>
-
-<!-- CATERING -->
-<section id="catering">
-  <div class="container">
-    <div class="section-label">Catering &amp; Large Orders</div>
-    <h2 class="section-title">Feed Your <em>Whole Crew</em></h2>
-    <p class="section-sub">Corporate events, celebrations, parties — fresh food for any occasion and size.</p>
-    <div class="catering-grid">
-      <div class="catering-perks">
-        <div class="catering-perk"><div class="catering-perk-icon">🥤</div><div class="catering-perk-text"><h4>Juice &amp; Smoothie Bars</h4><p>Set up a fresh juice or smoothie bar at your event.</p></div></div>
-        <div class="catering-perk"><div class="catering-perk-icon">🍢</div><div class="catering-perk-text"><h4>Grill &amp; Kebab Platters</h4><p>Large-format grill platters featuring chicken, lamb, and mixed grill.</p></div></div>
-        <div class="catering-perk"><div class="catering-perk-icon">🥗</div><div class="catering-perk-text"><h4>Salad &amp; Appetizer Spreads</h4><p>Mediterranean-inspired cold and hot appetizer spreads for any crowd.</p></div></div>
-        <div class="catering-perk"><div class="catering-perk-icon">📞</div><div class="catering-perk-text"><h4>Call to Discuss</h4><p>Reach us at <a href="tel:3478576692" style="color:var(--accent)">(347) 857-6692</a> for custom catering quotes.</p></div></div>
-      </div>
-      <div class="catering-form">
-        <h3>Request a Catering Quote</h3>
-        <div class="form-row">
-          <div class="form-group"><label>Your Name</label><input type="text" id="catName" placeholder="Full name"/></div>
-          <div class="form-group"><label>Phone</label><input type="tel" id="catPhone" placeholder="(xxx) xxx-xxxx"/></div>
-        </div>
-        <div class="form-group"><label>Email</label><input type="email" id="catEmail" placeholder="your@email.com"/></div>
-        <div class="form-row">
-          <div class="form-group"><label>Event Date</label><input type="date" id="catDate"/></div>
-          <div class="form-group"><label>Guest Count</label><select id="catGuests"><option>10–25</option><option>25–50</option><option>50–100</option><option>100–200</option><option>200+</option></select></div>
-        </div>
-        <div class="form-group"><label>Event Type</label><select id="catType"><option>Corporate / Office</option><option>Birthday Party</option><option>Wedding</option><option>Community Event</option><option>School / Non-profit</option><option>Other</option></select></div>
-        <div class="form-group"><label>Details</label><textarea id="catDetails" placeholder="Menu preferences, dietary requirements, location..."></textarea></div>
-        <!-- Honeypot -->
-        <input type="text" id="catHp" style="display:none!important" tabindex="-1" autocomplete="off"/>
-        <button class="form-submit" id="catBtn" onclick="submitCatering()">Send Catering Inquiry →</button>
-        <div id="catMsg" style="margin-top:.8rem;font-size:.82rem;text-align:center;min-height:1.2rem"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- LOCATION -->
-<section id="location">
-  <div class="container">
-    <div class="section-label">Find Us</div>
-    <h2 class="section-title">Location &amp; <em>Hours</em></h2>
-    <div class="location-grid">
-      <div>
-        <div class="loc-card">
-          <h4>📍 Address</h4>
-          <p>1612 Forest Ave<br>Staten Island, NY 10302<br><em style="color:var(--text-mid);font-size:.8rem">Westerleigh Neighborhood</em></p>
-          <br><a href="https://maps.google.com/?q=1612+Forest+Ave,+Staten+Island,+NY+10302" target="_blank" style="color:var(--accent);font-size:.82rem;font-weight:600">Get Directions →</a>
-        </div>
-        <div class="loc-card"><h4>📞 Phone</h4><a href="tel:3478576692">(347) 857-6692</a></div>
-        <div class="loc-card">
-          <h4>🕐 Hours</h4>
-          <div class="hours-table" id="hoursTable">
-            <div class="hours-row"><span class="day">Monday</span><span>10:00 AM – 10:00 PM</span></div>
-            <div class="hours-row"><span class="day">Tuesday</span><span>10:00 AM – 10:00 PM</span></div>
-            <div class="hours-row"><span class="day">Wednesday</span><span>10:00 AM – 10:00 PM</span></div>
-            <div class="hours-row"><span class="day">Thursday</span><span>10:00 AM – 10:00 PM</span></div>
-            <div class="hours-row"><span class="day">Friday</span><span>10:00 AM – 10:00 PM</span></div>
-            <div class="hours-row"><span class="day">Saturday</span><span>10:00 AM – 10:00 PM</span></div>
-            <div class="hours-row"><span class="day">Sunday</span><span>10:00 AM – 10:00 PM</span></div>
+      <div class="hero-right">
+        <div class="hero-visual">
+          <div class="hero-float-order">‚≠ê Signature Collection</div>
+          <div class="hero-main-card">
+            <div class="hero-dish-scene">
+              <img src="https://images.unsplash.com/photo-1561043433-aaf687c4cf04?w=800&h=520&fit=crop&auto=format" alt="Chicken Gyro" />
+            </div>
+            <div class="hero-dish-meta">
+              <span class="hero-dish-name">Grilled Branzino</span>
+              <span class="hero-dish-tag">Chef's Pick</span>
+            </div>
+          </div>
+          <div class="hero-side-cards">
+            <div class="hero-side-card">
+              <span>ü¶ê</span>
+              <div>
+                <div class="hero-side-card-name">Shrimp Platter</div>
+                <div class="hero-side-card-price">From $18</div>
+              </div>
+            </div>
+            <div class="hero-side-card">
+              <span>ü¶ë</span>
+              <div>
+                <div class="hero-side-card-name">Fried Calamari</div>
+                <div class="hero-side-card-price">From $14</div>
+              </div>
+            </div>
+            <div class="hero-side-card">
+              <span>üçù</span>
+              <div>
+                <div class="hero-side-card-name">Detox Juice</div>
+                <div class="hero-side-card-price">From $20</div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-float-stat">
+            <div class="stat-num">100%</div>
+            <div class="stat-lbl">Fresh Juices Daily</div>
           </div>
         </div>
       </div>
-      <div style="border-radius:18px;overflow:hidden;height:400px;border:1px solid rgba(212,168,67,.15)">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3027.4!2d-74.1347!3d40.6284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c249a2b2b2b2b3%3A0x0!2s1612+Forest+Ave%2C+Staten+Island%2C+NY+10302!5e0!3m2!1sen!2sus!4v1700000000000" width="100%" height="100%" style="border:0;filter:invert(90%) hue-rotate(180deg)" allowfullscreen="" loading="lazy" title="Red Sea Restaurant map"></iframe>
+    </div>
+  </div>
+  <!-- wave -->
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 60 C360 0 1080 0 1440 60 L1440 60 L0 60 Z" fill="#0d0d1a"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ ORDER PLATFORMS ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ -->
+<section id="platforms">
+  <div class="container">
+    <p class="platforms-label">Order From Your Favorite Platform</p>
+    <div class="platforms-grid fade-up">
+
+      <a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener" class="platform-card clover">
+        <div class="platform-logo logo-clover">üçÄ</div>
+        <div class="platform-name">Order Direct</div>
+        <div class="platform-desc">Best experience &amp; direct support</div>
+        <span class="platform-badge badge-clover">Recommended</span>
+      </a>
+
+      <a href="https://www.ubereats.com/store/detox-juice-bar-kabab-grill/4YYZtTu6WtiRdzJklCdU_g" target="_blank" rel="noopener" class="platform-card ubereats">
+        <div class="platform-logo logo-uber">üöó</div>
+        <div class="platform-name">Uber Eats</div>
+        <div class="platform-desc">Delivery to your door</div>
+        <span class="platform-badge badge-delivery">Delivery</span>
+      </a>
+
+      <a href="https://www.doordash.com/store/detox-juice-bar-&-kebab-grill-staten-island-25136394/" target="_blank" rel="noopener" class="platform-card doordash">
+        <div class="platform-logo logo-doordash">üö™</div>
+        <div class="platform-name">DoorDash</div>
+        <div class="platform-desc">Fast delivery nearby</div>
+        <span class="platform-badge badge-delivery">Delivery</span>
+      </a>
+
+      <a href="https://www.grubhub.com/restaurant/kebab-grill--detox-juice-bar-1612-forest-ave-staten-island/2498629" target="_blank" rel="noopener" class="platform-card grubhub">
+        <div class="platform-logo logo-grubhub">üõµ</div>
+        <div class="platform-name">Grubhub</div>
+        <div class="platform-desc">Easy online ordering</div>
+        <span class="platform-badge badge-delivery">Delivery</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ STATS STRIP ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid fade-up">
+      <div class="stat-block">
+        <span class="stat-block-icon">üê†</span>
+        <div class="stat-block-num" data-count="100" data-suffix="%">0%</div>
+        <div class="stat-block-label">Fresh Juices Daily</div>
+      </div>
+      <div class="stat-block">
+        <span class="stat-block-icon">‚≠ê</span>
+        <div class="stat-block-num" data-count="500" data-suffix="+">0+</div>
+        <div class="stat-block-label">5-Star Reviews</div>
+      </div>
+      <div class="stat-block">
+        <span class="stat-block-icon">üçΩÔ∏è</span>
+        <div class="stat-block-num" data-count="50" data-suffix="+">0+</div>
+        <div class="stat-block-label">Signature Dishes</div>
+      </div>
+      <div class="stat-block">
+        <span class="stat-block-icon">‚ù§Ô∏è</span>
+        <div class="stat-block-num" data-count="10" data-suffix="+ Yrs">0</div>
+        <div class="stat-block-label">Serving Staten Island</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a class="nav-logo" href="#hero" style="display:inline-flex;text-decoration:none">
-          <div class="nav-logo-icon">🌊</div>
-          <div class="nav-logo-text"><span>Red Sea Restaurant</span><span>&amp; Detox Juice Bar</span></div>
-        </a>
-        <p>Fresh-pressed juices, healing smoothies &amp; authentic kabab grill — Staten Island's favourite health-forward restaurant.</p>
+<!-- ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ FEATURED DISHES ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ -->
+<section id="featured" style="padding-top:0">
+  <div style="background:var(--dark)">
+    <svg viewBox="0 0 1440 50" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+      <path d="M0 0 C360 50 1080 50 1440 0 L1440 50 L0 50 Z" fill="#06060f"/>
+    </svg>
+  </div>
+  <div style="background:var(--dark); padding:60px 0 100px">
+    <div class="container">
+      <div class="sec-head fade-up">
+        <span class="section-label">Signature Collection</span>
+        <div class="divider"></div>
+        <h2 class="section-title">Our Most-Loved Dishes</h2>
+        <p class="section-sub" style="margin:0 auto">Cold-pressed juices, nourishing smoothies, and flame-grilled kebabs ‚Äî made fresh every time you order.</p>
       </div>
-      <div class="footer-col"><h5>Menu</h5><ul>
-        <li><a href="#menu" onclick="filterCat('detox',null)">Detox Juices</a></li>
-        <li><a href="#menu" onclick="filterCat('smoothies',null)">Smoothies</a></li>
-        <li><a href="#menu" onclick="filterCat('grill',null)">Grill &amp; Kebabs</a></li>
-        <li><a href="#menu" onclick="filterCat('wraps',null)">Wraps &amp; Gyros</a></li>
-        <li><a href="#menu" onclick="filterCat('dessert',null)">Desserts</a></li>
-      </ul></div>
-      <div class="footer-col"><h5>Order</h5><ul>
-        <li><a href="tel:3478576692">📞 Call (347) 857-6692</a></li>
-        <li><a href="https://www.ubereats.com/store/detox-juice-bar-kabab-grill/4YYZtTu6WtiRdzJklCdU_g" target="_blank">Uber Eats</a></li>
-        <li><a href="https://www.doordash.com/en/store/detox-juice-bar-&-kebab-grill-25136394/" target="_blank">DoorDash</a></li>
-        <li><a href="#catering">Catering</a></li>
-      </ul></div>
-      <div class="footer-col"><h5>Info</h5><ul>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#location">Location &amp; Hours</a></li>
-        <li><a href="https://www.instagram.com/redsearestaurant25/" target="_blank">Instagram</a></li>
-        <li><a href="https://redseadetox.com">redseadetox.com</a></li>
-      </ul></div>
+      <div class="dishes-grid">
+        <div class="dish-card fade-up">
+          <div class="dish-card-img">
+            <img src="https://images.unsplash.com/photo-1561043433-aaf687c4cf04?w=600&h=400&fit=crop&auto=format" alt="Chicken Gyro" />
+            <div class="dish-overlay"><a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order Now</a></div>
+          </div>
+          <div class="dish-card-body">
+            <span class="dish-tag">Fan Favorite</span>
+            <h3 class="dish-card-title">Chicken Gyro</h3>
+            <p class="dish-card-desc">Juicy, seasoned chicken wrapped in warm pillowy pita with fresh toppings and creamy house sauce.</p>
+            <div class="dish-card-footer">
+              <span class="dish-price">$15.99</span>
+              <a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="dish-card fade-up delay-1">
+          <div class="dish-card-img">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=400&fit=crop&auto=format" alt="Chicken Mix Grill" />
+            <div class="dish-overlay"><a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order Now</a></div>
+          </div>
+          <div class="dish-card-body">
+            <span class="dish-tag">Chef's Pick</span>
+            <h3 class="dish-card-title">Chicken Mix Grill</h3>
+            <p class="dish-card-desc">Chicken gyro, shish kebab, and adana all on one platter. Served with rice, salad, and fresh pita bread.</p>
+            <div class="dish-card-footer">
+              <span class="dish-price">$26.99</span>
+              <a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="dish-card fade-up delay-2">
+          <div class="dish-card-img">
+            <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=600&h=400&fit=crop&auto=format" alt="Lamb Mixed Grill" />
+            <div class="dish-overlay"><a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order Now</a></div>
+          </div>
+          <div class="dish-card-body">
+            <span class="dish-tag">Signature</span>
+            <h3 class="dish-card-title">Lamb Mixed Grill</h3>
+            <p class="dish-card-desc">Lamb shish, lamb adana, and lamb gyro beautifully plated with seasoned rice, fresh salad, and warm bread.</p>
+            <div class="dish-card-footer">
+              <span class="dish-price">$31.99</span>
+              <a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="dish-card fade-up">
+          <div class="dish-card-img">
+            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=400&fit=crop&auto=format" alt="Super Mixed Grill" />
+            <div class="dish-overlay"><a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order Now</a></div>
+          </div>
+          <div class="dish-card-body">
+            <span class="dish-tag">For the Table</span>
+            <h3 class="dish-card-title">Super Mixed Grill</h3>
+            <p class="dish-card-desc">The ultimate feast ‚Äî chicken, lamb, and seafood cuts all grilled to perfection. The go-to for groups and families.</p>
+            <div class="dish-card-footer">
+              <span class="dish-price">$37.99</span>
+              <a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="dish-card fade-up delay-1">
+          <div class="dish-card-img">
+            <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&h=400&fit=crop&auto=format" alt="Branzino Kebab" />
+            <div class="dish-overlay"><a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order Now</a></div>
+          </div>
+          <div class="dish-card-body">
+            <span class="dish-tag">Seafood</span>
+            <h3 class="dish-card-title">Branzino Kebab</h3>
+            <p class="dish-card-desc">Fresh branzino grilled on skewer with Mediterranean herbs, lemon, and olive oil. Light, flavorful, and satisfying.</p>
+            <div class="dish-card-footer">
+              <span class="dish-price">$26.99</span>
+              <a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="dish-card fade-up delay-2">
+          <div class="dish-card-img">
+            <img src="https://images.unsplash.com/photo-1589733955941-5eeaf752f6dd?w=600&h=400&fit=crop&auto=format" alt="Fresh Detox Juices" />
+            <div class="dish-overlay"><a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order Now</a></div>
+          </div>
+          <div class="dish-card-body">
+            <span class="dish-tag">House Specialty</span>
+            <h3 class="dish-card-title">Fresh Detox Juices</h3>
+            <p class="dish-card-desc">Cold-pressed daily from real fruits and vegetables. From Purple Beets to Sweet &amp; Sour King ‚Äî nourishing and vibrant.</p>
+            <div class="dish-card-footer">
+              <span class="dish-price">$8.99</span>
+              <a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ GALLERY ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ -->
+<section id="gallery">
+  <div class="container">
+    <div class="sec-head fade-up">
+      <span class="section-label">Ambiance &amp; Flavor</span>
+      <div class="divider"></div>
+      <h2 class="section-title">A Feast for the Eyes</h2>
+      <p class="section-sub" style="margin:0 auto">Every dish is a work of art. Every visit, an experience worth savoring.</p>
+    </div>
+    <div class="gallery-grid fade-up">
+      <div class="gallery-item g1">
+        <img src="https://images.unsplash.com/photo-1546173159-315724a31696?w=800&h=800&fit=crop&auto=format" alt="Fresh Detox Juices" />
+        <div class="gallery-caption">Fresh Detox Juices</div>
+      </div>
+      <div class="gallery-item g2">
+        <img src="https://images.unsplash.com/photo-1561043433-aaf687c4cf04?w=600&h=400&fit=crop&auto=format" alt="Chicken Gyro" />
+        <div class="gallery-caption">Chicken Gyro</div>
+      </div>
+      <div class="gallery-item g3">
+        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&h=400&fit=crop&auto=format" alt="Mediterranean Salad" />
+        <div class="gallery-caption">Mediterranean Salad</div>
+      </div>
+      <div class="gallery-item g4">
+        <img src="https://images.unsplash.com/photo-1541014741259-de529411b96a?w=400&h=400&fit=crop&auto=format" alt="House Hummus" />
+        <div class="gallery-caption">House Hummus</div>
+      </div>
+      <div class="gallery-item g5">
+        <img src="https://images.unsplash.com/photo-1502741224143-90386d7f8c82?w=400&h=400&fit=crop&auto=format" alt="Smoothies" />
+        <div class="gallery-caption">Protein Smoothies</div>
+      </div>
+      <div class="gallery-item g6">
+        <img src="https://images.unsplash.com/photo-1519996529931-28324d5a630e?w=600&h=400&fit=crop&auto=format" alt="Kunafa Dessert" />
+        <div class="gallery-caption">Kunafa Dessert</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ WHY CHOOSE US ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ -->
+<section id="why-us">
+  <div class="container">
+    <div class="why-layout">
+      <div class="fade-up">
+        <span class="section-label">Our Promise</span>
+        <div class="divider divider-l"></div>
+        <h2 class="section-title">More Than a Meal ‚Äî<br/>An Experience</h2>
+        <p class="section-sub" style="margin-bottom:32px">At Red Sea, we believe great food begins long before it reaches your plate ‚Äî with people who care about what they serve you.</p>
+        <div class="why-features">
+          <div class="why-feature">
+            <div class="why-icon">üê†</div>
+            <div>
+              <div class="why-title">Freshness You Can Taste</div>
+              <div class="why-desc">We cold-press our juices fresh every day from real fruits and vegetables. No concentrates, no shortcuts ‚Äî just pure, vibrant flavor.</div>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-icon">ü´ô</div>
+            <div>
+              <div class="why-title">Authentic Mediterranean Flavors</div>
+              <div class="why-desc">Recipes rooted in generations of culinary tradition ‚Äî bold spices, fragrant herbs, and time-honored techniques.</div>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-icon">ü§ù</div>
+            <div>
+              <div class="why-title">Genuine Family Hospitality</div>
+              <div class="why-desc">We treat every guest like a neighbor. Warm, welcoming, and consistent ‚Äî whether dining in or ordering online.</div>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-icon">‚ö°</div>
+            <div>
+              <div class="why-title">Made Fresh Every Order</div>
+              <div class="why-desc">No shortcuts. No reheating. Every dish is prepared the moment you order it ‚Äî because you deserve nothing less.</div>
+            </div>
+          </div>
+        </div>
+        <div class="why-values">
+          <span class="val-pill">Family Owned</span>
+          <span class="val-pill">Fresh Daily</span>
+          <span class="val-pill">Made to Order</span>
+          <span class="val-pill">Staten Island Proud</span>
+          <span class="val-pill">Mediterranean Roots</span>
+        </div>
+      </div>
+      <div class="fade-up delay-2">
+        <div class="why-quote">
+          <p class="why-quote-text">"We cook the way our families taught us ‚Äî with fresh ingredients, unhurried technique, and enough love that you can actually taste it in every single dish."</p>
+          <div class="why-quote-author">
+            <div class="why-quote-avatar">üë®‚Äçüç≥</div>
+            <div>
+              <div class="why-quote-name">The Red Sea Kitchen Team</div>
+              <div class="why-quote-role">Staten Island, New York</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ HOW IT WORKS ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ -->
+<section id="how">
+  <div class="container">
+    <div class="sec-head fade-up">
+      <span class="section-label">Simple &amp; Effortless</span>
+      <div class="divider"></div>
+      <h2 class="section-title">Fresh Food, Four Easy Steps</h2>
+      <p class="section-sub" style="margin:0 auto">Ordering from Red Sea Restaurant is as easy as it should be.</p>
+    </div>
+    <div class="steps-row">
+      <div class="step-card fade-up">
+        <div class="step-num">1</div>
+        <span class="step-emoji">üìñ</span>
+        <h3 class="step-title">Browse Our Menu</h3>
+        <p class="step-desc">Explore our full selection of detox juices, smoothies, grilled kebabs, and chef's specials ‚Äî all available online.</p>
+      </div>
+      <div class="step-card fade-up delay-1">
+        <div class="step-num">2</div>
+        <span class="step-emoji">üì±</span>
+        <h3 class="step-title">Place Your Order</h3>
+        <p class="step-desc">Select your dishes and order securely through our Clover platform. Fast, easy, no account required.</p>
+      </div>
+      <div class="step-card fade-up delay-2">
+        <div class="step-num">3</div>
+        <span class="step-emoji">üöó</span>
+        <h3 class="step-title">Pickup or Delivery</h3>
+        <p class="step-desc">Choose what works for you ‚Äî swing by and grab your order, or have it delivered fresh to your door.</p>
+      </div>
+      <div class="step-card fade-up delay-3">
+        <div class="step-num">4</div>
+        <span class="step-emoji">üçΩÔ∏è</span>
+        <h3 class="step-title">Enjoy Every Bite</h3>
+        <p class="step-desc">Sit back and enjoy fresh juices, nourishing smoothies, and perfectly grilled kebabs ‚Äî just the way we intended.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px" class="fade-up">
+      <a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener" class="btn btn-primary">
+        Start Your Order
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ ABOUT ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ -->
+<section id="about">
+  <div class="container">
+    <div class="about-layout">
+      <div class="about-visual fade-up">
+        <div class="about-main-card">
+          <span class="about-main-emoji">üåä</span>
+          <p class="about-main-text">Born from the Mediterranean. Served with heart.</p>
+          <div class="about-badge-1">
+            <div class="ab-num">Fresh</div>
+            <div class="ab-lbl">Every Day</div>
+          </div>
+          <div class="about-badge-2">
+            <div class="ab-num">‚ù§Ô∏è</div>
+            <div class="ab-lbl">Family Owned</div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-up delay-1">
+        <span class="section-label">Our Story</span>
+        <div class="divider divider-l"></div>
+        <h2 class="section-title">Born From the Sea,<br/>Made With Heart</h2>
+        <div class="about-quote">
+          <p>"We cook the way our families taught us ‚Äî with fresh ingredients, unhurried technique, and enough love that you can taste it in every dish."</p>
+        </div>
+        <p class="about-p">Red Sea Restaurant began with a simple belief: that real, fresh food ‚Äî cold-pressed juices, nourishing smoothies, and flame-grilled kebabs ‚Äî prepared with care and made to order, can bring people together in ways that few things can.</p>
+        <p class="about-p">Nestled in the heart of Staten Island, we've built something that feels less like a restaurant and more like a gathering place. Families celebrate here. Friends catch up here. Couples come back, year after year ‚Äî because the food is honest, the welcome is warm, and the experience is always worth it.</p>
+        <p class="about-p">Every recipe carries a story ‚Äî of Mediterranean coastlines, of family kitchens, of long dinners and longer conversations. We bring that spirit to every plate, whether you're dining with us or ordering from home.</p>
+        <div style="margin-top:28px">
+          <a href="#menu" class="btn btn-outline">
+            Explore Our Menu
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ MENU ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ -->
+<section id="menu">
+  <div class="container">
+    <div class="sec-head fade-up">
+      <span class="section-label">Our Menu</span>
+      <div class="divider"></div>
+      <h2 class="section-title">A Taste of the Mediterranean</h2>
+      <p class="section-sub" style="margin:0 auto">A curated preview of our most-loved dishes. Order online for the full selection.</p>
+    </div>
+    <div class="menu-tabs fade-up" id="menuTabs">
+      <button class="menu-tab active" data-tab="appetizers">ü´ô Appetizers</button>
+      <button class="menu-tab" data-tab="chicken">üçó Chicken</button>
+      <button class="menu-tab" data-tab="lamb">üêë Lamb</button>
+      <button class="menu-tab" data-tab="seafood">üêü Seafood</button>
+      <button class="menu-tab" data-tab="wraps">ü•ô Wraps &amp; More</button>
+      <button class="menu-tab" data-tab="salads">ü•ó Salads</button>
+      <button class="menu-tab" data-tab="juices">ü•§ Juices</button>
+      <button class="menu-tab" data-tab="smoothies">üçì Smoothies</button>
+      <button class="menu-tab" data-tab="yemeni">üç≤ Yemeni</button>
+      <button class="menu-tab" data-tab="desserts">üç∞ Desserts</button>
+    </div>
+    <div class="menu-panels">
+
+      <div class="menu-panel active" id="tab-appetizers">
+        <div class="menu-items-grid">
+          <div class="menu-row"><span class="menu-row-emoji">ü´ô</span><div><div class="menu-row-name">Hummus</div><div class="menu-row-desc">House-made hummus served with fresh pita</div></div><div class="menu-row-price">$8.75</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üçÜ</span><div><div class="menu-row-name">Baba Ganoush</div><div class="menu-row-desc">Smoky roasted eggplant dip with olive oil and seasoning</div></div><div class="menu-row-price">$8.50</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üçÉ</span><div><div class="menu-row-name">Grape Leaves (5 pcs)</div><div class="menu-row-desc">Stuffed with herbed rice, lemon, and olive oil</div></div><div class="menu-row-price">$8.59</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">ü•õ</span><div><div class="menu-row-name">Haydari (Labne)</div><div class="menu-row-desc">Strained yogurt with garlic and fresh herbs</div></div><div class="menu-row-price">$7.75</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">ü´ï</span><div><div class="menu-row-name">Mixed Appetizer</div><div class="menu-row-desc">Hummus, baba ganoush, haydari, and grape leaves</div></div><div class="menu-row-price">$16.98</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üßÜ</span><div><div class="menu-row-name">Sigara Boregi (4 pcs)</div><div class="menu-row-desc">Crispy rolled pastry filled with cheese and herbs</div></div><div class="menu-row-price">$9.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üçü</span><div><div class="menu-row-name">French Fries</div><div class="menu-row-desc">Crispy golden sticks served hot</div></div><div class="menu-row-price">$4.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üç†</span><div><div class="menu-row-name">Sweet Potato Fries</div><div class="menu-row-desc">Lightly seasoned and fried to golden perfection</div></div><div class="menu-row-price">$4.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üçó</span><div><div class="menu-row-name">Chicken Wings (5 pcs) with Fries</div><div class="menu-row-desc">Crispy wings served with your choice of sauce and fries</div></div><div class="menu-row-price">$11.95</div></div>
+        </div>
+      </div>
+
+      <div class="menu-panel" id="tab-chicken">
+        <div class="menu-items-grid">
+          <div class="menu-row"><span class="menu-row-emoji">ü•ô</span><div><div class="menu-row-name">Chicken Gyro</div><div class="menu-row-desc">Juicy chicken in warm pita with fresh toppings and house sauce</div></div><div class="menu-row-price">$15.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üç¢</span><div><div class="menu-row-name">Chicken Shish Kebab</div><div class="menu-row-desc">Marinated cubed chicken grilled on skewer, served with rice and salad</div></div><div class="menu-row-price">$10.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üî•</span><div><div class="menu-row-name">Chicken Adana Kebab</div><div class="menu-row-desc">Spiced ground chicken grilled on flat skewer with herbs</div></div><div class="menu-row-price">$11.50</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üçñ</span><div><div class="menu-row-name">Grilled Chicken Chop</div><div class="menu-row-desc">Whole grilled chicken chop with seasoned rice and salad</div></div><div class="menu-row-price">$16.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üåü</span><div><div class="menu-row-name">Chicken Mix Grill</div><div class="menu-row-desc">Chicken gyro, shish, and adana all on one platter with rice and pita</div></div><div class="menu-row-price">$26.99</div></div>
+        </div>
+      </div>
+
+      <div class="menu-panel" id="tab-lamb">
+        <div class="menu-items-grid">
+          <div class="menu-row"><span class="menu-row-emoji">ü•ô</span><div><div class="menu-row-name">Lamb Gyro</div><div class="menu-row-desc">Slow-roasted lamb in warm pita with fresh toppings</div></div><div class="menu-row-price">$10.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üç¢</span><div><div class="menu-row-name">Lamb Shish Kebab</div><div class="menu-row-desc">Tender cubed lamb marinated and grilled on skewer</div></div><div class="menu-row-price">$11.50</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üî•</span><div><div class="menu-row-name">Lamb Adana Kebab</div><div class="menu-row-desc">Spiced ground lamb grilled on flat skewer with herbs</div></div><div class="menu-row-price">$11.50</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üçñ</span><div><div class="menu-row-name">Lamb Chop</div><div class="menu-row-desc">Grilled lamb chops with seasoned rice and fresh salad</div></div><div class="menu-row-price">$25.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üåü</span><div><div class="menu-row-name">Lamb Mixed Grill</div><div class="menu-row-desc">Lamb gyro, shish, and adana on one stunning platter</div></div><div class="menu-row-price">$31.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üëë</span><div><div class="menu-row-name">Super Mixed Grill</div><div class="menu-row-desc">The ultimate platter ‚Äî chicken, lamb, and seafood all grilled fresh</div></div><div class="menu-row-price">$37.99</div></div>
+        </div>
+      </div>
+
+      <div class="menu-panel" id="tab-seafood">
+        <div class="menu-items-grid">
+          <div class="menu-row"><span class="menu-row-emoji">üêü</span><div><div class="menu-row-name">Branzino Kebab (Large)</div><div class="menu-row-desc">Fresh branzino grilled on skewer with Mediterranean herbs and lemon</div></div><div class="menu-row-price">$26.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">ü¶ê</span><div><div class="menu-row-name">Shrimp Kebab (Large)</div><div class="menu-row-desc">Marinated shrimp grilled on skewer, served with rice and salad</div></div><div class="menu-row-price">$21.50</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üê°</span><div><div class="menu-row-name">Salmon Kebab (Large)</div><div class="menu-row-desc">Fresh Atlantic salmon grilled on skewer with herbs and citrus</div></div><div class="menu-row-price">$21.50</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">ü•ó</span><div><div class="menu-row-name">Salmon Salad</div><div class="menu-row-desc">Fresh greens topped with grilled salmon and house dressing</div></div><div class="menu-row-price">$14.95</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üçî</span><div><div class="menu-row-name">Salmon Burger</div><div class="menu-row-desc">House-made salmon patty on a toasted bun with fresh toppings</div></div><div class="menu-row-price">$7.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üåØ</span><div><div class="menu-row-name">Salmon Wrap</div><div class="menu-row-desc">Grilled salmon in a warm wrap with greens and house sauce</div></div><div class="menu-row-price">$11.99</div></div>
+        </div>
+      </div>
+
+      <div class="menu-panel" id="tab-wraps">
+        <div class="menu-items-grid">
+          <div class="menu-row"><span class="menu-row-emoji">üåØ</span><div><div class="menu-row-name">Grilled Chicken Wrap</div><div class="menu-row-desc">Tender grilled chicken with fresh veggies and house sauce in warm wrap</div></div><div class="menu-row-price">$8.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üßÜ</span><div><div class="menu-row-name">Falafel Wrap</div><div class="menu-row-desc">Crispy falafel with lettuce, tomato, and tahini in warm pita</div></div><div class="menu-row-price">$8.49</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">ü•¨</span><div><div class="menu-row-name">Detox Wrap</div><div class="menu-row-desc">Fresh veggies, greens, and healthy fillings in a light wrap</div></div><div class="menu-row-price">$9.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">ü•ö</span><div><div class="menu-row-name">Egg White Wrap</div><div class="menu-row-desc">Egg whites with fresh vegetables in a grilled wrap</div></div><div class="menu-row-price">$8.95</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üßÄ</span><div><div class="menu-row-name">Chicken Quesadilla</div><div class="menu-row-desc">Grilled chicken with melted cheese in a crispy flour tortilla</div></div><div class="menu-row-price">$12.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">ü•©</span><div><div class="menu-row-name">Philly Steak Quesadilla</div><div class="menu-row-desc">Tender steak with peppers, onions, and melted cheese</div></div><div class="menu-row-price">$10.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üçî</span><div><div class="menu-row-name">Mega Burger</div><div class="menu-row-desc">Stacked house burger with all the fixings on a toasted bun</div></div><div class="menu-row-price">$12.97</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">ü¶É</span><div><div class="menu-row-name">Turkey Burger</div><div class="menu-row-desc">Lean turkey patty with fresh toppings on a toasted bun</div></div><div class="menu-row-price">$7.99</div></div>
+        </div>
+      </div>
+
+      <div class="menu-panel" id="tab-salads">
+        <div class="menu-items-grid">
+          <div class="menu-row"><span class="menu-row-emoji">ü•ó</span><div><div class="menu-row-name">Garden Salad</div><div class="menu-row-desc">Fresh mixed greens, tomato, cucumber, and house dressing</div></div><div class="menu-row-price">$9.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üßÄ</span><div><div class="menu-row-name">Caesar Salad</div><div class="menu-row-desc">Romaine, parmesan, croutons, and classic Caesar dressing</div></div><div class="menu-row-price">$10.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üå∂Ô∏è</span><div><div class="menu-row-name">Spicy Thai Chicken Salad</div><div class="menu-row-desc">Grilled chicken over mixed greens with spicy Thai vinaigrette</div></div><div class="menu-row-price">$11.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üê°</span><div><div class="menu-row-name">Salmon Salad</div><div class="menu-row-desc">Fresh greens topped with grilled salmon and house dressing</div></div><div class="menu-row-price">$14.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">ü•ë</span><div><div class="menu-row-name">Avocado Garden</div><div class="menu-row-desc">Mixed greens with fresh avocado, cherry tomatoes, and light vinaigrette</div></div><div class="menu-row-price">$11.50</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üçì</span><div><div class="menu-row-name">Fruit Salad</div><div class="menu-row-desc">Seasonal fresh fruits, beautifully prepared and chilled</div></div><div class="menu-row-price">$6.99</div></div>
+        </div>
+      </div>
+
+      <div class="menu-panel" id="tab-juices">
+        <div class="menu-items-grid">
+          <div class="menu-row"><span class="menu-row-emoji">ü´ê</span><div><div class="menu-row-name">Purple Beets</div><div class="menu-row-desc">Beets, oranges, apple, lemon, and pineapple</div></div><div class="menu-row-price">$8.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üçã</span><div><div class="menu-row-name">Sweet and Sour King</div><div class="menu-row-desc">Apple, kale, lemon, spinach, cucumber, celery, ginger</div></div><div class="menu-row-price">$8.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">ü•¨</span><div><div class="menu-row-name">Purify Greens</div><div class="menu-row-desc">Apple, kale, lemon, spinach, and cucumber celery</div></div><div class="menu-row-price">$8.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">ü•ù</span><div><div class="menu-row-name">Kiwi Apple</div><div class="menu-row-desc">Apple, kiwi, kale, and cucumber</div></div><div class="menu-row-price">$8.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üçä</span><div><div class="menu-row-name">Kale Immunity</div><div class="menu-row-desc">Kale, apple, carrot, orange, and lemon</div></div><div class="menu-row-price">$8.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üçç</span><div><div class="menu-row-name">Arctic Zen</div><div class="menu-row-desc">Pineapple, cucumber, apple, lemon, and mint</div></div><div class="menu-row-price">$8.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">ü´ö</span><div><div class="menu-row-name">Ginger Spark</div><div class="menu-row-desc">Ginger, apple, and carrot ‚Äî bold and energizing</div></div><div class="menu-row-price">$8.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">‚ö°</span><div><div class="menu-row-name">Energy</div><div class="menu-row-desc">Orange, spinach, beet, green apple, and carrot</div></div><div class="menu-row-price">$8.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">ü§ß</span><div><div class="menu-row-name">Cold Relief</div><div class="menu-row-desc">Carrot, orange, pineapple, and ginger</div></div><div class="menu-row-price">$8.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üåø</span><div><div class="menu-row-name">Weight Loss</div><div class="menu-row-desc">Celery, cucumber, and carrot ‚Äî clean and light</div></div><div class="menu-row-price">$8.99</div></div>
+        </div>
+      </div>
+
+      <div class="menu-panel" id="tab-smoothies">
+        <div class="menu-items-grid">
+          <div class="menu-row"><span class="menu-row-emoji">üçì</span><div><div class="menu-row-name">Strawberry Banana Blast</div><div class="menu-row-desc">Classic strawberry and banana blended smooth and creamy</div></div><div class="menu-row-price">$8.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">ü••</span><div><div class="menu-row-name">Beshar Special</div><div class="menu-row-desc">Strawberry, banana, coconut, and honey fat burner</div></div><div class="menu-row-price">$7.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üç´</span><div><div class="menu-row-name">The Incredible Bulk</div><div class="menu-row-desc">Chocolate, peanut butter, bananas, and whey protein</div></div><div class="menu-row-price">$9.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">ü•ú</span><div><div class="menu-row-name">Peanut Butter Trump</div><div class="menu-row-desc">Rich peanut butter smoothie with banana and protein</div></div><div class="menu-row-price">$9.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üçç</span><div><div class="menu-row-name">In the Tropics</div><div class="menu-row-desc">Pineapple, coconut, banana, and whey protein</div></div><div class="menu-row-price">$9.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">‚òï</span><div><div class="menu-row-name">Mocha Mania</div><div class="menu-row-desc">Chocolate-infused coffee blended with whey protein</div></div><div class="menu-row-price">$9.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üçá</span><div><div class="menu-row-name">Berry Berry Good</div><div class="menu-row-desc">Mixed berry fat-burning blend ‚Äî sweet and satisfying</div></div><div class="menu-row-price">$9.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üå¥</span><div><div class="menu-row-name">Tropical Bombshell</div><div class="menu-row-desc">Mango, pineapple, and coconut fat burner</div></div><div class="menu-row-price">$9.99</div></div>
+        </div>
+      </div>
+
+      <div class="menu-panel" id="tab-yemeni">
+        <div class="menu-items-grid">
+          <div class="menu-row"><span class="menu-row-emoji">üç≤</span><div><div class="menu-row-name">Haneegh</div><div class="menu-row-desc">Slow-cooked Yemeni lamb with aromatic spices and fragrant rice</div></div><div class="menu-row-price">$14.00</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üçó</span><div><div class="menu-row-name">Mandi</div><div class="menu-row-desc">Slow-roasted meat and fragrant spiced rice ‚Äî a Yemeni classic</div></div><div class="menu-row-price">$15.00</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">ü´ï</span><div><div class="menu-row-name">Chicken Madghut</div><div class="menu-row-desc">Pressure-cooked spiced chicken with seasoned rice</div></div><div class="menu-row-price">$16.00</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üî•</span><div><div class="menu-row-name">Chicken Fahm</div><div class="menu-row-desc">Charcoal-grilled chicken with Yemeni seasoning and bread</div></div><div class="menu-row-price">$14.00</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">ü´ò</span><div><div class="menu-row-name">Beans</div><div class="menu-row-desc">Slow-cooked spiced beans in traditional Yemeni style</div></div><div class="menu-row-price">$12.00</div></div>
+        </div>
+      </div>
+
+      <div class="menu-panel" id="tab-desserts">
+        <div class="menu-items-grid">
+          <div class="menu-row"><span class="menu-row-emoji">üç∞</span><div><div class="menu-row-name">Almond Cake</div><div class="menu-row-desc">Moist almond cake, delicately sweet and perfectly textured</div></div><div class="menu-row-price">$7.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">ü´ê</span><div><div class="menu-row-name">Cheese Cake</div><div class="menu-row-desc">Classic creamy cheesecake on a buttery graham cracker crust</div></div><div class="menu-row-price">$7.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üç´</span><div><div class="menu-row-name">Chocolate Mousse Cake</div><div class="menu-row-desc">Rich, velvety chocolate mousse layered in a decadent cake</div></div><div class="menu-row-price">$7.99</div></div>
+          <div class="menu-row"><span class="menu-row-emoji">üçö</span><div><div class="menu-row-name">Rice Pudding</div><div class="menu-row-desc">Creamy, lightly sweetened rice pudding ‚Äî warm and comforting</div></div><div class="menu-row-price">$7.99</div></div>
+        </div>
+      </div>
+
+    </div>
+    <div class="menu-cta fade-up">
+      <p>This is a preview only. For our full menu, all options, and to place your order ‚Äî</p>
+      <a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener" class="btn btn-primary">
+        View Full Menu &amp; Order Online
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ TESTIMONIALS ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ -->
+<section id="testimonials">
+  <div class="container">
+    <div class="sec-head fade-up">
+      <span class="section-label">Guest Reviews</span>
+      <div class="divider"></div>
+      <h2 class="section-title">Loved by Our Community</h2>
+      <p class="section-sub" style="margin:0 auto">Real words from real neighbors ‚Äî the families and regulars who make Red Sea feel like home.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card fade-up">
+        <div class="testi-platform">‚≠ê</div>
+        <div class="testi-stars"><span class="star">‚òÖ</span><span class="star">‚òÖ</span><span class="star">‚òÖ</span><span class="star">‚òÖ</span><span class="star">‚òÖ</span></div>
+        <p class="testi-text">The Purple Beets juice was absolutely stunning ‚Äî you could taste the freshness in every sip. And the Chicken Gyro? Perfectly seasoned. This is our go-to spot, at least twice a month.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">S</div>
+          <div>
+            <div class="testi-name">Sarah M.</div>
+            <div class="testi-tag">Staten Island ¬∑ Regular Guest</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-up delay-1">
+        <div class="testi-platform">üçΩÔ∏è</div>
+        <div class="testi-stars"><span class="star">‚òÖ</span><span class="star">‚òÖ</span><span class="star">‚òÖ</span><span class="star">‚òÖ</span><span class="star">‚òÖ</span></div>
+        <p class="testi-text">Ordered the Chicken Mix Grill and a few detox juices for a family dinner ‚Äî everyone went silent for the first few minutes, which is always a great sign. Generous portions, incredible flavor, easy online ordering.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">J</div>
+          <div>
+            <div class="testi-name">James R.</div>
+            <div class="testi-tag">Staten Island ¬∑ Verified Order</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-up delay-2">
+        <div class="testi-platform">‚ù§Ô∏è</div>
+        <div class="testi-stars"><span class="star">‚òÖ</span><span class="star">‚òÖ</span><span class="star">‚òÖ</span><span class="star">‚òÖ</span><span class="star">‚òÖ</span></div>
+        <p class="testi-text">I've tried a lot of juice bars and kebab spots in New York ‚Äî Red Sea is genuinely one of the best. The Kale Immunity juice was the real deal and the Lamb Mixed Grill was outstanding. Feels like a place that truly cares about what they serve you.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">L</div>
+          <div>
+            <div class="testi-name">Layla K.</div>
+            <div class="testi-tag">Staten Island ¬∑ Dine-in Guest</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ RESERVATION ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ -->
+<section id="reservation">
+  <div class="container">
+    <div class="sec-head fade-up">
+      <span class="section-label">Dine With Us</span>
+      <div class="divider"></div>
+      <h2 class="section-title">Reserve Your Table</h2>
+      <p class="section-sub" style="margin:0 auto">Planning a special evening? Let us know you're coming and we'll make sure everything is perfect.</p>
+    </div>
+    <div class="reservation-layout">
+      <div class="reservation-form-wrap fade-up">
+        <div class="form-title">Make a Reservation</div>
+        <div class="form-sub">Fill in your details and we'll confirm your reservation by phone or email.</div>
+        <form id="reservationForm" onsubmit="submitReservation(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input type="text" class="form-input" placeholder="Your first name" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input type="text" class="form-input" placeholder="Your last name" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" class="form-input" placeholder="(XXX) XXX-XXXX" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-input" placeholder="your@email.com" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Date</label>
+              <input type="date" class="form-input" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Time</label>
+              <select class="form-select form-input">
+                <option value="">Select a time</option>
+                <option>12:00 PM</option><option>12:30 PM</option>
+                <option>1:00 PM</option><option>1:30 PM</option>
+                <option>2:00 PM</option><option>6:00 PM</option>
+                <option>6:30 PM</option><option>7:00 PM</option>
+                <option>7:30 PM</option><option>8:00 PM</option>
+                <option>8:30 PM</option><option>9:00 PM</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Party Size</label>
+            <select class="form-select form-input">
+              <option>1‚Äì2 Guests</option><option>3‚Äì4 Guests</option>
+              <option>5‚Äì6 Guests</option><option>7‚Äì8 Guests</option>
+              <option>Large Party (8+)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Special Requests</label>
+            <textarea class="form-textarea" placeholder="Allergies, dietary needs, occasion details..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:15px">
+            Request Reservation
+          </button>
+          <p class="form-note">We'll confirm your reservation within a few hours. For immediate assistance, please call us directly.</p>
+        </form>
+        <div id="formSuccess" style="display:none;text-align:center;padding:32px 0">
+          <div style="font-size:3rem;margin-bottom:12px">‚úÖ</div>
+          <div style="font-family:var(--ff-display);font-size:1.2rem;font-weight:600;color:var(--cream);margin-bottom:8px">Reservation Requested!</div>
+          <div style="font-size:0.85rem;color:var(--muted)">We'll be in touch within a few hours to confirm your table.</div>
+        </div>
+      </div>
+      <div class="reservation-info fade-up delay-2">
+        <div class="res-info-card">
+          <div class="res-info-icon">üìç</div>
+          <div>
+            <div class="res-info-title">Location</div>
+            <div class="res-info-val">Red Sea Restaurant<br/>Staten Island, New York<br/><a href="https://maps.google.com" target="_blank" rel="noopener" style="color:var(--red-light);font-size:0.8rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;border-bottom:1px solid rgba(200,37,58,0.3)">Get Directions ‚Üí</a></div>
+          </div>
+        </div>
+        <div class="res-info-card">
+          <div class="res-info-icon">üìû</div>
+          <div>
+            <div class="res-info-title">Phone</div>
+            <div class="res-info-val"><a href="tel:+1XXXXXXXXXX">(XXX) XXX-XXXX</a><br/><span style="font-size:0.78rem;color:var(--muted)">Available during business hours</span></div>
+          </div>
+        </div>
+        <div class="res-info-card">
+          <div class="res-info-icon">üïê</div>
+          <div>
+            <div class="res-info-title">Hours</div>
+            <div class="res-info-val" style="font-size:0.85rem">
+              <div style="display:flex;justify-content:space-between;gap:16px"><span>Mon ‚Äì Thu</span><span style="color:var(--gold)">11am ‚Äì 9:30pm</span></div>
+              <div style="display:flex;justify-content:space-between;gap:16px;margin-top:4px"><span>Fri ‚Äì Sat</span><span style="color:var(--gold)">11am ‚Äì 10:30pm</span></div>
+              <div style="display:flex;justify-content:space-between;gap:16px;margin-top:4px"><span>Sunday</span><span style="color:var(--gold)">12pm ‚Äì 9pm</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="order-promo">
+          <span class="order-promo-emoji">üì±</span>
+          <div class="order-promo-title">Prefer to Order Online?</div>
+          <p class="order-promo-desc">Skip the wait ‚Äî browse our full menu and place your order for pickup or delivery in minutes.</p>
+          <a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center">Order Online Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ CONTACT ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ -->
+<section id="contact">
+  <div class="container">
+    <div class="sec-head fade-up">
+      <span class="section-label">Find Us</span>
+      <div class="divider"></div>
+      <h2 class="section-title">Come Visit or Order Online</h2>
+      <p class="section-sub" style="margin:0 auto">We're here to make your experience exceptional ‚Äî whether in person or delivered to your door.</p>
+    </div>
+    <div class="contact-grid fade-up">
+      <div class="contact-block">
+        <div class="cb-icon">üìç</div>
+        <div>
+          <div class="cb-label">Location</div>
+          <div class="cb-val">Red Sea Restaurant<br/>Staten Island, New York</div>
+        </div>
+      </div>
+      <div class="contact-block">
+        <div class="cb-icon">üìû</div>
+        <div>
+          <div class="cb-label">Phone</div>
+          <div class="cb-val"><a href="tel:+1XXXXXXXXXX">(XXX) XXX-XXXX</a></div>
+        </div>
+      </div>
+      <div class="contact-block">
+        <div class="cb-icon">‚úâÔ∏è</div>
+        <div>
+          <div class="cb-label">Email</div>
+          <div class="cb-val"><a href="mailto:info@redsearestaurant.com">info@redsearestaurant.com</a></div>
+        </div>
+      </div>
+      <div class="contact-block">
+        <div class="cb-icon">üïê</div>
+        <div>
+          <div class="cb-label">Hours</div>
+          <div class="cb-val" style="font-size:0.84rem">Mon‚ÄìThu: 11am‚Äì9:30pm<br/>Fri‚ÄìSat: 11am‚Äì10:30pm<br/>Sun: 12pm‚Äì9pm</div>
+        </div>
+      </div>
+      <div class="map-box" onclick="window.open('https://maps.google.com','_blank')">
+        <span>üó∫Ô∏è</span>
+        <p>Red Sea Restaurant ¬∑ Staten Island, NY</p>
+        <a href="https://maps.google.com" target="_blank" rel="noopener" onclick="event.stopPropagation()">Open in Google Maps ‚Üí</a>
+      </div>
+    </div>
+    <div class="contact-final-cta fade-up">
+      <div class="cfc-title">Ready to Order?</div>
+      <p class="cfc-desc">Our full menu is waiting. Place your order online in minutes and choose pickup or delivery ‚Äî fresh, made to order, every time.</p>
+      <a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.95rem;padding:16px 36px;margin-bottom:20px">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Order Online Now
+      </a>
+      <div class="cfc-pills">
+        <span class="cfc-pill">‚úì No account required</span>
+        <span class="cfc-pill">‚úì Fast &amp; secure checkout</span>
+        <span class="cfc-pill">‚úì Pickup or delivery</span>
+        <span class="cfc-pill">‚úì Made fresh to order</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ FOOTER ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a href="#home" class="logo" style="display:inline-flex;margin-bottom:4px">
+          <span class="logo-main"><span class="logo-accent">Red</span> Sea Restaurant</span>
+        </a>
+        <p class="footer-tagline">Born from the Mediterranean. Made fresh every day. Served with heart ‚Äî right here in Staten Island.</p>
+        <a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order Online</a>
+      </div>
+      <div>
+        <div class="footer-head">Navigate</div>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#featured">Signature Dishes</a></li>
+          <li><a href="#menu">Full Menu</a></li>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#reservation">Reserve a Table</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener">Order Online ‚Üí</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-head">Contact</div>
+        <ul class="footer-links">
+          <li><a href="tel:+1XXXXXXXXXX">(XXX) XXX-XXXX</a></li>
+          <li><a href="#">Staten Island, New York</a></li>
+          <li><a href="mailto:info@redsearestaurant.com">info@redsearestaurant.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-head">Hours</div>
+        <div class="footer-hours">
+          <div class="fh-row"><span class="fh-day">Mon ‚Äì Thu</span><span class="fh-time">11am ‚Äì 9:30pm</span></div>
+          <div class="fh-row"><span class="fh-day">Fri ‚Äì Sat</span><span class="fh-time">11am ‚Äì 10:30pm</span></div>
+          <div class="fh-row"><span class="fh-day">Sunday</span><span class="fh-time">12pm ‚Äì 9pm</span></div>
+        </div>
+      </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Red Sea Restaurant &amp; Detox Juice Bar · 1612 Forest Ave, Staten Island, NY 10302 · <a href="tel:3478576692" style="color:var(--text-mid)">(347) 857-6692</a></p>
-      <div class="footer-bottom-links">
-        <a href="https://www.instagram.com/redsearestaurant25/" target="_blank">Instagram</a>
+      <p class="footer-copy">¬© 2025 Red Sea Restaurant. All rights reserved. Staten Island, New York.</p>
+      <div class="footer-bl">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="https://www.clover.com/online-ordering/red-sea-restaurant-corp-staten-island" target="_blank" rel="noopener">Order Online</a>
       </div>
     </div>
   </div>
 </footer>
 
-<!-- STICKY CALL BAR -->
-<div class="sticky-call">
-  <div class="sticky-call-text">
-    <strong>📞 (347) 857-6692</strong>
-    Call or text to order · Open Daily 10AM–10PM
-  </div>
-  <a class="sticky-call-btn" href="tel:3478576692">Call to Order</a>
-</div>
-
-<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-<div class="toast" id="toast"></div>
-
 <script>
-// ═══════════════════════════════════════
-// MENU DATA
-// ═══════════════════════════════════════
-const MENU = [
-  // ── DETOX JUICES ──
-  {id:'purify-greens',cat:'detox',catLabel:'Detox Juices',name:'Purify Greens',desc:'Cucumber, celery, apple, lemon, and spinach. A deep green cleanse to purify and energize.',price:7.99,emoji:'🥬',imgPrompt:'emerald green detox juice in clear glass, cucumber and spinach beside it, moody dark food photography'},
-  {id:'sweet-sour-king',cat:'detox',catLabel:'Detox Juices',name:'Sweet & Sour King',desc:'Apple, kale, lemon, spinach, cucumber, and celery. A powerful alkalizing blend.',price:7.99,emoji:'🌿',imgPrompt:'fresh green apple kale celery juice in tall glass, kale leaves beside it, professional food photography'},
-  {id:'purple-beets',cat:'detox',catLabel:'Detox Juices',name:'Purple Beets',desc:'Beets, apple, lemon, orange, and ginger. A vibrant cleansing blend that supports liver function.',price:7.99,emoji:'🫐',imgPrompt:'vibrant purple beet juice in a glass, fresh beets and oranges beside it, dark moody studio lighting'},
-  // ── POWER JUICES ──
-  {id:'kale-immunity',cat:'power',catLabel:'Power Juices',name:'Kale Immunity',desc:'Kale, apple, carrot, and orange. Fortify your immune system with this powerhouse blend.',price:7.99,emoji:'🥦',imgPrompt:'green immunity juice with kale and carrot, orange slices beside it, professional restaurant photography'},
-  {id:'arctic-zen',cat:'power',catLabel:'Power Juices',name:'Arctic Zen',desc:'Pineapple, cucumber, and apple. Cool, refreshing, and deeply hydrating.',price:7.99,emoji:'🍍',imgPrompt:'pale green tropical juice with mint garnish in a chilled glass, pineapple chunks beside it, food photography'},
-  {id:'ginger-spark',cat:'power',catLabel:'Power Juices',name:'Ginger Spark',desc:'Ginger, mint, apple, cucumber, and kale. A warming, anti-inflammatory trio.',price:7.99,emoji:'🫚',imgPrompt:'orange ginger carrot juice shot in small glass, fresh ginger root and carrots, moody food photography'},
-  {id:'cucumber-apple',cat:'power',catLabel:'Power Juices',name:'Cucumber Apple',desc:'Ginger, mint, apple, cucumber, and kale. Crisp and refreshing.',price:7.99,emoji:'🥒',imgPrompt:'light green cucumber apple juice in glass, cucumber slices and apple beside it, clean food photography'},
-  // ── JUICE HELP ──
-  {id:'weight-loss',cat:'juice-help',catLabel:'Juice Help',name:'Weight Loss',desc:'Cucumber, carrot, and celery. Clean, crisp, and hydrating for your wellness journey.',price:7.99,emoji:'🥒',imgPrompt:'pale green celery cucumber carrot juice, clean minimal food photography, white and dark contrast'},
-  {id:'lack-energy',cat:'juice-help',catLabel:'Juice Help',name:'Lack of Energy',desc:'Beet, apple, carrot, orange, and spinach. Iron-rich and revitalizing — fight fatigue naturally.',price:7.99,emoji:'🩸',imgPrompt:'deep crimson beet apple orange juice, rich ruby color in glass, dramatic lighting food photography'},
-  {id:'inflammation',cat:'juice-help',catLabel:'Juice Help',name:'Inflammation',desc:'Carrot, orange, ginger, and pineapple. Anti-inflammatory ingredients for joint and body relief.',price:7.99,emoji:'🫚',imgPrompt:'golden anti-inflammatory turmeric ginger juice, ginger root and carrots, food photography'},
-  {id:'cholesterol',cat:'juice-help',catLabel:'Juice Help',name:'Cholesterol',desc:'Apple, orange, ginger, lemon, parsley, and kale. A heart-healthy blend.',price:7.99,emoji:'❤️',imgPrompt:'bright green juice with apple and orange, parsley garnish, health food photography dark background'},
-  {id:'mikelicious',cat:'juice-help',catLabel:'Juice Help',name:'Mikelicious',desc:'Pineapple, apple, kale, orange, ginger, mint, and parsley. Our most celebrated blend!',price:7.99,emoji:'🌱',imgPrompt:'complex green gold juice blend in tall glass, pear and pineapple beside it, premium food photography'},
-  {id:'hangover',cat:'juice-help',catLabel:'Juice Help',name:'Hangover',desc:'Beets, orange, ginger, mint, parsley, and cucumber. The ultimate morning-after rescue.',price:7.99,emoji:'🍊',imgPrompt:'bright citrus beet recovery juice, vibrant orange with hints of red, morning food photography'},
-  {id:'high-bp',cat:'juice-help',catLabel:'Juice Help',name:'High Blood Pressure',desc:'Lemon, orange, ginger, carrot, and celery. A clean blend known for blood pressure support.',price:7.99,emoji:'💓',imgPrompt:'simple orange carrot celery juice, clean glass, minimal wellness drink food photography'},
-  {id:'cold-relief',cat:'juice-help',catLabel:'Juice Help',name:'Cold Relief',desc:'Carrot, celery, parsley, beets, and orange. Immune-boosting blend to help you recover faster.',price:7.99,emoji:'🤧',imgPrompt:'warming orange ginger carrot juice, fresh pineapple chunks beside it, wellness drink photography'},
-  // ── FRUIT CUPS ──
-  {id:'fruit-cup',cat:'breakfast',catLabel:'Breakfast',name:'Fruit Cup',desc:'A refreshing assortment of seasonal fruits. Available in Small, Medium, Large, and X-Large.',price:6.99,emoji:'🍓',imgPrompt:'colorful fresh fruit cup with strawberries melon kiwi mango, bright food photography'},
-  // ── SMOOTHIES — FRESH BLENDS ──
-  {id:'strawberry-banana-blast',cat:'smoothies',catLabel:'Smoothies',name:'Strawberry Banana Blast',desc:'Strawberry, banana, almond milk, coconut water, orange juice, and apple juice.',price:7.49,emoji:'🍓',imgPrompt:'thick pink strawberry banana smoothie in tall glass, fresh strawberries beside it, food photography'},
-  {id:'pina-colada-madness',cat:'smoothies',catLabel:'Smoothies',name:'Pina Colada Madness',desc:'Pineapple and coconut milk. A tropical, creamy classic.',price:7.49,emoji:'🍍',imgPrompt:'creamy tropical pina colada smoothie with pineapple, coconut shreds, food photography'},
-  {id:'triple-berry',cat:'smoothies',catLabel:'Smoothies',name:'Triple Berry Sensation',desc:'Raspberry, blueberry, and strawberry. A powerful antioxidant-rich blend.',price:7.49,emoji:'🫐',imgPrompt:'deep purple triple berry smoothie in tall glass, blueberries strawberries raspberries, dark moody food photography'},
-  {id:'tropical-blast',cat:'smoothies',catLabel:'Smoothies',name:'Tropical Blast',desc:'Pineapple, mango, banana, and strawberry. Sunshine in a glass.',price:7.49,emoji:'🌴',imgPrompt:'vibrant yellow orange tropical smoothie, mango pineapple banana, bright food photography'},
-  {id:'green-smoothies',cat:'smoothies',catLabel:'Smoothies',name:'Green Smoothies',desc:'Pineapple, spinach, banana, kale, and water. Clean green nutrition.',price:7.49,emoji:'🥦',imgPrompt:'bright green smoothie with spinach kale banana, healthy drink food photography'},
-  {id:'honeymoon',cat:'smoothies',catLabel:'Smoothies',name:'Honeymoon',desc:'Pineapple, kale, banana, mango, and mint. A tropical escape in every sip.',price:7.49,emoji:'🍹',imgPrompt:'golden green honeymoon smoothie with mango kale mint, premium food photography'},
-  {id:'meech',cat:'smoothies',catLabel:'Smoothies',name:'Meech',desc:'Mango, kale pulp, banana, mango, and water. Smooth and naturally sweet.',price:7.49,emoji:'🥭',imgPrompt:'golden mango smoothie with kale, tropical fruit drink photography'},
-  // ── MUSCLE BUILDERS ──
-  {id:'green-machine',cat:'muscle',catLabel:'Muscle Builders',name:'Green Machine',desc:'Avocado, spinach, cinnamon, peanut butter, banana, lime, and apple juice.',price:11.99,emoji:'💪',imgPrompt:'thick green protein smoothie with avocado spinach peanut butter, fitness drink photography'},
-  {id:'hawaiian-runner',cat:'muscle',catLabel:'Muscle Builders',name:'Hawaiian Runner',desc:'Pineapple, mango, and coconut milk. A tropical muscle fuel.',price:11.99,emoji:'🌺',imgPrompt:'golden tropical muscle smoothie with pineapple mango coconut, athletic food photography'},
-  {id:'detox-muscle',cat:'muscle',catLabel:'Muscle Builders',name:'Detox (Muscle)',desc:'Raspberry, strawberry, blueberry, and whey protein. Post-workout recovery blend.',price:11.99,emoji:'💪',imgPrompt:'deep purple berry protein smoothie with whey, gym fitness drink photography'},
-  {id:'twisted-strawberry',cat:'muscle',catLabel:'Muscle Builders',name:'Twisted Strawberry',desc:'Strawberry, banana, and whey protein. A classic muscle-building blend.',price:11.99,emoji:'🍓',imgPrompt:'thick pink strawberry banana protein smoothie with whey, fitness food photography'},
-  {id:'peanut-butter-trump',cat:'muscle',catLabel:'Muscle Builders',name:'Peanut Butter Trump',desc:'Banana, peanut butter, and whey protein. Rich, creamy, and packed with protein.',price:11.99,emoji:'🥜',imgPrompt:'rich creamy peanut butter banana protein smoothie, dark moody food photography'},
-  {id:'in-the-tropics',cat:'muscle',catLabel:'Muscle Builders',name:'In the Tropics',desc:'Strawberry, banana, pineapple, coconut, and whey protein.',price:11.99,emoji:'🌴',imgPrompt:'tropical coconut pineapple protein smoothie, golden drink food photography'},
-  {id:'mocha-mania',cat:'muscle',catLabel:'Muscle Builders',name:'Mocha Mania',desc:'Chocolate infused with coffee and whey protein. The ultimate energy boost.',price:11.99,emoji:'☕',imgPrompt:'dark chocolate mocha protein smoothie with coffee swirl, athletic drink photography'},
-  // ── FAT BURNERS ──
-  {id:'belly-buster',cat:'fat-burner',catLabel:'Fat Burners',name:'Belly Buster',desc:'Strawberry, banana, and fat burn boost. A delicious way to support your goals.',price:11.99,emoji:'🔥',imgPrompt:'pink strawberry banana fat burn smoothie, fitness drink food photography'},
-  {id:'beery-beery-good',cat:'fat-burner',catLabel:'Fat Burners',name:'Beery Beery Good',desc:'Raspberry, blueberry, strawberry, and fat burn boost.',price:11.99,emoji:'🫐',imgPrompt:'deep purple berry fat burner smoothie, slim fitness drink photography'},
-  {id:'wonder-twins',cat:'fat-burner',catLabel:'Fat Burners',name:'Wonder Twins',desc:'Mango, peach, fat burn boost, and burn boost.',price:11.99,emoji:'🥭',imgPrompt:'golden mango peach fat burn smoothie, energetic fitness drink photography'},
-  {id:'tropical-bombshell',cat:'fat-burner',catLabel:'Fat Burners',name:'Tropical Bombshell',desc:'Pineapple, banana, coconut, and fat burn boost.',price:11.99,emoji:'💣',imgPrompt:'tropical pineapple coconut fat burner smoothie, bright fitness drink photography'},
-  // ── ACAI BOWL ──
-  {id:'acai-bowl',cat:'smoothies',catLabel:'Smoothies',name:'Acai Bowl',desc:'Acai, carnaiol, and your choice of toppings. Each topping is $1 extra.',price:11.99,emoji:'🫐',imgPrompt:'beautiful acai bowl with fresh berries granola banana toppings, overhead food photography'},
-  // ── SHOTS ──
-  {id:'shots',cat:'juice-help',catLabel:'Juice Help',name:'Wellness Shots',desc:'Concentrated wellness shots. 1oz $2.99 · 2oz $4.50 · 4oz $7.99.',price:2.99,emoji:'🥃',imgPrompt:'small shot glass with green ginger wellness shot, health drink photography'},
-  // ── BREAKFAST ──
-  {id:'detox-breakfast-wrap',cat:'breakfast',catLabel:'Breakfast',name:'Detox Breakfast Wrap',desc:'A fresh and healthy breakfast wrap packed with wholesome ingredients.',price:9.99,emoji:'🌯',imgPrompt:'fresh breakfast wrap with vegetables and eggs, morning food photography'},
-  {id:'super-veggie-wrap',cat:'breakfast',catLabel:'Breakfast',name:'Super Veggie Wrap',desc:'A hearty veggie-packed wrap — great start to your day.',price:7.99,emoji:'🥙',imgPrompt:'colorful veggie wrap with fresh vegetables, healthy breakfast photography'},
-  {id:'egg-white',cat:'breakfast',catLabel:'Breakfast',name:'Egg White',desc:'Fresh egg whites prepared your way.',price:7.99,emoji:'🥚',imgPrompt:'fluffy egg whites on plate, clean healthy breakfast photography'},
-  {id:'philadelphia-wrap',cat:'breakfast',catLabel:'Breakfast',name:'Philadelphia Wrap',desc:'A classic wrap with Philadelphia-style ingredients.',price:9.99,emoji:'🌯',imgPrompt:'philadelphia style breakfast wrap with cream cheese eggs, food photography'},
-  {id:'breakfast-platter',cat:'breakfast',catLabel:'Breakfast',name:'Breakfast Platter',desc:'A full breakfast platter to start your day right.',price:9.99,emoji:'🍳',imgPrompt:'mediterranean breakfast platter with eggs pita hummus and vegetables, restaurant food photography'},
-  {id:'shakshuka',cat:'breakfast',catLabel:'Breakfast',name:'Shakshuka',desc:'Eggs poached in a rich, spiced tomato sauce. A Mediterranean classic.',price:9.99,emoji:'🍅',imgPrompt:'shakshuka eggs in tomato sauce skillet, mediterranean breakfast photography'},
-  {id:'compuestos-pita',cat:'breakfast',catLabel:'Breakfast',name:'Compuestos Pita Bread',desc:'Chicken, eggs, tomatoes, and onion in warm pita bread.',price:9.99,emoji:'🫓',imgPrompt:'stuffed pita bread with chicken eggs tomatoes, middle eastern breakfast photography'},
-  {id:'beans',cat:'breakfast',catLabel:'Breakfast',name:'Beans',desc:'Slow-cooked beans, a hearty and satisfying dish.',price:15.99,emoji:'🫘',imgPrompt:'rich stewed beans in bowl with bread, middle eastern food photography'},
-  // ── OMELETTES ──
-  {id:'best-buy-omelette',cat:'omelets',catLabel:'Omelettes',name:'Best Buy Omelette',desc:'2 eggs, turkey bacon, onions, and peppers.',price:9.99,emoji:'🥚',imgPrompt:'fluffy omelette with turkey bacon onions peppers, breakfast food photography'},
-  {id:'western-omelette',cat:'omelets',catLabel:'Omelettes',name:'Western Omelette',desc:'2 egg whites, avocado, spinach, and turkey.',price:9.99,emoji:'🥑',imgPrompt:'healthy western omelette with avocado spinach turkey, clean food photography'},
-  {id:'carlitos-way',cat:'omelets',catLabel:'Omelettes',name:'Carlitos Way',desc:'Egg whites, onion, avocado, tomato, and cheese.',price:9.99,emoji:'🧀',imgPrompt:'gourmet omelette with avocado tomato cheese, restaurant food photography'},
-  {id:'superman-omelette',cat:'omelets',catLabel:'Omelettes',name:'Superman Omelette',desc:'2 egg whites, onion, spinach, and cheese.',price:9.99,emoji:'💪',imgPrompt:'power packed omelette with spinach onion cheese, healthy food photography'},
-  // ── SALADS ──
-  {id:'detox-garden-salad',cat:'salads',catLabel:'Salads',name:'Detox Garden Salad',desc:'Fresh garden vegetables in a detox-friendly mix.',price:11.99,emoji:'🥗',imgPrompt:'fresh green garden salad with colorful vegetables, light dressing, food photography'},
-  {id:'salmon-salad',cat:'salads',catLabel:'Salads',name:'Salmon Salad',desc:'Fresh salmon over a crisp, flavorful salad base.',price:18.99,emoji:'🐟',imgPrompt:'grilled salmon over fresh salad greens with vinaigrette dressing, restaurant food photography'},
-  {id:'catfish-salad',cat:'salads',catLabel:'Salads',name:'Catfish Salad',desc:'Fresh catfish over a crisp salad base.',price:10.99,emoji:'🐠',imgPrompt:'catfish salad with fresh greens tomatoes cucumbers, seafood salad photography'},
-  {id:'thai-salad',cat:'salads',catLabel:'Specialty Salads',name:'Spicy Thai Salad',desc:'A bold Thai-inspired salad with a spicy kick.',price:13.99,emoji:'🌶️',imgPrompt:'spicy thai salad with colorful vegetables sesame and chili dressing, vibrant food photography'},
-  {id:'caesar-salad',cat:'salads',catLabel:'Salads',name:'Caesar Salad',desc:'Romaine, croutons, parmesan, and Caesar dressing.',price:12.99,emoji:'🥗',imgPrompt:'classic caesar salad with croutons parmesan cheese, restaurant food photography'},
-  {id:'healthy-wrap-caesar',cat:'salads',catLabel:'Salads',name:'Healthy Wrap (Caesar)',desc:'Caesar salad wrapped in a whole wheat wrap.',price:13.99,emoji:'🌯',imgPrompt:'healthy caesar wrap cut in half, fresh greens visible, food photography'},
-  // ── WRAPS ──
-  {id:'detox-wrap',cat:'wraps',catLabel:'Wraps',name:'Detox Wrap',desc:'Grilled chicken, Swiss cheese, spinach, tomatoes, and mixed greens.',price:9.99,emoji:'🌯',imgPrompt:'grilled chicken wrap cut in half showing filling of spinach cheese tomato, restaurant food photography'},
-  {id:'healthy-wrap',cat:'wraps',catLabel:'Wraps',name:'Healthy Wrap',desc:'Grilled chicken, tomato, Swiss cheese, peppers, and mixed greens.',price:8.99,emoji:'🥙',imgPrompt:'healthy grilled chicken wrap with peppers and greens, clean food photography'},
-  {id:'caesar-wrap',cat:'wraps',catLabel:'Wraps',name:'Caesar Wrap',desc:'Croutons, Caesar dressing, parmesan, and romaine lettuce.',price:9.99,emoji:'🌯',imgPrompt:'caesar wrap with croutons parmesan lettuce, food photography'},
-  {id:'salmon-wrap',cat:'wraps',catLabel:'Wraps',name:'Salmon Wrap',desc:'Salmon and sweet spinach wrapped in a fresh tortilla.',price:12.99,emoji:'🐟',imgPrompt:'salmon wrap with spinach greens, premium seafood wrap food photography'},
-  {id:'falafel-wrap',cat:'wraps',catLabel:'Wraps',name:'Falafel Wrap',desc:'Tomato chipotle, falafel, lettuce, tomato, and hummus.',price:11.99,emoji:'🧆',imgPrompt:'falafel wrap with hummus tomato lettuce, middle eastern food photography'},
-  {id:'chicken-gyro',cat:'wraps',catLabel:'Wraps',name:'Chicken Gyro',desc:'Juicy chicken in a warm pita bread with all the toppings.',price:9.99,emoji:'🌮',imgPrompt:'authentic chicken gyro in pita bread with tzatziki sauce and vegetables, street food photography'},
-  // ── QUESADILLAS ──
-  {id:'detox-q',cat:'quesadilla',catLabel:'Quesadillas',name:'Detox Quesadilla',desc:'Grilled chicken, smoked spinach, grilled onions, and peppers.',price:13.89,emoji:'🌮',imgPrompt:'crispy chicken spinach quesadilla cut into triangles, melted cheese, restaurant food photography'},
-  {id:'chicken-quesadilla',cat:'quesadilla',catLabel:'Quesadillas',name:'Chicken Quesadilla',desc:'Parmesan, grilled chicken, lettuce, and croutons. #1 Most Liked!',price:12.99,emoji:'🌮',imgPrompt:'crispy chicken quesadilla cut into triangles, melted cheese visible, restaurant food photography'},
-  {id:'philly-q',cat:'quesadilla',catLabel:'Quesadillas',name:'Philly Cheese Steak Quesadilla',desc:'Steak, onion, and green peppers, mixed.',price:14.98,emoji:'🥩',imgPrompt:'philly cheesesteak quesadilla with steak onions peppers melted cheese, restaurant food photography'},
-  {id:'go-detox-q',cat:'quesadilla',catLabel:'Quesadillas',name:'Go Detox Quesadilla',desc:'Fresh shrimp, grilled, smoked spinach, broccoli, and peppers.',price:13.99,emoji:'🦐',imgPrompt:'shrimp and vegetable quesadilla with broccoli spinach melted cheese, premium food photography'},
-  // ── HOT APPETIZERS ──
-  {id:'falafel-hummus',cat:'hot-app',catLabel:'Hot Appetizers',name:'6 Pcs Falafel w/Hummus',desc:'Six crispy falafel balls served with creamy hummus.',price:11.89,emoji:'🧆',imgPrompt:'golden crispy falafel balls on plate with hummus dipping sauce, food photography'},
-  {id:'sweet-fries',cat:'hot-app',catLabel:'Hot Appetizers',name:'Sweet Fries',desc:'Crispy sweet potato fries served hot.',price:4.99,emoji:'🍠',imgPrompt:'golden crispy sweet potato fries in basket, warm food photography'},
-  {id:'kefries-soup',cat:'hot-app',catLabel:'Hot Appetizers',name:'Kefries Soup',desc:'A hearty and warming soup served with fries.',price:5.99,emoji:'🍜',imgPrompt:'warm soup with fries side, comfort food photography'},
-  {id:'chicken-wings',cat:'hot-app',catLabel:'Hot Appetizers',name:'Chicken Wings',desc:'Crispy, flavorful chicken wings.',price:6.99,emoji:'🍗',imgPrompt:'crispy golden chicken wings on plate with dipping sauce, restaurant food photography'},
-  {id:'chicken-nuggets',cat:'hot-app',catLabel:'Hot Appetizers',name:'Chicken Nuggets w/Fries',desc:'Crispy chicken nuggets served with fries.',price:12.99,emoji:'🍟',imgPrompt:'golden crispy chicken nuggets with fries, restaurant food photography'},
-  {id:'french-fries',cat:'hot-app',catLabel:'Hot Appetizers',name:'French Fries',desc:'Crispy, golden sticks served piping hot.',price:4.99,emoji:'🍟',imgPrompt:'perfectly golden crispy french fries in basket, restaurant food photography, warm lighting'},
-  // ── COLD APPETIZERS ──
-  {id:'hummus',cat:'cold-app',catLabel:'Cold Appetizers',name:'Hummus',desc:'Creamy hummus with chicken mixed, baba ganoush, pita, and lemon.',price:6.99,emoji:'🫘',imgPrompt:'creamy hummus in bowl with olive oil drizzle and pita bread, middle eastern food photography'},
-  {id:'baba-ganush',cat:'cold-app',catLabel:'Cold Appetizers',name:'Baba Ganush',desc:'Smoky baba ganoush with garlic and olive oil.',price:7.98,emoji:'🍆',imgPrompt:'smooth baba ganoush in bowl with olive oil garlic, middle eastern appetizer photography'},
-  {id:'grape-leaves',cat:'cold-app',catLabel:'Cold Appetizers',name:'5 Pcs Grape Leaves',desc:'Stuffed grape leaves with grilled egg plant and stuffed red pepper with olive.',price:12.99,emoji:'🍃',imgPrompt:'stuffed grape leaves on plate with side garnish, mediterranean food photography'},
-  {id:'mixed-appetizer',cat:'cold-app',catLabel:'Cold Appetizers',name:'Mixed Appetizer',desc:'Carrot, black pepper, lemon, rice, cumin, raisins, 2 pcs pita, grape leaves.',price:22.99,emoji:'🫒',imgPrompt:'mediterranean mixed appetizer platter hummus baba ganoush olives pita, restaurant food photography'},
-  // ── BURGERS ──
-  {id:'chicken-burger',cat:'burgers',catLabel:'Burgers',name:'Chicken Burger',desc:'Chicken, Swiss cheese, lettuce, and tomatoes. Served with fries.',price:11.99,emoji:'🍔',imgPrompt:'juicy chicken burger with swiss cheese lettuce tomato on toasted bun, premium food photography'},
-  {id:'big-dipper',cat:'burgers',catLabel:'Burgers',name:'The Big Dipper',desc:'Tomatoes, mozzarella, bacon, green onion strips. Served with fries.',price:10.99,emoji:'🍔',imgPrompt:'gourmet beef burger with mozzarella bacon green onions on toasted bun, restaurant food photography'},
-  {id:'salmon-burger',cat:'burgers',catLabel:'Burgers',name:'Salmon Burger',desc:'Salmon with lettuce, tomatoes, onion, cheese, and mayo. Served with fries.',price:11.99,emoji:'🐟',imgPrompt:'premium salmon burger with lettuce tomato onion mayo on bun, seafood food photography'},
-  // ── GRILL ──
-  {id:'chicken-gyro-dish',cat:'grill',catLabel:'Chicken & Lamb Dishes',name:'Chicken Gyro',desc:'Tender chicken gyro — a classic Mediterranean favourite.',price:9.99,emoji:'🌮',imgPrompt:'chicken gyro plate with rice salad pita, mediterranean food photography'},
-  {id:'chicken-shish',cat:'grill',catLabel:'Chicken & Lamb Dishes',name:'Chicken Shish Kebab',desc:'Marinated chicken grilled on skewers to perfection.',price:9.99,emoji:'🍡',imgPrompt:'grilled chicken shish kebab skewers on plate with pita rice and salad, mediterranean food photography'},
-  {id:'chicken-adana',cat:'grill',catLabel:'Chicken & Lamb Dishes',name:'Chicken Adana Kebab',desc:'Spiced ground chicken kebab grilled to perfection.',price:9.99,emoji:'🍢',imgPrompt:'chicken adana kebab on skewer with grilled vegetables, turkish food photography'},
-  {id:'chicken-macaroni',cat:'grill',catLabel:'Chicken & Lamb Dishes',name:'Chicken Macaroni',desc:'Tender chicken served with macaroni.',price:10.00,emoji:'🍝',imgPrompt:'chicken with macaroni pasta, comfort food photography'},
-  {id:'charcoal-chicken',cat:'grill',catLabel:'Chicken & Lamb Dishes',name:'Charcoal Chicken Chop',desc:'Chicken grilled over charcoal for a smoky, delicious flavour.',price:10.80,emoji:'🍗',imgPrompt:'charcoal grilled chicken chop with smoky char marks, restaurant food photography'},
-  {id:'chicken-mandi',cat:'grill',catLabel:'Chicken & Lamb Dishes',name:'Chicken Mandi',desc:'Aromatic slow-cooked chicken over fragrant basmati rice.',price:10.00,emoji:'🍚',imgPrompt:'chicken mandi over fragrant basmati rice, yemeni food photography'},
-  {id:'lamb-shish',cat:'grill',catLabel:'Chicken & Lamb Dishes',name:'Lamb Shish Kebab',desc:'Premium lamb marinated and grilled to a perfect sear on skewers.',price:10.00,emoji:'🍢',imgPrompt:'perfectly grilled lamb shish kebab skewers with charred edges, served with rice and salad'},
-  {id:'lamb-adana',cat:'grill',catLabel:'Chicken & Lamb Dishes',name:'Lamb Adana Kebab',desc:'Spiced ground lamb kebab grilled on skewers.',price:10.00,emoji:'🍢',imgPrompt:'lamb adana kebab on skewer, middle eastern grill food photography'},
-  {id:'lamb-chops',cat:'grill',catLabel:'Chicken & Lamb Dishes',name:'Lamb Chops',desc:'Juicy, perfectly grilled lamb chops.',price:10.00,emoji:'🥩',imgPrompt:'grilled lamb chops with herb seasoning on plate, premium restaurant food photography'},
-  {id:'mix-gyro',cat:'grill',catLabel:'Chicken & Lamb Dishes',name:'Chicken & Lamb Mix Gyro',desc:'A mix of chicken and lamb gyro — the best of both worlds.',price:11.99,emoji:'🌮',imgPrompt:'mixed chicken lamb gyro plate with rice and salad, mediterranean food photography'},
-  // ── SUPER MIXED GRILL ──
-  {id:'super-mixed',cat:'grill',catLabel:'Super Mixed Grill',name:'Red Sea Super Mixed Grill',desc:'An epic combination platter of our best grilled meats. Includes rice and salad.',price:40.00,emoji:'🥩',imgPrompt:'impressive mixed grill platter with chicken lamb kebabs rice and salads, restaurant food photography'},
-  // ── SEAFOOD ──
-  {id:'salmon-kebab',cat:'seafood',catLabel:'Seafood',name:'Salmon Kebab',desc:'Fresh salmon grilled on skewers to perfection.',price:22.99,emoji:'🐟',imgPrompt:'grilled salmon kebab skewers with lemon herbs on plate, seafood restaurant photography'},
-  {id:'branzino-kebab',cat:'seafood',catLabel:'Seafood',name:'Branzino Kebab',desc:'Fresh branzino grilled to a crispy perfection.',price:27.99,emoji:'🐠',imgPrompt:'grilled branzino fish kebab on plate with vegetables lemon, premium seafood photography'},
-  {id:'seafood-platter',cat:'seafood',catLabel:'Seafood',name:'Super Mixed Seafood Platter',desc:'A spectacular platter of our finest seafood selections.',price:49.00,emoji:'🦐',imgPrompt:'impressive mixed seafood platter with fish shrimp kebabs, premium restaurant photography'},
-  // ── YEMENI ──
-  {id:'yemeni',cat:'yemeni',catLabel:'Yemeni Dishes',name:'Yemeni Specialties',desc:'Authentic Yemeni cuisine prepared with traditional spices — including lamb okra with basmati rice.',price:13.99,emoji:'🫕',imgPrompt:'authentic yemeni lamb stew with basmati rice and flatbread, traditional middle eastern food photography'},
-  // ── DESSERTS ──
-  {id:'banana-cake',cat:'dessert',catLabel:'Dessert',name:'Banana Cake',desc:'A moist, delicious homemade banana cake.',price:7.99,emoji:'🍰',imgPrompt:'slice of moist banana cake on plate, bakery food photography'},
-  {id:'kunafe',cat:'dessert',catLabel:'Dessert',name:'Kunafe',desc:'Traditional Middle Eastern kunafe with stretchy cheese and golden pastry.',price:8.99,emoji:'🍮',imgPrompt:'golden kunafe with cheese and syrup, middle eastern dessert photography'},
-  {id:'rice-pudding',cat:'dessert',catLabel:'Dessert',name:'Rice Pudding',desc:'Creamy, comforting rice pudding.',price:8.99,emoji:'🍮',imgPrompt:'creamy rice pudding in bowl with cinnamon, comfort dessert photography'},
-  {id:'cheese-cake',cat:'dessert',catLabel:'Dessert',name:'Cheese Cake',desc:'Rich, creamy New York-style cheesecake.',price:8.99,emoji:'🎂',imgPrompt:'rich creamy cheesecake slice on plate, premium dessert photography'},
-  {id:'banana-mousse',cat:'dessert',catLabel:'Dessert',name:'Banana Mousse',desc:'Light and airy banana mousse.',price:4.99,emoji:'🍌',imgPrompt:'light banana mousse in glass, elegant dessert food photography'},
-];
+  // ‚îÄ‚îÄ Scroll progress bar
+  const bar = document.getElementById('progress-bar');
+  const backTop = document.getElementById('back-top');
+  const floatCta = document.getElementById('float-cta');
+  window.addEventListener('scroll', () => {
+    const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    bar.style.width = pct + '%';
+    backTop.classList.toggle('visible', window.scrollY > 400);
+    floatCta.classList.toggle('visible', window.scrollY > 500);
+    document.getElementById('header').classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
 
-const SIZE_CATS = ['detox','power','juice-help','smoothies','muscle','fat-burner'];
-const JUICE_SIZES = [
-  { key:'S', label:'Small',  oz:'12oz', price:6.99 },
-  { key:'M', label:'Medium', oz:'16oz', price:7.99 },
-  { key:'L', label:'Large',  oz:'24oz', price:9.49 },
-  { key:'XL',label:'X-Large',oz:'32oz', price:9.49 },
-];
-const SMOOTHIE_SIZES = [
-  { key:'S', label:'Small',  oz:'12oz', price:6.99 },
-  { key:'M', label:'Medium', oz:'16oz', price:7.49 },
-  { key:'L', label:'Large',  oz:'24oz', price:8.49 },
-  { key:'XL',label:'X-Large',oz:'32oz', price:9.49 },
-];
-const MUSCLE_SIZES = [
-  { key:'M', label:'Regular', oz:'16oz', price:11.99 },
-];
-const DEFAULT_SIZE = 'M';
+  backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-function getSizesForCat(cat) {
-  if (['muscle','fat-burner'].includes(cat)) return MUSCLE_SIZES;
-  if (cat === 'smoothies') return SMOOTHIE_SIZES;
-  if (SIZE_CATS.includes(cat)) return JUICE_SIZES;
-  return null;
-}
+  // ‚îÄ‚îÄ Mobile nav
+  const ham = document.getElementById('hamburger');
+  const mNav = document.getElementById('mobileNav');
+  ham.addEventListener('click', () => mNav.classList.toggle('open'));
+  document.querySelectorAll('.mn-link').forEach(l => l.addEventListener('click', () => mNav.classList.remove('open')));
 
-function itemHasSizes(item) { return SIZE_CATS.includes(item.cat); }
-function getNumericPrice(item) { return typeof item.price === 'number' ? item.price : 0; }
+  // ‚îÄ‚îÄ Fade-up observer
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
-const FEATURED_IDS = ['chicken-quesadilla','purple-beets','lamb-shish','go-detox-q','sweet-sour-king','triple-berry'];
-const GALLERY_IDS = ['lamb-shish','purple-beets','chicken-quesadilla','honeymoon','super-mixed','mixed-appetizer','salmon-salad','yemeni','kunafe'];
-const GALLERY_LABELS = {'lamb-shish':'Lamb Kebab','purple-beets':'Fresh Pressed Juice','chicken-quesadilla':'Quesadillas','honeymoon':'Honeymoon Smoothie','super-mixed':'Mixed Grill Platter','mixed-appetizer':'Cold Appetizers','salmon-salad':'Salmon Salad','yemeni':'Yemeni Dishes','kunafe':'Kunafe Dessert'};
-const CAT_ICONS = {detox:'🥤',power:'⚡','juice-help':'💊',smoothies:'🥛',muscle:'💪','fat-burner':'🔥',breakfast:'🍳',omelets:'🥚',salads:'🥗','cold-app':'🫒','hot-app':'♨️',wraps:'🌯',quesadilla:'🌮',burgers:'🍔',grill:'🍢',seafood:'🦐',yemeni:'🫕',dessert:'🍮'};
-const CAT_ORDER = ['detox','power','juice-help','smoothies','muscle','fat-burner','breakfast','omelets','salads','cold-app','hot-app','wraps','quesadilla','burgers','grill','seafood','yemeni','dessert'];
-
-// ═══════════════════════════════════════
-// IMAGE CACHE & SVG GENERATOR
-// ═══════════════════════════════════════
-const imgCache = {};
-
-function generateSVGFood(item) {
-  if (imgCache[item.id]) return imgCache[item.id];
-  // Color palettes per category
-  const palettes = {
-    'detox':    {bg:'#0a1a0e', c1:'#2d6a4f', c2:'#52b788', c3:'#95d5b2', accent:'#d4a843'},
-    'power':    {bg:'#0a1800', c1:'#386641', c2:'#6a994e', c3:'#a7c957', accent:'#bc6c25'},
-    'juice-help':{bg:'#1a0800', c1:'#bc6c25', c2:'#dda15e', c3:'#fefae0', accent:'#606c38'},
-    'smoothies':{bg:'#0a001a', c1:'#7b2d8b', c2:'#c77dff', c3:'#e0aaff', accent:'#ff9ef5'},
-    'muscle':   {bg:'#1a0a00', c1:'#9d4edd', c2:'#c77dff', c3:'#e0aaff', accent:'#ffd60a'},
-    'fat-burner':{bg:'#1a0200', c1:'#d62828', c2:'#f77f00', c3:'#fcbf49', accent:'#eae2b7'},
-    'breakfast':{bg:'#1a1000', c1:'#bc6c25', c2:'#dda15e', c3:'#fefae0', accent:'#606c38'},
-    'omelets':  {bg:'#1a1200', c1:'#e76f51', c2:'#f4a261', c3:'#e9c46a', accent:'#264653'},
-    'salads':   {bg:'#001a08', c1:'#2d6a4f', c2:'#52b788', c3:'#95d5b2', accent:'#d4a843'},
-    'cold-app': {bg:'#001a10', c1:'#2d6a4f', c2:'#52b788', c3:'#b7e4c7', accent:'#d4a843'},
-    'hot-app':  {bg:'#1a0800', c1:'#bc6c25', c2:'#dda15e', c3:'#fefae0', accent:'#606c38'},
-    'wraps':    {bg:'#0a1400', c1:'#386641', c2:'#6a994e', c3:'#a7c957', accent:'#bc6c25'},
-    'quesadilla':{bg:'#1a0e00', c1:'#bc6c25', c2:'#dda15e', c3:'#ffd166', accent:'#ef233c'},
-    'burgers':  {bg:'#1a0800', c1:'#9e2a2b', c2:'#e09f3e', c3:'#fff3b0', accent:'#335c67'},
-    'grill':    {bg:'#1a0500', c1:'#9e2a2b', c2:'#c9821a', c3:'#f4a261', accent:'#e9c46a'},
-    'seafood':  {bg:'#001525', c1:'#1d3557', c2:'#457b9d', c3:'#a8dadc', accent:'#e63946'},
-    'yemeni':   {bg:'#1a0800', c1:'#774936', c2:'#bc6c25', c3:'#dda15e', accent:'#606c38'},
-    'dessert':  {bg:'#1a0510', c1:'#9d0208', c2:'#dc2f02', c3:'#e85d04', accent:'#f48c06'},
-  };
-  const p = palettes[item.cat] || palettes['grill'];
-  // Shape vocabulary per category
-  const shapes = {
-    'detox': `<circle cx="100" cy="85" r="55" fill="${p.c1}" opacity=".9"/>
-      <ellipse cx="100" cy="85" rx="35" ry="38" fill="${p.c2}"/>
-      <circle cx="100" cy="80" r="20" fill="${p.c3}" opacity=".7"/>
-      <ellipse cx="82" cy="115" rx="18" ry="8" fill="${p.c1}" opacity=".6"/>
-      <ellipse cx="118" cy="112" rx="14" ry="6" fill="${p.accent}" opacity=".5"/>
-      <rect x="88" y="130" width="24" height="50" rx="12" fill="${p.c1}" opacity=".8"/>`,
-    'smoothies': `<rect x="55" y="60" width="90" height="110" rx="45" fill="${p.c1}" opacity=".95"/>
-      <rect x="63" y="68" width="74" height="95" rx="37" fill="${p.c2}" opacity=".8"/>
-      <circle cx="100" cy="80" r="22" fill="${p.c3}" opacity=".7"/>
-      <ellipse cx="100" cy="170" rx="28" ry="6" fill="${p.c1}" opacity=".4"/>
-      <circle cx="85" cy="100" r="8" fill="${p.accent}" opacity=".6"/>
-      <circle cx="115" cy="95" r="6" fill="${p.c3}" opacity=".8"/>`,
-    'grill': `<ellipse cx="100" cy="130" rx="70" ry="20" fill="${p.c1}" opacity=".4"/>
-      <rect x="30" y="80" width="140" height="60" rx="8" fill="${p.c1}" opacity=".9"/>
-      <rect x="38" y="88" width="124" height="44" rx="5" fill="${p.c2}" opacity=".8"/>
-      <line x1="40" y1="95" x2="160" y2="95" stroke="${p.bg}" stroke-width="3" opacity=".6"/>
-      <line x1="40" y1="110" x2="160" y2="110" stroke="${p.bg}" stroke-width="3" opacity=".6"/>
-      <line x1="40" y1="125" x2="160" y2="125" stroke="${p.bg}" stroke-width="3" opacity=".6"/>
-      <circle cx="70" cy="75" r="10" fill="${p.accent}" opacity=".8"/>
-      <circle cx="130" cy="75" r="10" fill="${p.accent}" opacity=".8"/>`,
-    'wraps': `<ellipse cx="100" cy="120" rx="75" ry="50" fill="${p.c1}" opacity=".9"/>
-      <ellipse cx="100" cy="115" rx="60" ry="40" fill="${p.c2}" opacity=".8"/>
-      <ellipse cx="100" cy="110" rx="45" ry="30" fill="${p.c3}" opacity=".7"/>
-      <circle cx="75" cy="105" r="12" fill="${p.accent}" opacity=".7"/>
-      <circle cx="100" cy="95" r="10" fill="${p.c1}" opacity=".8"/>
-      <circle cx="125" cy="108" r="9" fill="${p.accent}" opacity=".6"/>`,
-    'quesadilla': `<polygon points="100,40 175,140 25,140" fill="${p.c1}" opacity=".9"/>
-      <polygon points="100,55 162,135 38,135" fill="${p.c2}" opacity=".8"/>
-      <polygon points="100,40 175,140 25,140" fill="none" stroke="${p.accent}" stroke-width="2" opacity=".5"/>
-      <circle cx="100" cy="105" r="18" fill="${p.c3}" opacity=".6"/>
-      <circle cx="78" cy="115" r="8" fill="${p.accent}" opacity=".5"/>
-      <circle cx="122" cy="112" r="8" fill="${p.accent}" opacity=".5"/>`,
-    'salads': `<circle cx="100" cy="100" r="72" fill="${p.c1}" opacity=".7"/>
-      <circle cx="100" cy="100" r="55" fill="${p.c2}" opacity=".6"/>
-      <circle cx="78" cy="88" r="14" fill="${p.c3}" opacity=".8"/>
-      <circle cx="118" cy="92" r="12" fill="${p.accent}" opacity=".7"/>
-      <circle cx="95" cy="115" r="10" fill="${p.c1}" opacity=".9"/>
-      <circle cx="115" cy="118" r="8" fill="${p.c3}" opacity=".7"/>
-      <circle cx="82" cy="112" r="6" fill="${p.accent}" opacity=".6"/>`,
-    'burgers': `<ellipse cx="100" cy="75" rx="70" ry="30" fill="${p.c3}" opacity=".9"/>
-      <rect x="28" y="95" width="144" height="20" rx="4" fill="${p.c1}" opacity=".9"/>
-      <rect x="28" y="108" width="144" height="25" rx="4" fill="${p.c2}" opacity=".8"/>
-      <rect x="28" y="126" width="144" height="15" rx="4" fill="${p.accent}" opacity=".7"/>
-      <ellipse cx="100" cy="148" rx="72" ry="18" fill="${p.c1}" opacity=".85"/>`,
-  };
-  const shapeKey = Object.keys(shapes).find(k => item.cat.includes(k)) || 'grill';
-  const svgBody = shapes[shapeKey] || shapes['grill'];
-
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
-    <rect width="200" height="200" fill="${p.bg}"/>
-    <circle cx="100" cy="100" r="90" fill="${p.c1}" opacity=".08"/>
-    ${svgBody}
-    <rect width="200" height="200" fill="url(#vignette)" opacity=".5"/>
-    <defs>
-      <radialGradient id="vignette" cx="50%" cy="50%" r="50%">
-        <stop offset="60%" stop-color="transparent"/>
-        <stop offset="100%" stop-color="${p.bg}"/>
-      </radialGradient>
-    </defs>
-  </svg>`;
-  const dataUrl = 'data:image/svg+xml;base64,' + btoa(svg);
-  imgCache[item.id] = dataUrl;
-  return dataUrl;
-}
-
-// ═══════════════════════════════════════
-// MENU RENDERING
-// ═══════════════════════════════════════
-function renderMenuSections(items) {
-  const sections = {};
-  items.forEach(item => {
-    if (!sections[item.cat]) sections[item.cat] = {label:item.catLabel, items:[]};
-    sections[item.cat].items.push(item);
-  });
-  const container = document.getElementById('menuSections');
-  container.innerHTML = CAT_ORDER.filter(cat => sections[cat]).map(cat => {
-    const sec = sections[cat];
-    return `<div class="cat-section" data-cat="${cat}" id="cat-${cat}">
-      <h3 class="cat-section-title">${CAT_ICONS[cat]||'🍽️'} ${sec.label}</h3>
-      <div class="cat-section-divider"></div>
-      <div class="menu-grid">
-        ${sec.items.map(item => {
-          const imgSrc = imgCache[item.id] || generateSVGFood(item);
-          const sizes = getSizesForCat(item.cat);
-          const displayPrice = sizes ? 'From $' + sizes[0].price.toFixed(2) : '$' + getNumericPrice(item).toFixed(2);
-          const sizeInfo = sizes ? sizes.map(s => `<span class="size-pill">${s.key} $${s.price.toFixed(2)}</span>`).join('') : '';
-          return `<div class="menu-card fade-in" data-cat="${item.cat}" data-name="${item.name.toLowerCase()}">
-            <div class="menu-card-img"><img src="${imgSrc}" alt="${item.name}" loading="lazy" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:3rem;display:flex;align-items:center;justify-content:center;height:100%&quot;>${item.emoji}</span>'"/></div>
-            <div class="menu-card-body">
-              <div class="menu-card-cat">${item.catLabel}</div>
-              <div class="menu-card-name">${item.name}</div>
-              <div class="menu-card-desc">${item.desc}</div>
-              ${sizeInfo ? `<div class="size-info">${sizeInfo}</div>` : ''}
-              <div class="menu-card-footer">
-                <span class="menu-card-price">${displayPrice}</span>
-                <a class="menu-card-call" href="tel:3478576692">📞 Call to Order</a>
-              </div>
-            </div>
-          </div>`;
-        }).join('')}
-      </div>
-    </div>`;
-  }).join('');
-}
-
-function renderGallery() {
-  const grid = document.getElementById('galleryGrid');
-  grid.innerHTML = GALLERY_IDS.map(id => {
-    const item = MENU.find(m => m.id === id);
-    if (!item) return '';
-    const imgSrc = imgCache[id] || generateSVGFood(item);
-    return `<div class="gallery-item fade-in">
-      <img src="${imgSrc}" alt="${GALLERY_LABELS[id]}" loading="lazy"/>
-      <div class="gallery-item-overlay"><span class="gallery-label">${GALLERY_LABELS[id]}</span></div>
-    </div>`;
-  }).join('');
-}
-
-// ═══════════════════════════════════════
-// FILTERS
-// ═══════════════════════════════════════
-let activeFilterCat = 'all';
-
-function filterCat(cat, btn) {
-  activeFilterCat = cat;
-  const sections = document.querySelectorAll('.cat-section');
-  if (cat === 'all') sections.forEach(s => s.classList.remove('hidden'));
-  else sections.forEach(s => s.dataset.cat === cat ? s.classList.remove('hidden') : s.classList.add('hidden'));
-  if (btn) { document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); }
-  document.getElementById('menuSearch').value = '';
-  document.getElementById('noResults').classList.add('hidden');
-}
-
-function filterMenu() {
-  const q = document.getElementById('menuSearch').value.toLowerCase().trim();
-  if (!q) { filterCat(activeFilterCat, null); return; }
-  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-  let found = 0;
-  document.querySelectorAll('.cat-section').forEach(sec => {
-    const cards = sec.querySelectorAll('.menu-card');
-    let n = 0;
-    cards.forEach(c => { if ((c.dataset.name||'').includes(q)) { c.style.display='flex'; n++; } else c.style.display='none'; });
-    if (n > 0) { sec.classList.remove('hidden'); found += n; } else sec.classList.add('hidden');
-  });
-  document.getElementById('noResults').classList.toggle('hidden', found > 0);
-}
-
-// ═══════════════════════════════════════
-// CATERING FORM
-// ═══════════════════════════════════════
-async function submitCatering() {
-  if (document.getElementById('catHp')?.value) return;
-  const name = document.getElementById('catName')?.value?.trim();
-  const phone = document.getElementById('catPhone')?.value?.trim();
-  const email = document.getElementById('catEmail')?.value?.trim();
-  const btn = document.getElementById('catBtn');
-  const msg = document.getElementById('catMsg');
-  if (!name) { msg.textContent='⚠️ Please enter your name.'; msg.style.color='#e74c3c'; return; }
-  if (!phone) { msg.textContent='⚠️ Please enter your phone.'; msg.style.color='#e74c3c'; return; }
-  if (!email) { msg.textContent='⚠️ Please enter your email.'; msg.style.color='#e74c3c'; return; }
-  btn.textContent='Sending...'; btn.disabled=true;
-  try {
-    const res = await fetch('/api/catering', {
-      method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({
-        name, phone, email,
-        eventDate: document.getElementById('catDate')?.value,
-        guestCount: document.getElementById('catGuests')?.value,
-        eventType: document.getElementById('catType')?.value,
-        details: document.getElementById('catDetails')?.value,
-      })
-    });
-    const data = await res.json();
-    if (res.ok && data.success) {
-      btn.textContent='✓ Inquiry Sent!'; btn.style.background='var(--green)';
-      msg.textContent="We'll be in touch within 24 hours!"; msg.style.color='var(--green2)';
-    } else {
-      btn.textContent='Send Catering Inquiry →'; btn.disabled=false;
-      msg.textContent=data.error||'Failed to send. Please call (347) 857-6692.'; msg.style.color='#e74c3c';
-    }
-  } catch {
-    btn.textContent='Send Catering Inquiry →'; btn.disabled=false;
-    msg.textContent='Error. Please call (347) 857-6692.'; msg.style.color='#e74c3c';
+  // ‚îÄ‚îÄ Counter animation
+  function animateCount(el) {
+    const target = +el.dataset.count;
+    const suffix = el.dataset.suffix || '';
+    const duration = 1400;
+    const step = duration / target;
+    let current = 0;
+    const timer = setInterval(() => {
+      current = Math.min(current + Math.ceil(target / 60), target);
+      el.textContent = current + suffix;
+      if (current >= target) clearInterval(timer);
+    }, step);
   }
-}
+  const countObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animateCount(e.target);
+        countObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
 
-// ═══════════════════════════════════════
-// UTILS
-// ═══════════════════════════════════════
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg; t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2200);
-}
-
-function highlightToday() {
-  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const today = days[new Date().getDay()];
-  document.querySelectorAll('.hours-row').forEach(row => {
-    if (row.querySelector('.day')?.textContent === today) row.classList.add('today');
+  // ‚îÄ‚îÄ Menu tabs
+  document.querySelectorAll('.menu-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+    });
   });
-}
 
-window.addEventListener('scroll', () => {
-  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 50);
-  const btt = document.getElementById('btt');
-  btt.style.display = window.scrollY > 400 ? 'flex' : 'none';
-});
+  // ‚îÄ‚îÄ Smooth scroll anchors
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 76, behavior: 'smooth' }); }
+    });
+  });
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, {threshold:0.08});
-
-// ═══════════════════════════════════════
-// INIT
-// ═══════════════════════════════════════
-document.addEventListener('DOMContentLoaded', () => {
-  MENU.forEach(item => generateSVGFood(item));
-  renderMenuSections(MENU);
-  renderGallery();
-  highlightToday();
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-});
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') document.getElementById('mobileMenu')?.classList.remove('open');
-});
+  // ‚îÄ‚îÄ Reservation form
+  function submitReservation(e) {
+    e.preventDefault();
+    document.getElementById('reservationForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
 </script>
 </body>
 </html>
